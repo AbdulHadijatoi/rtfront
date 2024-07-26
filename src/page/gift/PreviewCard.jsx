@@ -20,7 +20,7 @@ const PreviewCard = () => {
       <Box>
         {/* <img src="/preview.png" alt="" style={{ height: '100%', width: '100%' }} /> */}
 
-        <Typography sx={{ color: theme.palette.primary.main, fontSize: '2rem', fontWeight: '700', mt: 5, textAlign: 'center' }}>Pacific Adventures Gift Card</Typography>
+        <Typography sx={{ color: theme.palette.primary.main, fontSize: '2rem', fontWeight: '700', mt: 5, textAlign: 'center' }}>RAH Tours Gift Card</Typography>
 
         <Typography sx={{ fontSize: '3rem', fontWeight: '700', mt: 2, textAlign: 'center', }}>
           Book unforgettable
@@ -38,7 +38,7 @@ const PreviewCard = () => {
 
           <Typography sx={{ mt: 1, fontWeight: '600', fontSize: '3rem' }}>Lucky You !</Typography>
           <Typography sx={{ mt: 1, fontWeight: '600', fontSize: '1.5rem' }}>You can book any tour, activity, or attraction you
-            like on Pacific Adventures</Typography>
+            like on RAH Tours</Typography>
 
           <Box padding='2rem 20%'>
 

@@ -157,7 +157,7 @@ const TermsConditions = ({nameProp}) => {
 
         <Box sx={{ color: "grey", marginTop: "1rem" }}>
           <Typography sx={{fontSize:'13px'}}>
-            After payment, Book Pacific Adventures will send a confirmation / voucher
+            After payment, Book RAH Tours will send a confirmation / voucher
             by e-mail: this voucher has to be printed, as a proof of purchase,
             and will be presented to the service provider/guide.
           </Typography>
@@ -169,14 +169,14 @@ const TermsConditions = ({nameProp}) => {
 
           <Typography sx={{fontSize:'13px'}}>
             All requests for modifications/amendments must be sent by email to
-            Book Pacific Adventures.
+            Book RAH Tours.
           </Typography>
 
           <Typography sx={{ marginTop: "1rem", fontSize:'13px' }}>
             <Link to="/">www.pacific-adventures.com</Link> cannot be held
             responsible for any problem that may happen if you don't receive or
             read carefully your confirmation / voucher. In case you have not
-            received your voucher, you must notify Book Pacific Adventures at least 24
+            received your voucher, you must notify Book RAH Tours at least 24
             hours before the date of service.
           </Typography>
 
@@ -283,7 +283,7 @@ const TermsConditions = ({nameProp}) => {
           <Typography sx={{fontSize:'13px'}}>
             All content in this website, including logos, pictures, images,
             information on tour package, attractions, pricing details, and other
-            relevant details, are proprietary to Book Pacific Adventures. Accordingly,
+            relevant details, are proprietary to Book RAH Tours. Accordingly,
             as a condition of this website´s usage, you agree not to exploit
             this website or its content for any non-personal, commercial, or
             illegitimate purposes.

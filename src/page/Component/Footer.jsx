@@ -40,114 +40,122 @@ const currentYear = new Date().getFullYear();
             color: "white",
           }}
         >
-          <Grid container spacing={3} alignItems={"center"}>
-            <Grid item lg={5} md={5} sm={12} xs={12}>
-              <Typography
-                variant="h1"
-                sx={{ fontSize: "1.2rem", fontWeight: "600" }}
-              >
-                We have got amazing deals just for you
-              </Typography>
+          <Box sx={{
+            margin: 'auto',
+            width: {
+             lg: '1280px',
+            }, 
+          }}>
+            <Grid container spacing={3} alignItems={"center"}>
+              <Grid item lg={5} md={5} sm={12} xs={12}>
+                <Typography
+                  variant="h1"
+                  sx={{ fontSize: "1.2rem", fontWeight: "600" }}
+                >
+                  We have got amazing deals just for you
+                </Typography>
 
-              <Typography sx={{ fontSize: "0.8rem" }}>
-                Subscribe to the newsletter and stay up to date...
-              </Typography>
-            </Grid>
+                <Typography sx={{ fontSize: "0.8rem" }}>
+                  Subscribe to the newsletter and stay up to date...
+                </Typography>
+              </Grid>
 
-            <Grid item lg={3} md={3} sm={12} xs={12}>
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                  alignItems: "center",
-                }}
-              >
-
-
-
-
-                <a href="https://www.facebook.com/pacificadventuresdubai" target="_blank" rel="noopener noreferrer">
-                  <FacebookIcon sx={{ color: 'white' }} />
-                </a>
-
-                <a href="https://www.linkedin.com/company/pacificadventures/" target="_blank" rel="noopener noreferrer">
-                  <LinkedInIcon sx={{ color: 'white' }} />
-                </a>
-
-                <a href="https://www.instagram.com/pacificadventuresdubai" target="_blank" rel="noopener noreferrer">
-                  <InstagramIcon sx={{ color: 'white' }} />
-                </a>
-                {/* <a href="https://twitter.com/pacificadventures" target="_blank" rel="noopener noreferrer">
-                  <TikTokIcon sx={{ color: 'white' }} />
-                </a> */}
-
-
-                <a href="https://www.youtube.com/@PacificAdventuresdubai" target="_blank" rel="noopener noreferrer">
-                  <YouTubeIcon sx={{ color: 'white' }} />
-                </a>
-                {/* <a href="https://www.pinterest.com/pacific-adventures/" target="_blank" rel="noopener noreferrer">
-                  <PinterestIcon sx={{ color: 'white' }} />
-                </a> */}
-              </Box>
-            </Grid>
-
-            <Grid item lg={4} md={4} sm={12} xs={12}>
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                  alignItems: "center",
-                }}
-              >
-                <TextField
-                  fullWidth
-                  placeholder="Enter your Email"
+              <Grid item lg={3} md={3} sm={12} xs={12}>
+                <Box
                   sx={{
-                    "& .MuiInputBase-root": {
-                      border: "none",
-                      padding: 0, // Set padding to 0
-                      "&:hover": {
-                        borderColor: "transparent",
-                      },
-                      "&.Mui-focused": {
-                        boxShadow: "none",
-                      },
-                    },
-                    "& .MuiOutlinedInput-notchedOutline": {
-                      display: "none",
-                    },
-                    borderRadius: "0px",
-                    backgroundColor: "white",
+                    display: "flex",
+                    justifyContent: "space-evenly",
+                    alignItems: "center",
                   }}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment
-                        position="end"
-                        sx={{
-                          backgroundColor: "black",
-                          padding: "1.8rem 1rem",
-                          color: "white",
-                        }}
-                      >
-                        <SearchOutlinedIcon />
-                      </InputAdornment>
-                    ),
-                    sx: {
-                      "& input::placeholder": {
-                        color: "#832d14",
-                      },
-                      padding: 0, // Ensure no padding for the input
-                    },
+                >
+
+                  <a href="https://www.facebook.com/rahtravels" target="_blank" rel="noopener noreferrer">
+                    <FacebookIcon sx={{ color: 'white' }} />
+                  </a>
+
+                  <a href="https://twitter.com/rahtoursdubai?s=21" target="_blank" rel="noopener noreferrer">
+                    <TwitterIcon sx={{ color: 'white' }} />
+                  </a>
+
+                  <a href="https://www.linkedin.com/company/rah-tourism-l.l.c" target="_blank" rel="noopener noreferrer">
+                    <LinkedInIcon sx={{ color: 'white' }} />
+                  </a>
+
+                  <a href="https://www.instagram.com/rahtourism/" target="_blank" rel="noopener noreferrer">
+                    <InstagramIcon sx={{ color: 'white' }} />
+                  </a>
+
+
+                  <a href="https://www.youtube.com/MyHabib786" target="_blank" rel="noopener noreferrer">
+                    <YouTubeIcon sx={{ color: 'white' }} />
+                  </a>
+                
+                </Box>
+              </Grid>
+
+              <Grid item lg={4} md={4} sm={12} xs={12}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-evenly",
+                    alignItems: "center",
                   }}
-                />
-              </Box>
+                >
+                  <TextField
+                    fullWidth
+                    placeholder="Enter your Email"
+                    sx={{
+                      "& .MuiInputBase-root": {
+                        border: "none",
+                        padding: 0, // Set padding to 0
+                        "&:howver": {
+                          borderColor: "transparent",
+                        },
+                        "&.Mui-focused": {
+                          boxShadow: "none",
+                        },
+                      },
+                      "& .MuiOutlinedInput-notchedOutline": {
+                        display: "none",
+                      },
+                      borderRadius: "0px",
+                      backgroundColor: "white",
+                    }}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment
+                          position="end"
+                          sx={{
+                            backgroundColor: "black",
+                            padding: "1.8rem 1rem",
+                            color: "white",
+                          }}
+                        >
+                          <SearchOutlinedIcon />
+                        </InputAdornment>
+                      ),
+                      sx: {
+                        "& input::placeholder": {
+                          color: "black",
+                        },
+                        padding: 0, // Ensure no padding for the input
+                      },
+                    }}
+                  />
+                </Box>
+              </Grid>
             </Grid>
-          </Grid>
+          </Box>
         </Box>
 
-        <Box sx={{ padding: "3rem 5%" }}>
+        <Box sx={{ padding: "3rem 5%", 
+                    margin: 'auto',
+                    width: {
+                      lg: '1280px',
+                    },  
+            }}>
           <Grid container spacing={5} alignItems={"start"}>
-            <Grid item lg={3} md={3} sm={12} xs={12} >
+            <Grid item lg={4} md={4} sm={12} xs={12} >
               <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
                 <Box>
                   <Link to='/'>
@@ -159,9 +167,9 @@ const currentYear = new Date().getFullYear();
                   variant="h3"
                   sx={{ fontSize: "0.8rem", marginTop: "1rem", textAlign: 'justify' }}
                 >
-                  Welcome to pacific-adventures.com, Pacific Adventures deals and packages at the best price
+                  Welcome to pacific-adventures.com, RAH Tours deals and packages at the best price
 
-                  official Pacific Adventures experience booking website in UAE.
+                  official RAH Tours experience booking website in UAE.
                 </Typography>
               </Box>
 
@@ -181,7 +189,7 @@ const currentYear = new Date().getFullYear();
                 <img src="/stripe.png" alt="" />
               </Box>
             </Grid>
-            <Grid item lg={1.7} md={1.8} sm={12} xs={12}>
+            <Grid item lg={2} md={2} sm={12} xs={12}>
               <Typography
                 sx={{
                   fontSize: "1rem",
@@ -189,7 +197,7 @@ const currentYear = new Date().getFullYear();
                   marginBottom: "0.9rem",
                 }}
               >
-                About Us
+                What We Do
               </Typography>
               <Typography
                 sx={{
@@ -285,11 +293,37 @@ const currentYear = new Date().getFullYear();
                 >
                   Contact Us
                 </MuiLink>
+                
+              </Typography>
+              
+              <Typography
+                sx={{
+                  color: 'grey',
+                  fontSize: "0.9rem",
+                  marginBottom: "0.9rem",
+                  textTransform: "none",
+                }}
+              >
+                <MuiLink
+                    component={Link}
+                    // to="/blogs"
+                  to={routes[7]?.route}
+
+                    sx={{
+
+                      textDecoration: "none",
+                      color: "inherit",
+                      "&:hover": { textDecoration: "none" },
+                    }}
+                  >
+                    Blogs
+                  </MuiLink>
+                
               </Typography>
 
             </Grid>
 
-            <Grid item lg={2} md={1.8} sm={12} xs={12}>
+            <Grid item lg={2} md={2} sm={12} xs={12}>
               <Typography
                 sx={{
                   fontSize: "1rem",
@@ -345,59 +379,8 @@ const currentYear = new Date().getFullYear();
 
             </Grid>
 
-            <Grid item lg={1.7} md={1.8} sm={12} xs={12}>
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "start",
-                  flexDirection: "column",
-                }}
-              >
-                <Typography
-                  sx={{
-                    fontSize: "1rem",
-                    fontWeight: "700",
-                    marginBottom: "1rem",
-                  }}
-                >
-                  What We Do
-                </Typography>
-                <Typography sx={{ fontSize: "0.9rem", marginBottom: "0.9rem", color: 'grey' }}>
-                  Experience Dubai
-                </Typography>
-                <Typography sx={{ fontSize: "0.9rem", marginBottom: "0.9rem", color: 'grey' }}>
-                  Corporate
-                </Typography>
-                <Typography
-                  sx={{
-                    color: 'grey',
-                    fontSize: "0.9rem",
-                    marginBottom: "0.9rem",
-                    textTransform: "none",
-                  }}
-                >
-                  <MuiLink
-                    component={Link}
-                    // to="/blogs"
-                  to={routes[7]?.route}
-
-                    sx={{
-
-                      textDecoration: "none",
-                      color: "inherit",
-                      "&:hover": { textDecoration: "none" },
-                    }}
-                  >
-                    Blogs
-                  </MuiLink>
-                </Typography>
-
-
-
-              </Box>
-            </Grid>
-            <Grid item lg={1.8} md={1.8} sm={12} xs={12}>
+            
+            <Grid item lg={2} md={2} sm={12} xs={12}>
               <Typography
                 sx={{
                   fontSize: "1rem",
@@ -462,25 +445,6 @@ const currentYear = new Date().getFullYear();
               </Typography>
             </Grid>
 
-            <Grid item lg={1.8} md={1.8} sm={12} xs={12}>
-              <Typography
-                sx={{
-                  fontSize: "1rem",
-                  fontWeight: "700",
-                  marginBottom: "0.9rem",
-                }}
-              >
-                Mobile
-              </Typography>
-
-              <Box>
-                <img src="/appstore.png" alt="App Store" height={'auto'} width={'100px'} />
-              </Box>
-
-              <Box sx={{ marginTop: "1rem" }}>
-                <img src="/googleplay.png" alt="App Store" height={'auto'} width={'100px'} />
-              </Box>
-            </Grid>
           </Grid>
         </Box>
         <Divider />
@@ -488,13 +452,17 @@ const currentYear = new Date().getFullYear();
         <Box
           sx={{
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "start",
             alignItems: "center",
             padding: "1rem",
+            margin: 'auto',
+            width: {
+              lg: '1280px',
+            }, 
           }}
         >
           <Typography sx={{ fontSize: "0.7rem", color: "grey" }}>
-            Copyright © Pacific Adventures {currentYear} All rights reserved.
+            Copyright © RAH Tours L.L.C {currentYear} All rights reserved.
           </Typography>
         </Box>
       </Box>

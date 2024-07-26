@@ -39,7 +39,7 @@ const Landing = ({nameProp}) => {
 
   return (
     <>
-      <Page title={nameProp}>
+      <Page title={nameProp} >
         <div style={{ display: "flex", flexDirection: "column", gap: "50px" }}>
           <Header />
 

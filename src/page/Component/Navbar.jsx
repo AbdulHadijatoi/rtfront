@@ -24,6 +24,7 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import { FaWhatsapp } from "react-icons/fa";
 import AllActivities from "../Landing/Components/AllActivities";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -211,7 +212,7 @@ const Navbar = () => {
 
 
   // const placeholderLines = ["Desert Safari", "Quad Bikes", "City Tours"];
-  const placeholderLines = ["Find your activity"];
+  const placeholderLines = ["Search your activities or destinations"];
   const [currentLineIndex, setCurrentLineIndex] = useState(0);
   const [placeholderText, setPlaceholderText] = useState('');
   const [typingSpeed, setTypingSpeed] = useState(50); // Adjust typing speed here
@@ -248,13 +249,68 @@ const Navbar = () => {
           alignItems: "center",
           position: "static",
           top: 0,
+          margin: 'auto',
+          width: {
+            lg: '1280px',
+          },
+
           zIndex: 10000000,
         }}
       >
-        <Box>
+
+        <Box sx={{ display: "flex", alignItems: "center" }}>
           <Link to="/">
-            <img src="/mainLogo.png" alt="Logo" style={{ height: '70px' }} />
+            <img src="/mainLogo.png" alt="Logo" style={{ height: '45px', padding: '6px 0px' }} />
           </Link>
+
+          <Box sx={{ 
+                display: {
+                  xs: 'none', // hide on extra small screens
+                  sm: 'none', // hide on extra small screens
+                  md: 'flex' // show on small and larger screens
+                }, 
+                alignItems: "center" 
+            }}>
+            <TextField
+              placeholder={placeholderText}
+              size="small"
+              variant="outlined"
+              value={searchKeyword}
+              onChange={handleSearchChange}
+              sx={{ 
+                marginLeft: "20px", 
+                width: "320px",
+                '& .MuiOutlinedInput-root': {
+                  '& fieldset': {
+                    border: 'none',
+                  },
+                },
+              }}
+              onKeyDown={(event) => {
+                if (event.key === "Enter") {
+                  handleSearchClick();
+                }
+              }}
+              InputProps={{
+                sx: {
+                  padding: 0,
+                  borderRadius: "20px",
+                  backgroundColor: '#f5f5f5',
+                  fontSize: "14px"
+                },
+                startAdornment: (
+                  <InputAdornment
+                    position="start"
+                    style={{ paddingLeft: 10, paddingRight: 10, margin: 0 }}
+                  >
+                    <img src="./search-new.svg" width="25px"/>
+                  </InputAdornment>
+                ),
+              }}
+            />
+
+
+          </Box>
         </Box>
 
         {isSmallScreen ? (
@@ -263,146 +319,8 @@ const Navbar = () => {
           </Button>
         ) : (
           <>
-            {/* <Box
-              width={isSmallScreen ? "100%" : "7rem"}
-              marginBottom={isSmallScreen ? "1rem" : "1rem"}
-              sx={{
-                position: "relative",
-                "&:hover > .dropdown-menu": {
-                  display: "block",
-                  opacity: 1,
-                },
-
-              }}
-            >
-              <FormControl fullWidth size="small" variant="standard">
-                <InputLabel
-                  id="demo-simple-select-label"
-                  sx={{ borderBottom: "none", cursor: "pointer" }}
-                >
-                  What We Do
-                </InputLabel>
-              </FormControl>
-
-              <Box
-                className="dropdown-menu"
-                sx={{
-                  display: "none",
-                  position: "absolute",
-                  top: "100%",
-                  left: 0,
-                  backgroundColor: "white",
-                  boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-                  zIndex: 1,
-                  width: "max-content",
-                  padding: "1rem",
-                  mt: 3,
-                  zIndex: 10000
-                }}
-              >
-                <Box
-                  sx={{
-                    display: "flex",
-                  }}
-                >
-                  <Box
-                    sx={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "20px",
-                      padding: "10px 30px",
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        display: "flex",
-                        gap: "10px",
-                        alignItems: "center",
-                      }}
-                    >
-                      <IoIosBicycle
-                        size={25}
-                        style={{ color: theme.palette.primary.main }}
-                      />
-                      <Typography
-                        sx={{
-                          cursor: "pointer",
-                          fontSize: "16px",
-                          fontWeight: 600,
-                        }}
-                      >
-                        Things To Do
-                      </Typography>
-                      <FaChevronRight
-                        size={20}
-                        style={{ color: theme.palette.primary.main }}
-                      />
-                    </Box>
-                    <Divider />
-                    {data.map((val, ind) => (
-                      <Typography
-                        key={ind}
-                        sx={{ cursor: "pointer" }}
-                        onClick={() => navigate("/desert-safari")}
-                      >
-                        {val.name}
-                      </Typography>
-                    ))}
-                  </Box>
-                  <Box
-                    sx={{ borderLeft: "1px solid #DCDCDC", marginTop: "55px" }}
-                  ></Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "20px",
-                      padding: "10px 30px",
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        display: "flex",
-                        gap: "10px",
-                        alignItems: "center",
-                      }}
-                    >
-                      <PiBuildingsBold
-                        size={25}
-                        style={{ color: theme.palette.primary.main }}
-                      />
-                      <Typography sx={{ fontSize: "16px", fontWeight: 600 }}>
-                        Experience Dubai
-                      </Typography>
-                      <FaChevronRight
-                        size={20}
-                        style={{ color: theme.palette.primary.main }}
-                      />
-                    </Box>
-                    <Divider />
-                    {data1.map((val, ind) => (
-                      <Typography
-                        key={ind}
-                        sx={{ cursor: "pointer" }}
-                        onClick={() => navigate("/desert-safari")}
-                      >
-                        {val.name}
-                      </Typography>
-                    ))}
-                  </Box>
-
-
-                </Box>
-              </Box>
-            </Box> */}
-
             
-
-
-
-
-            {/* ---------------------- */}
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }} gap={4}>
+            <Box sx={{ fontSize: "14px", display: 'flex', justifyContent: 'space-between', alignItems: 'center' }} gap={4}>
               
 
               <Box
@@ -415,7 +333,38 @@ const Navbar = () => {
               >
                 <Typography
                   sx={{
-                    fontSize: "0.9rem",
+                    fontSize: "14px",
+                    marginBottom: "0.9rem",
+                    textTransform: "none",
+                  }}
+                >
+                  <MuiLink
+                    href='https://wa.me/+971529331100'
+                    sx={{
+                      alignItems: "center",
+                      display: "flex",
+                      textDecoration: "none",
+                      color: "inherit",
+                      "&:hover": { textDecoration: "none" },
+                    }}
+                  >
+                    <FaWhatsapp style={{ fontSize: '18px', marginRight: "5px" }} />
+                    Chat with an expert
+                  </MuiLink>
+                </Typography>
+              </Box>
+
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginTop: "1rem",
+                  cursor: "pointer",
+                }}
+              >
+                <Typography
+                  sx={{
+                    fontSize: "14px",
                     marginBottom: "0.9rem",
                     textTransform: "none",
                   }}
@@ -431,7 +380,7 @@ const Navbar = () => {
                       "&:hover": { textDecoration: "none" },
                     }}
                   >
-                    <HelpOutlineIcon />
+                    {/* <HelpOutlineIcon /> */}
                     Help
                   </MuiLink>
                 </Typography>
@@ -447,7 +396,7 @@ const Navbar = () => {
               >
                 <Typography
                   sx={{
-                    fontSize: "0.9rem",
+                    fontSize: "14px",
                     marginBottom: "0.9rem",
                     textTransform: "none",
                   }}
@@ -475,7 +424,7 @@ const Navbar = () => {
                         "&:hover": { textDecoration: "none" },
                       }}
                     >
-                      <FavoriteBorderRoundedIcon />
+                      {/* <FavoriteBorderRoundedIcon /> */}
                       Wish List
                     </MuiLink>
                   </Badge>
@@ -492,7 +441,7 @@ const Navbar = () => {
               >
                 <Typography
                   sx={{
-                    fontSize: "0.9rem",
+                    fontSize: "14px",
                     marginBottom: "0.9rem",
                     textTransform: "none",
                   }}
@@ -519,7 +468,7 @@ const Navbar = () => {
                         "&:hover": { textDecoration: "none" },
                       }}
                     >
-                      <ShoppingCartOutlinedIcon />
+                      {/* <ShoppingCartOutlinedIcon /> */}
                       Cart
                     </MuiLink>
                   </Badge>
@@ -601,42 +550,27 @@ const Navbar = () => {
                       </Select>
                     </FormControl>
                   </Box>
-                ) : ('')}
+                ) : (
+                  <MuiLink
+                    component={Link}
+                    to="/login"
+                    sx={{
+                      alignItems: "center",
+                      display: "flex",
+                      textDecoration: "none",
+                      backgroundColor: "#ee8e3b",
+                      padding: "8px 15px",
+                      borderRadius: "20px",
+                      color: "white",
+                      "&:hover": { textDecoration: "none" },
+                    }}
+                  >
+                    {/* <img src="/user_icon.svg" alt="User Icon" style={{ width: '24px', height: '24px' }} /> */}
+                    Login
+                  </MuiLink>
+                )}
               </Box>
-              <Box sx={{ display: "flex", alignItems: "center" }}>
-
-
-                <TextField
-                  // placeholder="Search for Experience"
-                  placeholder={placeholderText}
-                  size="small"
-                  variant="outlined"
-                  value={searchKeyword}
-                  onChange={handleSearchChange}
-
-                  onKeyDown={(event) => {
-                    if (event.key === "Enter") {
-                      handleSearchClick();
-                    }
-                  }}
-                  
-                  InputProps={{
-                    sx: {
-                      padding: 0,
-                    },
-                    endAdornment: (
-                      <InputAdornment
-                        position="end"
-                        style={{ paddingRight: 10, margin: 0 }}
-                      >
-                        
-                          <SearchOutlinedIcon />
-                        
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-              </Box>
+              
             </Box>
           </>
         )}
@@ -676,6 +610,36 @@ const Navbar = () => {
           <Box
             sx={{
               display: "flex",
+              alignItems: "center",
+              marginTop: "1rem",
+              cursor: "pointer",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: "14px",
+                textTransform: "none",
+              }}
+            >
+              <MuiLink
+                href='https://wa.me/+971529331100'
+                sx={{
+                  alignItems: "center",
+                  display: "flex",
+                  textDecoration: "none",
+                  color: "inherit",
+                  "&:hover": { textDecoration: "none" },
+                }}
+              >
+                <FaWhatsapp style={{ fontSize: '20px', marginRight: "5px" }} />
+                Chat with an expert
+              </MuiLink>
+            </Typography>
+          </Box>
+
+          <Box
+            sx={{
+              display: "flex",
               alignItems: "cener",
 
               cursor: "pointer",
@@ -683,7 +647,7 @@ const Navbar = () => {
           >
             <Typography
               sx={{
-                fontSize: "1.2rem",
+                fontSize: "14px",
 
                 textTransform: "none",
               }}
@@ -702,7 +666,7 @@ const Navbar = () => {
                   "&:hover": { textDecoration: "none" },
                 }}
               >
-                <HelpOutlineIcon />
+                <HelpOutlineIcon style={{ fontSize: '20px', marginRight: "5px" }} />
                 Help
               </MuiLink>
             </Typography>
@@ -719,7 +683,7 @@ const Navbar = () => {
           >
             <Typography
               sx={{
-                fontSize: "1.2rem",
+                fontSize: "14px",
 
                 textTransform: "none",
               }}
@@ -746,7 +710,7 @@ const Navbar = () => {
                     "&:hover": { textDecoration: "none" },
                   }}
                 >
-                  <FavoriteBorderRoundedIcon />
+                  <FavoriteBorderRoundedIcon style={{ fontSize: '20px', marginRight: "5px" }} />
                   Wishlist
                 </MuiLink>
               </Badge>
@@ -763,7 +727,7 @@ const Navbar = () => {
           >
             <Typography
               sx={{
-                fontSize: "1.2rem",
+                fontSize: "14px",
                 textTransform: "none",
               }}
             >
@@ -789,7 +753,7 @@ const Navbar = () => {
                     "&:hover": { textDecoration: "none" },
                   }}
                 >
-                  <ShoppingCartOutlinedIcon />
+                  <ShoppingCartOutlinedIcon style={{ fontSize: '20px', marginRight: "5px" }} />
                   Cart
                 </MuiLink>
               </Badge>
@@ -864,6 +828,7 @@ const Navbar = () => {
                 backgroundColor: theme.palette.primary.main,
                 padding: "0.5rem 2rem",
                 textTransform: "none",
+                color: 'white'
               }}
             >
               Login
@@ -913,7 +878,7 @@ const Navbar = () => {
                       }}
                       onClick={handleSearchClick}
                     >
-                      <SearchOutlinedIcon />
+                      <SearchOutlinedIcon sx={{color: 'grey'}}/>
                     </Button>
                   </InputAdornment>
                 ),

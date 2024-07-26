@@ -79,7 +79,7 @@ the booking process.`,
       <Page title={nameProp}>
         <Box
           sx={{
-            backgroundColor: "#f6ce98",
+            backgroundColor: "#ee8e3b",
             height: "50vh",
           }}
         >
@@ -103,6 +103,7 @@ the booking process.`,
                   cursor: "pointer",
                   fontSize: "25px",
                   fontWeight: "600",
+                  marginBottom: "20px"
                 }}
               >
                 Hello How Can we help you?
@@ -178,6 +179,7 @@ the booking process.`,
                     width: "100%",
                     padding: "0.5rem 0rem",
                     textTransform: "none",
+                    backgroundColor: 'whitesmoke',
                   }}
                   onClick={handleSubmit}
                 >

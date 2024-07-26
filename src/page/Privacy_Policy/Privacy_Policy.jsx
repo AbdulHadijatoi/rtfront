@@ -67,7 +67,7 @@ const Privacy_Policy = ({nameProp}) => {
       <Box sx={{ p: 5 }}>
         {/* <Heading>Privacy Policy</Heading> */}
         <Paragraph>
-          Pacific Adventures Tourism LLC collects information about its
+          RAH Tours Tourism LLC collects information about its
           customers both during the order process and as customers navigate the
           following website:
           <a href="https://www.pacific-adventures.com">
@@ -77,10 +77,10 @@ const Privacy_Policy = ({nameProp}) => {
         <Paragraph>
           The information provided by customers during the ordering process such
           as their name, physical address, email address, and payment
-          information is considered private, and Book Pacific Adventures not sell this
+          information is considered private, and Book RAH Tours not sell this
           personal information to third parties. This information will be used
           to process your order and deliver it to you in a timely fashion. In
-          addition, Pacific Adventures reserves the right to contact existing
+          addition, RAH Tours reserves the right to contact existing
           customers regarding store specials and other significant events.
         </Paragraph>
         <Heading variant="h4" sx={{ mt: 2 }}>
@@ -102,7 +102,7 @@ const Privacy_Policy = ({nameProp}) => {
         </Paragraph>
         <Paragraph>
           The information provided by customer and visitors of Pacific
-          Adventures will be held only by Pacific Adventures and its duly
+          Adventures will be held only by RAH Tours and its duly
           authorized agents. Your information will not be given or sold to any
           outside organization for its use in marketing or any other promotion
           purposes.
@@ -124,7 +124,7 @@ const Privacy_Policy = ({nameProp}) => {
           Third Party Service Providers
         </Heading>
         <Paragraph>
-          Pacific Adventures may share your information provided with your order
+          RAH Tours may share your information provided with your order
           with third-party service providers who provide services related to
           your order. Examples of these third-party service providers include a
           credit card processing company and a hotel. Your personal information
@@ -167,7 +167,7 @@ const Privacy_Policy = ({nameProp}) => {
         </Heading>
         <Paragraph>
           if you ever need to update any information on file with Pacific
-          Adventures you may call or email us at Pacific Adventures at (contact
+          Adventures you may call or email us at RAH Tours at (contact
           us). If you need to update your information when re-ordering, you will
           have a chance to make changes to your payment information, shipping
           and billing address (es) at checkout.
@@ -183,7 +183,7 @@ const Privacy_Policy = ({nameProp}) => {
           This document sets out our policy for responding to requests for
           deletion of data under UK data protection law. This document explains
           the rights of the data subject in relation to data deletion and the
-          responsibilities of Pacific Adventures in responding with such a
+          responsibilities of RAH Tours in responding with such a
           request.
         </Paragraph>
         <List txt="Individual Rights" />
@@ -202,7 +202,7 @@ const Privacy_Policy = ({nameProp}) => {
         {text_list2.map((val) => (
           <CH_Box_Text text={val} />
         ))}
-        <List txt="What information does Book Pacific Adventures retain?" />
+        <List txt="What information does Book RAH Tours retain?" />
         <Paragraph>
           <a href="www.pacific-adventures.com">www.pacific-adventures.com</a>
           stores data about individuals in order to process bookings of
@@ -228,11 +228,11 @@ const Privacy_Policy = ({nameProp}) => {
         </Paragraph>
         <Paragraph>
           If you have additional questions about the privacy of your
-          information, please contact Pacific Adventures at
+          information, please contact RAH Tours at
           privacy@pacific-adventures.com{" "}
         </Paragraph>
         <Paragraph>Mailing Address:</Paragraph>
-        <Paragraph>Pacific Adventures Tourism LLC.</Paragraph>
+        <Paragraph>RAH Tours Tourism LLC.</Paragraph>
         <Paragraph>P.O. Box: 232226, Dubai, United Arab Emirates</Paragraph>
         <Paragraph>T: +971-50-3773786 </Paragraph>
         <Paragraph>Last Updated on: May 14, 2024</Paragraph>

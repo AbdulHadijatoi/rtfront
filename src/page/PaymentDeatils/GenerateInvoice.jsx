@@ -204,7 +204,7 @@ const GenerateInvoice = () => {
 
   return (
     <>
-      <Page title="Invoice Details | Book Pacific Adventures">
+      <Page title="Invoice Details | Book RAH Tours">
         <Box>
           <Grid container spacing={1}>
 
@@ -263,7 +263,7 @@ const GenerateInvoice = () => {
                     Proof of Payment
                   </Typography>
                   <Typography sx={{ fontSize: "20px", fontWeight: 600 }}>
-                    Booking Number: <span style={{ color: '#832d14' }}> {number}</span>
+                    Booking Number: <span style={{ color: '#ee8e3b' }}> {number}</span>
                   </Typography>
                   <Divider sx={{ width: "100%" }} />
                   {authh === false ? (
@@ -356,7 +356,7 @@ const GenerateInvoice = () => {
                       <Grid item lg={3.6} md={3.6} sm={12} xs={12}>
                         <Box>
                           <Typography sx={{ color: "red" }}>
-                            Book Pacific Adventures{" "}
+                            Book RAH Tours{" "}
                           </Typography>
 
                           <Typography sx={{ fontSize: '0.8rem' }}>API World Tower </Typography>
@@ -379,7 +379,7 @@ const GenerateInvoice = () => {
 
                       <Grid item lg={3.6} md={3.6} sm={12} xs={12}>
                         <Box>
-                          <Typography sx={{ fontSize: '0.8rem' }}>Pacific Adventures L.L.C </Typography>
+                          <Typography sx={{ fontSize: '0.8rem' }}>RAH Tours L.L.C </Typography>
                         </Box>
                       </Grid>
                     </Grid>
@@ -442,7 +442,7 @@ const GenerateInvoice = () => {
                     Proof of Payment
                   </Typography>
                   <Typography sx={{ fontSize: "20px", fontWeight: 600 }}>
-                    Booking Number: <span style={{ color: '#832d14' }}> {number}</span>
+                    Booking Number: <span style={{ color: '#ee8e3b' }}> {number}</span>
                   </Typography>
                   <Divider sx={{ width: "100%" }} />
 
@@ -496,7 +496,7 @@ const GenerateInvoice = () => {
                       <Grid item lg={3.6} md={3.6} sm={12} xs={12}>
                         <Box>
                           <Typography sx={{ color: "red" }}>
-                            Book Pacific Adventures{" "}
+                            Book RAH Tours{" "}
                           </Typography>
 
                           <Typography sx={{ fontSize: '0.8rem' }}>API World Tower </Typography>
@@ -519,7 +519,7 @@ const GenerateInvoice = () => {
 
                       <Grid item lg={3.6} md={3.6} sm={12} xs={12}>
                         <Box>
-                          <Typography sx={{ fontSize: '0.8rem' }}>Pacific Adventures L.L.C </Typography>
+                          <Typography sx={{ fontSize: '0.8rem' }}>RAH Tours L.L.C </Typography>
                         </Box>
                       </Grid>
                     </Grid>
@@ -544,7 +544,7 @@ const GenerateInvoice = () => {
               variant="contained"
               sx={{
                 textTransform: "none",
-                backgroundColor: "#832d14",
+                backgroundColor: "#ee8e3b",
                 color: "white",
                 padding: "10px 30px",
               }}
@@ -557,7 +557,7 @@ const GenerateInvoice = () => {
               onClick={handlePrintInvoice}
               sx={{
                 textTransform: "none",
-                backgroundColor: "#832d14",
+                backgroundColor: "#ee8e3b",
                 color: "white",
                 padding: "10px 30px",
               }}

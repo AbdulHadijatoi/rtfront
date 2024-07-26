@@ -25,7 +25,10 @@ const Popular = () => {
         <Box sx={{
             padding: '20px 50px',
 
-
+            margin: 'auto',
+            width: {
+              lg: '1280px',
+            }, 
             textAlign: 'center'
         }}>
             <Box sx={{

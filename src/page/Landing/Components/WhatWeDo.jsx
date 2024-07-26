@@ -119,42 +119,49 @@ const WhatWeDo = () => {
           flexDirection: 'column',
         }}
       >
-        <Box>
-          <Typography variant="h1" sx={{ fontSize: '1.5rem', fontWeight: '600' }}>
-            What We Do
-          </Typography>
-          {/* <Typography variant="body1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit unde hic dignissimos.
-            Sit, libero natus!
-          </Typography> */}
+        <Box sx={{
+          margin: 'auto',
+          width: {
+            lg: '1280px',
+          }, 
+        }}>
+          <Box>
+            <Typography variant="h1" sx={{ fontSize: '1.5rem', fontWeight: '600' }}>
+              What We Do
+            </Typography>
+            {/* <Typography variant="body1">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit unde hic dignissimos.
+              Sit, libero natus!
+            </Typography> */}
+          </Box>
+
+          <Box gap={2} sx={{ marginTop: '1rem' }}>
+            <img src='/vector1.png' alt='vector1' />
+            <img src='/vector2.png' alt='vector1' style={{ marginLeft: '1rem' }} />
+
+          </Box>
+
+
+          <Box sx={{ borderBottom: 1, borderColor: 'divider', }}>
+            <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+              <Tab label="Experiences" />
+              <Tab label="Activities" />
+            </Tabs>
+          </Box>
+          <CustomTabPanel value={value} index={0}>
+
+
+
+            <Tab1Card tab1data={tab1data} />
+
+
+
+          </CustomTabPanel>
+          <CustomTabPanel value={value} index={1}>
+            <Tab2Card tab2data={tab2data} />
+
+          </CustomTabPanel>
         </Box>
-
-        <Box gap={2} sx={{ marginTop: '1rem' }}>
-          <img src='/vector1.png' alt='vector1' />
-          <img src='/vector2.png' alt='vector1' style={{ marginLeft: '1rem' }} />
-
-        </Box>
-
-
-        <Box sx={{ borderBottom: 1, borderColor: 'divider', }}>
-          <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-            <Tab label="Experiences" />
-            <Tab label="Activities" />
-          </Tabs>
-        </Box>
-        <CustomTabPanel value={value} index={0}>
-
-
-
-          <Tab1Card tab1data={tab1data} />
-
-
-
-        </CustomTabPanel>
-        <CustomTabPanel value={value} index={1}>
-          <Tab2Card tab2data={tab2data} />
-
-        </CustomTabPanel>
       </Box>
     </>
   );

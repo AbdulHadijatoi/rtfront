@@ -148,7 +148,7 @@ const GiftDetail = ({ ac_data }) => {
     return result;
   };
   return (
-    <Page title='Gift Card | Pacific Adventures'>
+    <Page title='Gift Card | RAH Tours'>
       <Box>
         <Box sx={{
           padding: { xs: '3px', md: '70px', lg: '2rem 30%' },

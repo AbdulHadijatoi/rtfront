@@ -218,7 +218,7 @@ const BlogDetail = () => {
           ))}
 
           <Typography
-            sx={{ fontSize: "20px", color: "#832d14", fontWeight: 600 }}
+            sx={{ fontSize: "20px", color: "#ee8e3b", fontWeight: 600 }}
           >
             FAQ's
           </Typography>

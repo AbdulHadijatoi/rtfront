@@ -327,7 +327,7 @@ const Signup_Main = () => {
                         color: theme.palette.primary.main,
                         textTransform: "none",
 
-                        border: "1px solid #832d14",
+                        border: "1px solid #ee8e3b",
                         boxShadow: "none",
                         ":hover": {
                           backgroundColor: "transparent",
@@ -346,7 +346,7 @@ const Signup_Main = () => {
                         color: theme.palette.primary.main,
                         textTransform: "none",
 
-                        border: "1px solid #832d14",
+                        border: "1px solid #ee8e3b",
                         boxShadow: "none",
                         ":hover": {
                           backgroundColor: "transparent",
@@ -365,7 +365,7 @@ const Signup_Main = () => {
                         color: theme.palette.primary.main,
                         textTransform: "none",
 
-                        border: "1px solid #832d14",
+                        border: "1px solid #ee8e3b",
                         boxShadow: "none",
                         ":hover": {
                           backgroundColor: "transparent",

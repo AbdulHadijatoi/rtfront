@@ -17,7 +17,7 @@ const Header = () => {
     const iii = useSelector((state)=>state?.homeImage?.homeImage)
     const imageUrl = iii?.payload?.length > 0 ? iii?.payload[0].image_url : '';
 
-const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
     useEffect(() => {
         const result = dispatch(getHomeImage());
@@ -42,32 +42,39 @@ const dispatch = useDispatch()
                 position: 'relative'
             }}
         >
-            <Typography sx={{
-                fontSize: isSmall ? '25px' : '48px', fontWeight: 500,
+            <Box sx={{
+                margin: 'auto',
+                width: {
+                 lg: '1280px',
+                }, 
             }}>
-                Do More with pacific-adventures.com
-            </Typography>
-            <Typography sx={{ fontSize: '17px', width: isSmall ? '100%' : '60%', }}>
-                Choose from our curated selection of activities, including desert tours, adventures, city tours, yacht
-                cruises, and water adventures. Immerse yourself in the best experiences, tailored for both tourists and
-                residents
-            </Typography>
-            <Box>
-                <Button onClick={handleLearn} variant='contained' sx={{ backgroundColor: theme.palette.primary.main, color: "white", padding: '10px 30px', textTransform: 'none', fontSize: '16px', fontWeight: 500 }}>Learn More</Button>
-            </Box>
-            <Box sx={{ position: 'fixed', bottom: 20, left: 30, display: 'flex', alignItems: 'center', zIndex: 9999 }}>
-                <Button onClick={() => navigate(AllMenus[13]?.route)} variant='contained' sx={{
-                    backgroundColor: '#FBD107',
-                    textTransform: 'none',
-                    color: "#000",
-                    fontWeight: 600,
-                    paddingTop: '10px',
-                    transform: 'rotate(-90deg)',
-                    transformOrigin: 'left bottom',
-                    zIndex: 9999
+                <Typography sx={{
+                    fontSize: isSmall ? '25px' : '48px', fontWeight: 500,
                 }}>
-                    Feedback
-                </Button>
+                    Do More with rahtours.ae
+                </Typography>
+                <Typography sx={{ fontSize: '17px', width: isSmall ? '100%' : '60%', }}>
+                    Choose from our curated selection of activities, including desert tours, adventures, city tours, yacht
+                    cruises, and water adventures. Immerse yourself in the best experiences, tailored for both tourists and
+                    residents
+                </Typography>
+                <Box>
+                    <Button onClick={handleLearn} variant='contained' sx={{ backgroundColor: theme.palette.primary.main, color: "white", padding: '10px 30px', textTransform: 'none', fontSize: '16px', fontWeight: 500 }}>Learn More</Button>
+                </Box>
+                <Box sx={{ position: 'fixed', bottom: 20, left: 30, display: 'flex', alignItems: 'center', zIndex: 9999 }}>
+                    <Button onClick={() => navigate(AllMenus[13]?.route)} variant='contained' sx={{
+                        backgroundColor: '#ee8e3b',
+                        textTransform: 'none',
+                        color: "#000",
+                        fontWeight: 600,
+                        paddingTop: '10px',
+                        transform: 'rotate(-90deg)',
+                        transformOrigin: 'left bottom',
+                        zIndex: 9999
+                    }}>
+                        Feedback
+                    </Button>
+                </Box>
             </Box>
         </Box>
     );

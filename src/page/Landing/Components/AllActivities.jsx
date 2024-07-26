@@ -62,25 +62,23 @@ const AllActivities = () => {
   }
 
   return (
-    <Box sx={{ padding: "1rem 5%", position: 'sticky', top: 0, zIndex: 999, backgroundColor: 'white', boxShadow: isScrolled ? '0px 4px 12px rgba(0, 0, 0, 0.1)' : 'none', display: "flex", justifyContent: "space-between", flexDirection: "row-reverse" }} gap={2}>
-      {!authh ? (
-        <MuiLink
-          component={Link}
-          to="/login"
-          sx={{
-            alignItems: "center",
-            display: "flex",
-            textDecoration: "none",
-            color: "inherit",
-            "&:hover": { textDecoration: "none" },
-          }}
-        >
-          <img src="/user_icon.svg" alt="User Icon" style={{ width: '24px', height: '24px' }} />
-          Login / Create Account
-        </MuiLink>
-      ): (<Box></Box>)}
+    <Box sx={{ padding: "1rem 5%",
+       position: 'sticky', 
+       top: 0, zIndex: 999, 
+       backgroundColor: 'white', 
+       boxShadow: isScrolled ? '0px 4px 12px rgba(0, 0, 0, 0.1)' : 'none', 
+       display: "flex", 
+       justifyContent: "space-between", 
+       }} gap={2}>
+      
 
-      <Box sx={{ display: "flex", alignItems: "center" }} gap={2}>
+      <Box sx={{ display: "flex", 
+                alignItems: "center",
+                margin: 'auto',
+                width: {
+                  lg: '1280px',
+                }, 
+                }} gap={2}>
         {!loading && staticCategories.map((val, ind) => (
           <Box key={ind} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
             <img src={val.image} alt={val.name} style={{ width: '20px', height: '20px' }} />
