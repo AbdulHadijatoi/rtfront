@@ -306,17 +306,19 @@ const DetailPage = ({ nameProp }) => {
         </>
       ) : (
         <>
-
+        <Box sx={{
+              margin: 'auto',
+              width: {
+                lg: '1280px',
+              },
+            }}>
           <Box
             sx={{
               display: {
                 md: 'none',
                 sm: 'block'
               },
-              margin: 'auto',
-              width: {
-                lg: '1280px',
-              },
+              
             }}
           >
             <Box
@@ -449,27 +451,6 @@ const DetailPage = ({ nameProp }) => {
 
 
                     </Box>
-
-                    {/* <Box
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        gap: "10px",
-                      }}
-                    >
-                      <Rating
-                        name="simple-controlled"
-                        value={value}
-                        size="small"
-                        onChange={(event, newValue) => {
-                          setValue(newValue);
-                        }}
-                      />
-                      <Typography sx={{ fontSize: { xs: "14px", md: "16px" } }}>
-                        {data1?.reviews?.length} Reviews
-                      </Typography>
-                    </Box> */}
                   </Box>
 
 
@@ -838,7 +819,7 @@ const DetailPage = ({ nameProp }) => {
 
           <RelatedData ac_data={data1} />
 
-
+        </Box>
         </>
       )}
     </Page>
