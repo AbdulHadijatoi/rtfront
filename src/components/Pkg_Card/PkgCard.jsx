@@ -18,7 +18,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import Loader from "../Loader/Loader";
 
 const PkgCard = ({ data, categories, ind }) => {
-  const base = 'https://admin.pacific-adventures.com';
+  const base = 'http://127.0.0.1:8000';
   const navigate = useNavigate();
   const [value, setValue] = React.useState(5);
   const theme = useTheme();

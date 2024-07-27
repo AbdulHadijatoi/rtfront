@@ -40,7 +40,10 @@ const CartMain = ({ nameProp }) => {
   }, [])
   return (
     <Page title={nameProp}>
-      <Box sx={{ padding: "1rem 5%" }}>
+      <Box sx={{ padding: "1rem 5%", margin: 'auto',
+                width: {
+                  lg: '1280px',
+                },  }}>
         <Typography variant="h1" sx={{ fontSize: "1.5rem", fontWeight: "700", mt: 3 }}>
           Shopping Cart
         </Typography>

@@ -118,7 +118,12 @@ const dispatch =  useDispatch()
                 <Overlay title="Guidelines" imageUrl={guidelineimage} />
 
 
-                <Box sx={{ padding: '10px 5%' }}>
+                <Box sx={{ padding: '10px 5%',
+                    margin: 'auto',
+                    width: {
+                      lg: '1280px'
+                    }
+                 }}>
                     {data1.map((val, ind) => (
                         <Box key={ind}>
                             <Typography sx={{ lineHeight: '1.5rem', fontSize: "20px", fontWeight: 700, color: theme.palette.primary.main, marginTop: '1.5rem' }}>{val.title}</Typography>

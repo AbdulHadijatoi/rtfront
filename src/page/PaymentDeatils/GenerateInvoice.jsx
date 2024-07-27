@@ -370,8 +370,8 @@ const GenerateInvoice = () => {
                         <Box>
                           <br />
                           <Typography sx={{ fontSize: '0.8rem' }}>Phone: +971 58 862 7171</Typography>
-                          <Typography sx={{ fontSize: '0.8rem' }}>bookings@pacific-adventures </Typography>
-                          <Typography sx={{ fontSize: '0.8rem' }}>www.pacific-adventures.com</Typography>
+                          <Typography sx={{ fontSize: '0.8rem' }}>bookings@rahtours </Typography>
+                          <Typography sx={{ fontSize: '0.8rem' }}>www.rahtours.ae</Typography>
                         </Box>
                       </Grid>
 
@@ -510,8 +510,8 @@ const GenerateInvoice = () => {
                         <Box>
                           <br />
                           <Typography sx={{ fontSize: '0.8rem' }}>Phone: +971 58 862 7171</Typography>
-                          <Typography sx={{ fontSize: '0.8rem' }}>bookings@pacific-adventures </Typography>
-                          <Typography sx={{ fontSize: '0.8rem' }}>www.pacific-adventures.com</Typography>
+                          <Typography sx={{ fontSize: '0.8rem' }}>bookings@rahtours </Typography>
+                          <Typography sx={{ fontSize: '0.8rem' }}>www.rahtours.ae</Typography>
                         </Box>
                       </Grid>
 

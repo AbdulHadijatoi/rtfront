@@ -95,7 +95,12 @@ const Contact_Us = ({nameProp}) => {
   return (
     <Page title={nameProp}>
       <Overlay title="Contact Us" imageUrl={about} />
-      <Box sx={{ p: is_sm ? 2 : 5 }}>
+      <Box sx={{ p: is_sm ? 2 : 5,
+        margin: 'auto',
+        width: {
+          lg: '1280px'
+        }
+       }}>
         <Typography fontWeight="bold" variant="h5" textAlign="center">
           Get In Touch
         </Typography>

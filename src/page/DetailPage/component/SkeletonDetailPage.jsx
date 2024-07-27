@@ -24,7 +24,12 @@ const SkeletonDetailPage = () => {
 
     return (
         <div>
-            <Grid container spacing={0.5}>
+            <Grid sx={{
+                margin: 'auto',
+                width: {
+                  lg: '1280px',
+                },
+            }} container spacing={0.5}>
                 <Grid item xs={8} sx={{ position: 'relative' }}>
                     <Skeleton variant="rectangular" width="100%" height="66vh" sx={{ borderRadius: "5px" }} />
                     <Box sx={{ position: 'absolute', top: 50, left: 50 }}>

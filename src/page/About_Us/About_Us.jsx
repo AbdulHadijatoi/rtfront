@@ -50,7 +50,12 @@ const About_Us = ({nameProp}) => {
   return (
     <Page title={nameProp}>
       <Overlay title="About Us" imageUrl={header} />
-      <Box sx={{ p: 5 }}>
+      <Box sx={{ p: 5,
+        margin: 'auto',
+        width: {
+          lg: '1280px'
+        }
+       }}>
         <Typography
           variant="h4"
           fontWeight="bold"
@@ -71,12 +76,12 @@ const About_Us = ({nameProp}) => {
                   paddingRight: "2rem",
                 }}
               >
-             pacific-adventures.com is committed to serving customers with professional care and giving them optimum satisfaction. We inspire people to travel and explore to further enrich their lives. We aim to meet and supersede all tourism requirements by using advanced technology to ensure fast and efficient services to our clients.
+             rahtours.ae is committed to serving customers with professional care and giving them optimum satisfaction. We inspire people to travel and explore to further enrich their lives. We aim to meet and supersede all tourism requirements by using advanced technology to ensure fast and efficient services to our clients.
 
              <br/>
              <br/>
 
-             At pacific-adventures.com, We ensures a high degree of quality in services and yet our prices are incredibly reasonable. We can promise you the best deals with the most satisfying and enjoyable services so that you will yearn to return. We also provide all tours, excursions bookings online.
+             At rahtours.ae, We ensures a high degree of quality in services and yet our prices are incredibly reasonable. We can promise you the best deals with the most satisfying and enjoyable services so that you will yearn to return. We also provide all tours, excursions bookings online.
 
 <br/>
 <br/>
@@ -112,8 +117,8 @@ What's app or Call:
 </Typography>
 <Typography sx={{fontSize:'0.9rem', textAlign:'center', color:'grey'}} variant="body1">
         For MICE and Group Bookings email us:
-        <Link href="mailto:bookings@pacific-adventures.com">
-          {" "}bookings@pacific-adventures.com
+        <Link href="mailto:bookings@rahtours.ae">
+          {" "}bookings@rahtours.ae
         </Link>
       </Typography>
               <Button

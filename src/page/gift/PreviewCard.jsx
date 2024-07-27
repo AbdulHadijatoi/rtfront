@@ -10,7 +10,7 @@ const PreviewCard = () => {
     setIsExpanded(!isExpanded);
   };
   const { discountPrice, recipientEmail, description, acData } = location.state;
-  const base = 'https://admin.pacific-adventures.com/';
+  const base = 'http://127.0.0.1:8000/';
 
   useEffect(() => {
     window.scrollTo(0, 0)

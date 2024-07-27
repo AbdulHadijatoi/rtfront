@@ -82,10 +82,10 @@ const CustomCard = () => {
               onClick={() => navigate(`/${val.slug}`)}
               sx={{
                 backgroundColor: "white",
-                borderRadius: "12px",
-                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+                border: "1px solid rgba(0, 0, 0, 0.1)",
                 overflow: "hidden",
-                padding: "5px",
+                borderRadius: "17px",
+                paddingBottom: '5px',
                 height: "100%",
                 display: 'flex',
                 flexDirection: 'column',
@@ -95,12 +95,12 @@ const CustomCard = () => {
             >
               <Box sx={{ position: "relative" }}>
                 <img
-                  src={`https://admin.pacific-adventures.com/storage/uploads/media/${val.image}`}
+                  src={`http://127.0.0.1:8000/storage/uploads/media/${val.image}`}
                   alt="Header"
                   style={{
                     width: "100%",
-                    height: "30vh",
-                    borderRadius: "12px",
+                    borderRadius: "12px 12px 0px 0px",
+                    height: '30vh',
                     objectFit: "cover",
                   }}
                 />
@@ -108,7 +108,7 @@ const CustomCard = () => {
 
               <Box
                 p={2}
-                sx={{ width: "100%", display: "flex", flexDirection: "column", gap: "10px" }}
+                sx={{ padding: '10px', width: "100%", display: "flex", flexDirection: "column", gap: "10px" }}
               >
                 <Typography
                   sx={{

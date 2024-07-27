@@ -168,7 +168,10 @@ const ManageProfileMain = ({nameProp}) => {
 
     <Page title={nameProp}>
 
-    <Box sx={{ padding: "1rem 5%" }}>
+    <Box sx={{ padding: "1rem 5%",margin: 'auto',
+                width: {
+                  lg: '1280px',
+                },  }}>
       {/* <Button
         variant="outlined"
         sx={{ textTransform: "none" }}

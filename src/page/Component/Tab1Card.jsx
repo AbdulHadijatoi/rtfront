@@ -48,10 +48,10 @@ const Tab1Card = (props) => {
                 minHeight: '20rem',
                 maxHeight: '20rem',
                 backgroundColor: "white",
-                borderRadius: "12px",
                 boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                 overflow: "hidden",
-                padding: "5px",
+                borderRadius: "17px",
+                paddingBottom: '5px',
                 textAlign: "start",
               }}
             >
@@ -87,21 +87,22 @@ const Tab1Card = (props) => {
                 minHeight: '20rem',
                 // maxHeight: '20rem',
                 backgroundColor: "white",
-                borderRadius: "12px",
+
                 boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                 overflow: "hidden",
-                padding: "5px",
+                borderRadius: "17px",
+                paddingBottom: '5px',
                 textAlign: "start",
               }}
             >
               <Box sx={{ position: "relative" }}>
                 <img
-                  src={`https://admin.pacific-adventures.com/storage/uploads/media/${val.image}`}
+                  src={`http://127.0.0.1:8000/storage/uploads/media/${val.image}`}
                   alt="Header image"
                   style={{
                     width: "100%",
                     height: "30vh",
-                    borderRadius: "12px",
+                    borderRadius: "12px 12px 0px 0px",
                     objectFit: "cover",
                   }}
                 />

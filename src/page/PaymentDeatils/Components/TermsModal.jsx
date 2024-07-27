@@ -64,7 +64,7 @@ const TermsModal = ({ isOpen, onClose }) => {
           read the following terms and procedures in order to make sure that
           you´ve clearly understood the conditions of your preferred trip.
           Information below provides clear details of various services we offer
-          at www.pacific-adventures.com, All of the below mentioned terms and
+          at www.rahtours.ae, All of the below mentioned terms and
           conditions are applicable for bookings made through our websites such
           as:
         </Typography>
@@ -99,7 +99,7 @@ const TermsModal = ({ isOpen, onClose }) => {
           </Typography>
           <Typography sx={{ fontSize: "13px" }}>
             If for any reason the price quoted is not correct, the team of
-            www.pacific-adventures.com will contact you for authorization.
+            www.rahtours.ae will contact you for authorization.
           </Typography>
 
           <Typography sx={{ fontSize: "13px" }}>
@@ -130,7 +130,7 @@ const TermsModal = ({ isOpen, onClose }) => {
           <Typography sx={{ fontSize: "13px" }}>
             All tours/services must be pre-paid except otherwise stated. We
             accept Visa, MasterCard, American Express. Payment will be listed as
-            "pacific-adventures.com” on the credit card statement. You will be
+            "rahtours.ae” on the credit card statement. You will be
             charged in UAE Dirham (AED) at the conversion's rate applicable on
             the date of your booking.
           </Typography>
@@ -180,7 +180,7 @@ const TermsModal = ({ isOpen, onClose }) => {
           </Typography>
 
           <Typography sx={{ marginTop: "1rem", fontSize: "13px" }}>
-            <Link to="/">www.pacific-adventures.com</Link> cannot be held
+            <Link to="/">www.rahtours.ae</Link> cannot be held
             responsible for any problem that may happen if you don't receive or
             read carefully your confirmation / voucher. In case you have not
             received your voucher, you must notify Book RAH Tours at least 24
@@ -218,7 +218,7 @@ const TermsModal = ({ isOpen, onClose }) => {
         <Box sx={{ color: "grey", marginTop: "1rem" }}>
           <Typography sx={{ fontSize: "13px" }}>
             Every Tour Activity/Attraction has its own cancellation policies,
-            before booking any activity with pacific-adventures.com, clients have
+            before booking any activity with rahtours.ae, clients have
             to read cancellation policy of that particular tour. However, terms
             and conditions are subject to change.
           </Typography>
@@ -266,7 +266,7 @@ const TermsModal = ({ isOpen, onClose }) => {
             several aspects. Should this transpire, we can provide suitable
             options of similar value, however depending on its availability. At
             most, we announce changes in itinerary, if any, before departure.
-            Please note that www.pacific-adventures.com reserves complete right to
+            Please note that www.rahtours.ae reserves complete right to
             implement minor amendments in itinerary at any time without
             reimbursement. Further, no reimbursement can be done in the event of
             vis major, such as flood and earthquake or any unforeseen

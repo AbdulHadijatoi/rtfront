@@ -16,6 +16,7 @@ import { getPopularActivities } from "../../store/actions/categoriesActions";
 import { useDispatch } from "react-redux";
 import { getFindUs, getHomeImage } from "../../store/actions/setting";
 import { getMenus } from "../../store/actions/authActions";
+import ExploreMore from "../Component/ExploreMore";
 const Landing = ({nameProp}) => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -48,6 +49,7 @@ const Landing = ({nameProp}) => {
         </div>
 
         <WhatWeDo />
+        <ExploreMore />
         {/* <DubaiLeading /> */}
         {/* <OurPartners /> */}
         {/* <SpecialOffer /> */}

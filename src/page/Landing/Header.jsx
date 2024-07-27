@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { getHomeImage } from '../../store/actions/setting';
-
+import {InputAdornment,TextField, Link as MuiLink} from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     const navigate = useNavigate();
@@ -13,15 +14,29 @@ const Header = () => {
     const handleLearn = () => {
         navigate(AllMenus[4].route);
     };
-
+    const menusRoutes = useSelector((state) => state?.AllMenu?.menus?.payload || {})
     const iii = useSelector((state)=>state?.homeImage?.homeImage)
     const imageUrl = iii?.payload?.length > 0 ? iii?.payload[0].image_url : '';
-
+    const [searchKeyword, setSearchKeyword] = useState("");
     const dispatch = useDispatch()
+
+    const handleSearchClick = () => {
+        localStorage.setItem("searchKeyword", searchKeyword);
+        navigate(menusRoutes[3]?.route);
+    };
+
+    const handleSearchChange = (event) => {
+        const keyword = event.target.value;
+        setSearchKeyword(keyword);
+        localStorage.setItem("searchKeyword", keyword);
+    };
 
     useEffect(() => {
         const result = dispatch(getHomeImage());
-
+        const storedKeyword = localStorage.getItem("searchKeyword");
+        if (storedKeyword) {
+        setSearchKeyword(storedKeyword);
+        }
       }, [dispatch]);
 
     return (
@@ -49,23 +64,77 @@ const Header = () => {
                 }, 
             }}>
                 <Typography sx={{
-                    fontSize: isSmall ? '25px' : '48px', fontWeight: 500,
+                    fontSize: isSmall ? '25px' : '48px', fontWeight: 600, textAlign: { xs: 'center', sm: 'center', md:'left', lg: 'left'}
                 }}>
-                    Do More with rahtours.ae
+                    Your world of joy
                 </Typography>
-                <Typography sx={{ fontSize: '17px', width: isSmall ? '100%' : '60%', }}>
-                    Choose from our curated selection of activities, including desert tours, adventures, city tours, yacht
-                    cruises, and water adventures. Immerse yourself in the best experiences, tailored for both tourists and
-                    residents
+                <Typography sx={{ 
+                    fontSize: '18px', width: isSmall ? '100%' : '70%', textAlign: { xs: 'center', sm: 'center', md:'left', lg: 'left'}
+                }}>
+                    From local escapes to far-flung adventures, find what makes you happy anytime, anywhere
                 </Typography>
-                <Box>
-                    <Button onClick={handleLearn} variant='contained' sx={{ backgroundColor: theme.palette.primary.main, color: "white", padding: '10px 30px', textTransform: 'none', fontSize: '16px', fontWeight: 500 }}>Learn More</Button>
+                <Box sx={{marginTop: '10px',display: "flex", backgroundColor: 'white', borderRadius: "12px", alignItems: 'center', justifyContent: 'start', padding: '3px', height: "56px", width: isSmall ? '100%' : '65%',}}>
+                    <TextField
+                        placeholder={'Search destinations or activities'}
+                        size="small"
+                        variant="outlined"
+                        value={searchKeyword}
+                        onChange={handleSearchChange}
+                        sx={{ 
+                            width: '100%',
+                            '& .MuiOutlinedInput-root': {
+                            '& fieldset': {
+                                    border: 'none',
+                                },
+                            },
+                        }}
+                        onKeyDown={(event) => {
+                            if (event.key === "Enter") {
+                            handleSearchClick();
+                            }
+                        }}
+                        InputProps={{
+                            sx: {
+                            padding: 0,
+                            
+                            backgroundColor: '#FFF',
+                            fontSize: {xs: '15px',sm: '15px',md:"20px"}
+                            },
+                            startAdornment: (
+                            <InputAdornment
+                                position="start"
+                                style={{ paddingLeft: 10, paddingRight: 10, margin: 0 }}
+                            >
+                                <img src="./search-new.svg" width="22px"/>
+                            </InputAdornment>
+                            
+                            ),
+                        }}
+                        />
+                         <MuiLink
+                            component={Link}
+                            to="/login"
+                            sx={{
+                            alignItems: "center",
+                            display: "flex",
+                            textDecoration: "none",
+                            backgroundColor: "#ee8e3b",
+                            padding: "0px 40px",
+                            borderRadius: "10px",
+                            height: "55px",
+                            color: "white",
+                            "&:hover": { textDecoration: "none" },
+                            }}
+                        >
+                            {/* <img src="/user_icon.svg" alt="User Icon" style={{ width: '24px', height: '24px' }} /> */}
+                            Login
+                        </MuiLink>
                 </Box>
                 <Box sx={{ position: 'fixed', bottom: 20, left: 30, display: 'flex', alignItems: 'center', zIndex: 9999 }}>
                     <Button onClick={() => navigate(AllMenus[13]?.route)} variant='contained' sx={{
                         backgroundColor: '#ee8e3b',
                         textTransform: 'none',
-                        color: "#000",
+                        color: "#FFF",
                         fontWeight: 600,
                         paddingTop: '10px',
                         transform: 'rotate(-90deg)',

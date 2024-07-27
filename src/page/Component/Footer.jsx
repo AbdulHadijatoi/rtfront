@@ -167,7 +167,7 @@ const currentYear = new Date().getFullYear();
                   variant="h3"
                   sx={{ fontSize: "0.8rem", marginTop: "1rem", textAlign: 'justify' }}
                 >
-                  Welcome to pacific-adventures.com, RAH Tours deals and packages at the best price
+                  Welcome to rahtours.ae, RAH Tours deals and packages at the best price
 
                   official RAH Tours experience booking website in UAE.
                 </Typography>
@@ -363,10 +363,10 @@ const currentYear = new Date().getFullYear();
                 <EmailOutlinedIcon style={{ color: 'grey', fontSize: '20px' }} />
 
                 <Box>
-                  {/* <Typography sx={{ fontSize: '12px', color: 'grey', }}>info@pacific-adventures.com</Typography> */}
+                  {/* <Typography sx={{ fontSize: '12px', color: 'grey', }}>info@rahtours.ae</Typography> */}
 
-                  <Typography component="a" href={`mailto:info@pacific-adventures.com`} sx={{ fontSize: '12px', color: 'grey', textDecoration:'none' }}>
-                  info@pacific-adventures.com
+                  <Typography component="a" href={`mailto:info@rahtours.ae`} sx={{ fontSize: '12px', color: 'grey', textDecoration:'none' }}>
+                  info@rahtours.ae
                   </Typography>
 
                 </Box>

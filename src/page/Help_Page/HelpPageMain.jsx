@@ -40,7 +40,7 @@ const HelpPageMain = ({nameProp}) => {
       icon: "/bookingicon.png",
       title: "Booking",
       description: `You can book your activity online and receive your booking confirmation by email,
-together with a link to download the pacific-adventures app.`,
+together with a link to download the rahtours app.`,
     },
     {
       icon: "/paymenticon.png",

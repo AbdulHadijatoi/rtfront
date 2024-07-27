@@ -76,7 +76,7 @@ const PaymentErrorPage = () => {
 
             <Box mt={5}>
                 <Typography variant="body2" color="textSecondary">
-                    For any urgent bookings related issues please reach on call Dubai +971 58 862 7171, or Email us on <a style={{textDecoration: "none", color: "#832c13"}} href="mailto:info@pacific-adventures.com">PacificAdventures</a>
+                    For any urgent bookings related issues please reach on call Dubai +971 58 862 7171, or Email us on <a style={{textDecoration: "none", color: "#832c13"}} href="mailto:info@rahtours.ae">Rahtours</a>
                 </Typography>
                 <Typography variant="body2" color="textSecondary" style={{ margin: '10px 0px 20px 0px', color: '#832c13' }}>
                     Error Code:

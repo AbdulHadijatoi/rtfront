@@ -242,7 +242,10 @@ const Categories = ({nameProp}) => {
 
   return (
     <Page title={nameProp}>
-      <Box sx={{ padding: isSmall ? "3rem 2rem" : "3rem 5rem", }}>
+      <Box sx={{ padding: isSmall ? "3rem 2rem" : "3rem 5rem", margin: 'auto',
+            width: {
+              lg: '1280px',
+            }, }}>
         <Box
           sx={{
             display: "flex",

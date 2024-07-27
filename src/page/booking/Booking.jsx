@@ -21,7 +21,7 @@ import { BookingUpdate, OrderCancel, getAllBooking } from "../../store/actions/b
 import Page from "../../components/page";
 
 const Booking = ({nameProp}) => {
-  const base = 'https://admin.pacific-adventures.com/';
+  const base = 'http://127.0.0.1:8000/';
   const [bookings, setBooking] = useState([]);
   const [loading, setLoading] = useState(true);
   const [openModal, setOpenModal] = useState(false);
@@ -123,7 +123,10 @@ const Booking = ({nameProp}) => {
   return (
     <>
       <Page title={nameProp}>
-        <Box sx={{ padding: "30px" }}>
+        <Box sx={{ padding: "30px",margin: 'auto',
+                width: {
+                  lg: '1280px',
+                },  }}>
           <Typography
             sx={{ fontSize: "28px", fontWeight: 700, padding: "30px 0px" }}
           >

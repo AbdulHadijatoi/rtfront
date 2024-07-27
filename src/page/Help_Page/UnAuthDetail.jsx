@@ -8,7 +8,7 @@ const UnAuthDetail = () => {
 
     const packageData = state?.allData;
 
-    const base = 'https://admin.pacific-adventures.com/';
+    const base = 'http://127.0.0.1:8000/';
     console.log(packageData, 'stateay');
 
     return (

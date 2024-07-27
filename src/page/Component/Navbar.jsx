@@ -35,7 +35,7 @@ import { logout } from "../../store/actions/authActions";
 
 const Navbar = () => {
   const theme = useTheme();
-  const base = 'https://admin.pacific-adventures.com/'
+  const base = 'http://127.0.0.1:8000/'
 
 
   const user = useSelector((state) => state?.auth?.user);
@@ -296,7 +296,7 @@ const Navbar = () => {
                   padding: 0,
                   borderRadius: "20px",
                   backgroundColor: '#f5f5f5',
-                  fontSize: "14px"
+                  fontSize: "12px"
                 },
                 startAdornment: (
                   <InputAdornment
@@ -320,7 +320,7 @@ const Navbar = () => {
         ) : (
           <>
             
-            <Box sx={{ fontSize: "14px", display: 'flex', justifyContent: 'space-between', alignItems: 'center' }} gap={4}>
+            <Box sx={{ fontSize: "12px", display: 'flex', justifyContent: 'space-between', alignItems: 'center' }} gap={4}>
               
 
               <Box
@@ -333,7 +333,7 @@ const Navbar = () => {
               >
                 <Typography
                   sx={{
-                    fontSize: "14px",
+                    fontSize: "12px",
                     marginBottom: "0.9rem",
                     textTransform: "none",
                   }}
@@ -364,7 +364,7 @@ const Navbar = () => {
               >
                 <Typography
                   sx={{
-                    fontSize: "14px",
+                    fontSize: "12px",
                     marginBottom: "0.9rem",
                     textTransform: "none",
                   }}
@@ -385,6 +385,37 @@ const Navbar = () => {
                   </MuiLink>
                 </Typography>
               </Box>
+              
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginTop: "1rem",
+                  cursor: "pointer",
+                }}
+              >
+                <Typography
+                  sx={{
+                    fontSize: "12px",
+                    marginBottom: "0.9rem",
+                    textTransform: "none",
+                  }}
+                >
+                  <MuiLink
+                    component={Link}
+                    to={menusRoutes[15]?.route}
+                    sx={{
+                      alignItems: "center",
+                      display: "flex",
+                      textDecoration: "none",
+                      color: "inherit",
+                      "&:hover": { textDecoration: "none" },
+                    }}
+                  >
+                    Recently Viewed
+                  </MuiLink>
+                </Typography>
+              </Box>
 
               <Box
                 sx={{
@@ -396,7 +427,7 @@ const Navbar = () => {
               >
                 <Typography
                   sx={{
-                    fontSize: "14px",
+                    fontSize: "12px",
                     marginBottom: "0.9rem",
                     textTransform: "none",
                   }}
@@ -441,7 +472,7 @@ const Navbar = () => {
               >
                 <Typography
                   sx={{
-                    fontSize: "14px",
+                    fontSize: "12px",
                     marginBottom: "0.9rem",
                     textTransform: "none",
                   }}
@@ -617,7 +648,7 @@ const Navbar = () => {
           >
             <Typography
               sx={{
-                fontSize: "14px",
+                fontSize: "12px",
                 textTransform: "none",
               }}
             >
@@ -647,7 +678,7 @@ const Navbar = () => {
           >
             <Typography
               sx={{
-                fontSize: "14px",
+                fontSize: "12px",
 
                 textTransform: "none",
               }}
@@ -683,7 +714,7 @@ const Navbar = () => {
           >
             <Typography
               sx={{
-                fontSize: "14px",
+                fontSize: "12px",
 
                 textTransform: "none",
               }}
@@ -727,7 +758,7 @@ const Navbar = () => {
           >
             <Typography
               sx={{
-                fontSize: "14px",
+                fontSize: "12px",
                 textTransform: "none",
               }}
             >

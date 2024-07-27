@@ -175,7 +175,7 @@ const SearchCard = () => {
                   <Grid item lg={4} md={12} sm={12} xs={12}>
                     <Box>
                       <img
-                        src={`https://admin.pacific-adventures.com/storage/uploads/media/${val.activity.image}`}
+                        src={`http://127.0.0.1:8000/storage/uploads/media/${val.activity.image}`}
                         style={{
                           width: "100%",
                           borderRadius: "10px",
@@ -254,7 +254,7 @@ const SearchCard = () => {
 
                     <Box>
                       <img
-                        src={`https://admin.pacific-adventures.com/storage/uploads/media/${val.image}`}
+                        src={`http://127.0.0.1:8000/storage/uploads/media/${val.image}`}
                         style={{
                           width: "100%",
                           borderRadius: "10px",

@@ -9,7 +9,7 @@ const RelatedData = ({ onItemClick }) => {
   const theme = useTheme();
   const [value, setValue] = useState(5);
   const [loading, setLoading] = useState(false);
-  const base = "https://admin.pacific-adventures.com/";
+  const base = "http://127.0.0.1:8000/";
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const popularActivities = useSelector(
@@ -110,7 +110,7 @@ const RelatedData = ({ onItemClick }) => {
                 >
                   <Box sx={{ position: "relative" }}>
                     <img
-                      src={`https://admin.pacific-adventures.com/storage/uploads/media/${val.image}`}
+                      src={`http://127.0.0.1:8000/storage/uploads/media/${val.image}`}
                       alt="Header"
                       style={{
                         width: "100%",

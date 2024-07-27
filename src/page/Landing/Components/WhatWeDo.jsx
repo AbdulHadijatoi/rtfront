@@ -126,7 +126,9 @@ const WhatWeDo = () => {
           }, 
         }}>
           <Box>
-            <Typography variant="h1" sx={{ fontSize: '1.5rem', fontWeight: '600' }}>
+            <Typography variant="h1" sx={{ fontSize: '1.5rem', fontWeight: '600', textAlign: { xs: 'center', sm: 'center', md:'left', lg: 'left'}, marginBottom: {xs: '0px', sm: '0px', md:'20px'}
+
+             }}>
               What We Do
             </Typography>
             {/* <Typography variant="body1">
@@ -135,13 +137,7 @@ const WhatWeDo = () => {
             </Typography> */}
           </Box>
 
-          <Box gap={2} sx={{ marginTop: '1rem' }}>
-            <img src='/vector1.png' alt='vector1' />
-            <img src='/vector2.png' alt='vector1' style={{ marginLeft: '1rem' }} />
-
-          </Box>
-
-
+         
           <Box sx={{ borderBottom: 1, borderColor: 'divider', }}>
             <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
               <Tab label="Experiences" />

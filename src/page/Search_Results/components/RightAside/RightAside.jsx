@@ -283,7 +283,7 @@ const isAuth = useSelector((state)=>state?.auth?.isAuthenticated)
               >
                 <Box flex={1}>
                   <img
-                    src={`https://admin.pacific-adventures.com/storage/uploads/media/${val.image}`}
+                    src={`http://127.0.0.1:8000/storage/uploads/media/${val.image}`}
                     style={{
                       width: "100%",
                       borderRadius: "10px",

@@ -34,7 +34,12 @@ const MainComponent = () => {
 
   return (
     <>
-      <Box sx={{ padding: "3rem 5%" }}>
+      <Box sx={{ padding: "3rem 5%",
+        margin: 'auto',
+        width: {
+          lg: '1280px'
+        }
+       }}>
         <Box sx={{ textAlign: "center", color: "grey" }}>
           <Typography sx={{ fontSize: '0.9rem' }}>
             Our teams are here to make your experience hassle-free. Contact us in the way that suits you best,

@@ -64,14 +64,19 @@ const Privacy_Policy = ({nameProp}) => {
   return (
     <Page title={nameProp}>
       <Overlay title="Privacy Policy" imageUrl={guidelineimage} />
-      <Box sx={{ p: 5 }}>
+      <Box sx={{ p: 5,
+        margin: 'auto',
+        width: {
+          lg: '1280px'
+        }
+      }}>
         {/* <Heading>Privacy Policy</Heading> */}
         <Paragraph>
           RAH Tours Tourism LLC collects information about its
           customers both during the order process and as customers navigate the
           following website:
-          <a href="https://www.pacific-adventures.com">
-            https://www.pacific-adventures.com
+          <a href="https://www.rahtours.ae">
+            https://www.rahtours.ae
           </a>
         </Paragraph>
         <Paragraph>
@@ -101,8 +106,8 @@ const Privacy_Policy = ({nameProp}) => {
           parties.
         </Paragraph>
         <Paragraph>
-          The information provided by customer and visitors of Pacific
-          Adventures will be held only by RAH Tours and its duly
+          The information provided by customer and visitors of Rahtours
+          will be held only by RAH Tours and its duly
           authorized agents. Your information will not be given or sold to any
           outside organization for its use in marketing or any other promotion
           purposes.
@@ -111,8 +116,8 @@ const Privacy_Policy = ({nameProp}) => {
           Use of your information:
         </Heading>
         <Paragraph>
-          The information of our clients and visitors will be used by Pacific
-          Adventures Portal for market analysis and production of internal
+          The information of our clients and visitors will be used by Rahtours
+          Portal for market analysis and production of internal
           reports, for marketing our products and services generally and
           (subject to any objection or preference you may indicate when
           submitting your details to us) for sending information to you about
@@ -156,6 +161,7 @@ const Privacy_Policy = ({nameProp}) => {
           Transaction Security
         </Heading>
         <Paragraph>
+
           all transactions occur through Secure Server. That means that we use
           encryption to secure information sent from your computer to our
           servers. In addition, for the safety of your credit card payments we
@@ -166,8 +172,8 @@ const Privacy_Policy = ({nameProp}) => {
           Updating Your Information
         </Heading>
         <Paragraph>
-          if you ever need to update any information on file with Pacific
-          Adventures you may call or email us at RAH Tours at (contact
+          if you ever need to update any information on file with Rahtours
+          you may call or email us at RAH Tours at (contact
           us). If you need to update your information when re-ordering, you will
           have a chance to make changes to your payment information, shipping
           and billing address (es) at checkout.
@@ -204,7 +210,7 @@ const Privacy_Policy = ({nameProp}) => {
         ))}
         <List txt="What information does Book RAH Tours retain?" />
         <Paragraph>
-          <a href="www.pacific-adventures.com">www.pacific-adventures.com</a>
+          <a href="www.rahtours.ae">www.rahtours.ae</a>
           stores data about individuals in order to process bookings of
           services. We store the name, e-mail address, phone number and
           nationality in order to create a booking/account, which is stored on
@@ -229,7 +235,7 @@ const Privacy_Policy = ({nameProp}) => {
         <Paragraph>
           If you have additional questions about the privacy of your
           information, please contact RAH Tours at
-          privacy@pacific-adventures.com{" "}
+          privacy@rahtours.ae{" "}
         </Paragraph>
         <Paragraph>Mailing Address:</Paragraph>
         <Paragraph>RAH Tours Tourism LLC.</Paragraph>

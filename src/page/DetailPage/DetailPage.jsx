@@ -312,7 +312,11 @@ const DetailPage = ({ nameProp }) => {
               display: {
                 md: 'none',
                 sm: 'block'
-              }
+              },
+              margin: 'auto',
+              width: {
+                lg: '1280px',
+              },
             }}
           >
             <Box
@@ -368,7 +372,7 @@ const DetailPage = ({ nameProp }) => {
                     textAlign={"right"}
                     sx={{ fontSize: { xs: "0.9rem", md: "0.9rem" } }}
                   >
-                    {data1?.packages[0]?.category === "private"
+                    {data1?.packages?.[0]?.category === "private"
                       ? `AED ${(
                         data1?.packages[0]?.price -
                         (data1?.packages[0]?.price * data1?.discount_offer) / 100

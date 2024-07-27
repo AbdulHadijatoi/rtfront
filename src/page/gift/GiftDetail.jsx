@@ -132,7 +132,7 @@ const GiftDetail = ({ ac_data }) => {
     backgroundColor: '#f6f7f9',
   };
 
-  const base = 'https://admin.pacific-adventures.com/';
+  const base = 'http://127.0.0.1:8000/';
   const descriptionPreview = ac_data?.description?.split(' ').slice(0, 30).join(' ');
   const handleDiscountClick = (value) => {
     setDiscountPrice(value);

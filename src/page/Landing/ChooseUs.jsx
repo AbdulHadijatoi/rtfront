@@ -6,10 +6,9 @@ import { VscOpenPreview } from "react-icons/vsc";
 import { CgWebsite } from "react-icons/cg";
 
 const chooseData = [
-    { icon: TfiHeadphoneAlt, title: '24/7 Customer Support', description: "New price? New plan? No problem. We're here to help, 24/7" },
-    { icon: RiBookLine, title: 'Ultimate Flexibility', description: " Free cancellation and payment options to satisfy any plans or budget" },
-    { icon: VscOpenPreview, title: 'Quality at Our Core', description: "High quality standards. Reliable reviews." },
-    { icon: CgWebsite, title: 'Memorable experiences', description: `Browse and book tours and activities so incredible, you’ll want to tell your friends.` },
+    { icon: TfiHeadphoneAlt, title: 'Unmatched Expertise', description: "Benefit from our 15 years of industry experience, ensuring unparalleled knowledge and insights into the best attractions in Dubai and Abu Dhabi." },
+    { icon: RiBookLine, title: 'Premium Packages', description: "Indulge in luxury with our premium tour packages, designed to provide an extraordinary travel experience tailored to your preferences." },
+    { icon: VscOpenPreview, title: 'Personalized Services', description: "As one of the experienced tourism companies in Dubai we offer personalized services, where attention to detail and customer satisfaction are our top priorities." },
 ];
 
 const ChooseUs = () => {
@@ -29,18 +28,18 @@ const ChooseUs = () => {
                     lg: '1280px',
                 }, 
             }}>
-            <Typography sx={{  fontWeight: 600,fontSize: isSmall ? '14px' : '26px', }}>Why Book with Book RAH Tours?</Typography>
-            {/* <Typography sx={{ color: theme.palette.primary.textPrimary, textAlign: 'center', fontSize:'14px' }}>Experience the thrill of discovering off-the-beaten-path gems and famous landmarks in top
-            destinations worldwide - your wanderlust awaits!</Typography> */}
-            <Box style={{ padding: isSmall ? '30px 17px' : '0px 6%'}}>
+            <Typography sx={{  
+                fontWeight: 600,fontSize: isSmall ? '14px' : '26px',width: '100%', textAlign: { xs: 'center', sm: 'center', md:'left', lg: 'left'}, marginBottom: {xs: '0px', sm: '0px', md:'20px'}
+            }}>Why Book with RAH Tours?</Typography>
+            <Box >
                 <Grid container spacing={5}>
                     {chooseData.length > 0 ? (
                         chooseData.map((val, ind) => (
-                            <Grid key={ind} item lg={3} xs={12} sm={12} md={4}>
-                                <Box sx={{ display: "flex", flexDirection: 'column', gap: '10px', alignItems: 'center' }}>
+                            <Grid key={ind} item lg={4} xs={12} sm={12} md={4}>
+                                <Box sx={{ display: "flex", flexDirection: 'column', gap: '10px', alignItems: {xs: 'center', sm: 'center', md: 'start'} }}>
                                     <val.icon size={20} style={{ color: 'white', backgroundColor: theme.palette.primary.main, padding: '10px', borderRadius: '10px' }} />
-                                    <Typography sx={{ fontWeight: 700, textAlign: 'center', fontSize:'14px' }}>{val.title}</Typography>
-                                    <Typography sx={{ color: theme.palette.text.secondary, textAlign: 'center', fontSize:'12px' }}>{val.description}</Typography>
+                                    <Typography sx={{ fontWeight: 600, textAlign: 'left', fontSize:'20px' }}>{val.title}</Typography>
+                                    <Typography sx={{ fontWeight: 400, lineHeight: '1.5', color: theme.palette.text.secondary, textAlign: {xs: 'center', sm: 'center', md: 'left'}, fontSize:'14px' }}>{val.description}</Typography>
                                 </Box>
                             </Grid>
                         ))

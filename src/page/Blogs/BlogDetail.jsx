@@ -7,7 +7,7 @@ import { getBlogBID } from "../../store/actions/blogAction";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import Page from "../../components/page";
 const BlogDetail = () => {
-  const base = "https://admin.pacific-adventures.com/";
+  const base = "http://127.0.0.1:8000/";
   const navigate = useNavigate();
   const { id } = useParams();
   const handleBack = () => {
