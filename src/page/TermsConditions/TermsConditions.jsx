@@ -39,7 +39,7 @@ const TermsConditions = ({nameProp}) => {
 <Overlay title="Terms & Conditions" imageUrl={termsimage}/>
 
 
-      <Box sx={{ padding: "3rem 5%" }}>
+      <Box sx={{ padding: "3rem 5%", margin: 'auto', width: {lg: '1280px'} }}>
         {/* <Typography
           variant="h1"
           sx={{

@@ -380,8 +380,8 @@ const DetailPage = ({ nameProp }) => {
                         (data1?.packages[0]?.price * data1?.discount_offer) / 100
                       )}`
                       : `AED ${(
-                        data1?.packages[0]?.adult_price -
-                        (data1?.packages[0]?.adult_price * data1?.discount_offer) / 100
+                        data1?.packages?.[0]?.adult_price -
+                        (data1?.packages?.[0]?.adult_price * data1?.discount_offer) / 100
                       )}`}
                   </Typography>
                 </Box>

@@ -88,7 +88,7 @@ const ReviewsDetail = ({ data }) => {
           </Box>
         </Box>
 
-        {reviewsToShow.map((review, index) => (
+        {reviewsToShow?.map((review, index) => (
           <Card key={index} sx={{ margin: '10px 0', padding: '20px' }}>
   <CardContent>
     <Grid container spacing={2} alignItems="center">

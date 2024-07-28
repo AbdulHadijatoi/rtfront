@@ -120,7 +120,7 @@ const CustomCard = () => {
                     overflowWrap: "break-word",
                     display: "-webkit-box",
                     WebkitBoxOrient: "vertical",
-                    WebkitLineClamp: 1,
+                    WebkitLineClamp: 2,
                     overflow: "hidden",
                     textOverflow: "ellipsis",
                     maxHeight: "4.5rem",

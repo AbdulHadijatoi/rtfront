@@ -48,8 +48,8 @@ const Landing = ({nameProp}) => {
           <Popular />
         </div>
 
-        <WhatWeDo />
-        <ExploreMore />
+        {/* <WhatWeDo /> */}
+        {/* <ExploreMore /> */}
         {/* <DubaiLeading /> */}
         {/* <OurPartners /> */}
         {/* <SpecialOffer /> */}
