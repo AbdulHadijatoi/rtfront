@@ -78,6 +78,18 @@ const RelatedData = ({ onItemClick }) => {
     );
   }
 
+  const calculateRating = (reviews) => {
+    if (!Array.isArray(reviews) || reviews.length === 0) {
+        return 0;
+    }
+
+    const totalReviews = reviews.length;
+    const totalRating = reviews.reduce((acc, review) => acc + (review?.rating || 0), 0);
+    const averageRating = (totalRating / totalReviews).toFixed(1);
+
+    return averageRating;
+};
+
   return (
     <>
       <Box
@@ -210,9 +222,9 @@ const RelatedData = ({ onItemClick }) => {
                       }}
                     >
                       <Box>
-                        <Typography sx={{ fontSize: '0.8rem' }}>{val?.reviews?.length} Reviews</Typography>
+                        <Typography sx={{ fontSize: '0.8rem' }}>({calculateRating(val?.reviews)}) {val?.reviews?.length} Reviews</Typography>
 
-                        <Rating size="small" name="simple-controlled" value={value} readOnly />
+                        <Rating size="small" name="simple-controlled" value={Math.round((val?.reviews?.reduce((acc, review) => acc + review?.rating, 0))/(val?.reviews?.length || 0))} readOnly />
                       </Box>
                       <Button variant="contained" sx={{ fontSize: '0.7rem' }} onClick={() => handleBookNow(val.slug)}>Book Now</Button>
                     </Box>

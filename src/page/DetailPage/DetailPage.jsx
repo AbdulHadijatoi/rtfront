@@ -44,6 +44,14 @@ const DetailPage = ({ nameProp }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   // const [visitedIds, setVisitedIds] = useState([]);
 
+  // Calculate average rating
+  const totalReviews = data1?.reviews?.length || 0;
+  const averageRating = data1?.reviews?.reduce((acc, review) => acc + review?.rating, 0) / totalReviews || 0;
+
+  useEffect(() => {
+    setValue(Math.round(averageRating));
+  }, [averageRating]);
+
   const toggleDescription = () => {
     setIsExpanded(!isExpanded);
   };
@@ -439,14 +447,12 @@ const DetailPage = ({ nameProp }) => {
 
                         <Rating
                           name="simple-controlled"
-                          value={value}
+                          value={averageRating}
                           sx={{ marginLeft: '1rem' }}
                           size="small"
-                          onChange={(event, newValue) => {
-                            setValue(newValue);
-                          }}
+                          readOnly
                         />
-                        <span style={{ fontSize: '0.9rem', fontWeight: '500' }}>{data1?.reviews?.length} Reviews</span>
+                        <span style={{ fontSize: '0.9rem', fontWeight: '500' }}>({averageRating}) {data1?.reviews?.length} Reviews</span>
                       </Typography>
 
 

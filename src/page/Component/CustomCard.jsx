@@ -16,7 +16,17 @@ const CustomCard = () => {
   const popularActivities = useSelector(
     (state) => state?.popularActivities?.popularActivities?.payload
   );
+  const calculateRating = (reviews) => {
+    if (!Array.isArray(reviews) || reviews.length === 0) {
+        return 0;
+    }
 
+    const totalReviews = reviews.length;
+    const totalRating = reviews.reduce((acc, review) => acc + (review?.rating || 0), 0);
+    const averageRating = (totalRating / totalReviews).toFixed(1);
+
+    return averageRating;
+};
   const filteredActivities = popularActivities
     ? popularActivities
       .filter((activity) => activity.most_popular_activity === 1)
@@ -173,14 +183,11 @@ const CustomCard = () => {
                 </Box>
               </Box>
               <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'start', paddingLeft: '15px' }}>
-                <Typography sx={{ fontSize: '0.7rem' }}>{val?.reviews?.length} Reviews</Typography>
+                <Typography sx={{ fontSize: '0.7rem' }}>({calculateRating(val?.reviews)}) {val?.reviews?.length} Reviews</Typography>
                 <Rating
                   readOnly
                   name="simple-controlled"
-                  value={value}
-                  onChange={(event, newValue) => {
-                    setValue(newValue);
-                  }}
+                  value={Math.round((val?.reviews?.reduce((acc, review) => acc + review?.rating, 0))/(val?.reviews?.length || 0))}
                   size="small"
                 />
               </Box>

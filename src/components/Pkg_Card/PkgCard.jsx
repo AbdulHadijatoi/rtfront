@@ -27,6 +27,13 @@ const PkgCard = ({ data, categories, ind }) => {
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
 
+  // Calculate average rating
+  const totalReviews = data?.reviews?.length || 0;
+  const averageRating = data?.reviews?.reduce((acc, review) => acc + review?.rating, 0) / totalReviews || 0;
+
+  useEffect(() => {
+    setValue(Math.round(averageRating));
+  }, [averageRating]);
 
   const WishListredux = useSelector((state) => state?.wishlist?.wishlist?.payload)
   const isAuth = useSelector((state) => state?.auth?.isAuthenticated)
@@ -163,8 +170,8 @@ const PkgCard = ({ data, categories, ind }) => {
         <Typography color="textSecondary" component="div" sx={{ fontSize: '12px' }}>
           {subCategory}
         </Typography>
-        <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: '1rem', fontWeight: '700' }}>
-          {truncateName(data?.name)}
+        <Typography gutterBottom variant="h5" component="div" sx={{ WebkitLineClamp: 2, fontSize: '1rem', fontWeight: '700' }}>
+          {data?.name}
         </Typography>
         {/* <Typography sx={descriptionStyle}>{data?.description}</Typography> */}
         <Box
@@ -213,14 +220,13 @@ const PkgCard = ({ data, categories, ind }) => {
 
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 1 }}>
           <Box>
-            <Typography sx={{ fontSize: '0.7rem' }}>{data?.reviews?.length} Reviews</Typography>
+            <Typography sx={{ fontSize: '0.7rem' }}>{averageRating} Ratting</Typography>
             <Rating
               name="simple-controlled"
-              value={value}
-              onChange={(event, newValue) => {
-                setValue(newValue);
-              }}
+              value={averageRating}
+              
               size="small"
+              readOnly
             />
           </Box>
 
