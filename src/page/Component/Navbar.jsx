@@ -386,36 +386,6 @@ const Navbar = () => {
                 </Typography>
               </Box>
               
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  marginTop: "1rem",
-                  cursor: "pointer",
-                }}
-              >
-                <Typography
-                  sx={{
-                    fontSize: "12px",
-                    marginBottom: "0.9rem",
-                    textTransform: "none",
-                  }}
-                >
-                  <MuiLink
-                    component={Link}
-                    to={menusRoutes[15]?.route}
-                    sx={{
-                      alignItems: "center",
-                      display: "flex",
-                      textDecoration: "none",
-                      color: "inherit",
-                      "&:hover": { textDecoration: "none" },
-                    }}
-                  >
-                    Recently Viewed
-                  </MuiLink>
-                </Typography>
-              </Box>
 
               <Box
                 sx={{
@@ -506,6 +476,66 @@ const Navbar = () => {
                 </Typography>
               </Box>
 
+              <Box>
+
+                  <Select
+                    sx={{
+                      outline: "none",
+                      "&:focus": {
+                        outline: "none",
+                      },
+                      "& .MuiOutlinedInput-notchedOutline": {
+                        border: "none",
+                      },
+                    }}
+                    value={selectedValue}
+                    onChange={handleChange}
+                    displayEmpty
+                    inputProps={{ "aria-label": "Recently Viewed" }}
+                    renderValue={(selected) => (
+
+                      <Typography sx={{ fontSize: '12px' }}>
+                        Recently Viewed
+                      </Typography>
+                    )}
+                    IconComponent={() => null} // Remove the dropdown icon
+                  >
+                    <MenuItem
+                      value="Manage Profile"
+                      sx={{ fontSize: '0.8rem', width: '400px', padding: '10px' }}
+                      onClick={() => handleMenuItemClick("Manage Profile")}
+                    >
+                      Manage Profile
+                    </MenuItem>
+
+                    <MenuItem
+                      sx={{ fontSize: '0.8rem', width: '400px', padding: '10px' }}
+                      value="Booking"
+                      onClick={() => handleMenuItemClick("Booking")}
+                    >
+                      Booking
+                    </MenuItem>
+
+                    <MenuItem
+                      sx={{ fontSize: '0.8rem', width: '400px', padding: '10px' }}
+                      value="History"
+                      onClick={() => handleMenuItemClick("History")}
+                    >
+                      History
+                    </MenuItem>
+
+                    <MenuItem
+                      sx={{ fontSize: '0.8rem', width: '400px', padding: '10px' }}
+                      value="Logout"
+                      onClick={() => handleMenuItemClick("Logout")}
+                    >
+                      Logout
+                    </MenuItem>
+                  </Select>
+
+              </Box>
+
+              
               <Box
                 sx={{
                   display: "flex",
@@ -540,7 +570,7 @@ const Navbar = () => {
                               src={userData ? `${base}${userData?.profile_image}` : ""}
                               sx={{ height: '2rem', width: '2rem', marginRight: "8px" }}
                             />
-                            <Typography sx={{ fontSize: '1rem' }}> {userData?.first_name}</Typography>
+                            <Typography sx={{ fontSize: '14px' }}> {userData?.first_name}</Typography>
                           </Box>
                         )}
                       >

@@ -254,23 +254,12 @@ const RelatedData = ({ onItemClick }) => {
             mb: 5,
           }}
         >
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: theme.palette.primary.main,
-              color: "white",
-              padding: "10px 30px",
-              borderRadius: "20px",
-              textTransform: "none",
-              fontSize: "0.9rem",
-              fontWeight: 600,
-            }}
-
-            onClick={() => {
+          
+          <Button variant='outlined' sx={{ color: 'black', padding: '5px 100px', borderRadius: '10px', textTransform: 'none', fontSize: '0.9rem', fontWeight: 400 }} 
+          onClick={() => {
               navigate(routes[4]?.route)
-            }}
-          >
-            See All {" "} <ArrowForwardIcon />{" "}
+            }}>
+              See More
           </Button>
         </Box>
       </Box>

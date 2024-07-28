@@ -73,7 +73,7 @@ const Header = () => {
                 }}>
                     From local escapes to far-flung adventures, find what makes you happy anytime, anywhere
                 </Typography>
-                <Box sx={{marginTop: '10px',display: "flex", backgroundColor: 'white', borderRadius: "12px", alignItems: 'center', justifyContent: 'start', padding: '3px', height: "56px", width: isSmall ? '100%' : '65%',}}>
+                <Box sx={{marginTop: '10px',display: "flex", backgroundColor: 'white', borderRadius: "12px", alignItems: 'center', justifyContent: 'start', padding: '3px 4px', height: "48px", width: isSmall ? '100%' : '65%',}}>
                     <TextField
                         placeholder={'Search destinations or activities'}
                         size="small"
@@ -113,21 +113,20 @@ const Header = () => {
                         />
                          <MuiLink
                             component={Link}
-                            to="/login"
                             sx={{
                             alignItems: "center",
                             display: "flex",
                             textDecoration: "none",
                             backgroundColor: "#ee8e3b",
                             padding: "0px 40px",
-                            borderRadius: "10px",
-                            height: "55px",
+                            borderRadius: "9px",
+                            height: "46px",
                             color: "white",
                             "&:hover": { textDecoration: "none" },
                             }}
                         >
                             {/* <img src="/user_icon.svg" alt="User Icon" style={{ width: '24px', height: '24px' }} /> */}
-                            Login
+                            Search
                         </MuiLink>
                 </Box>
                 <Box sx={{ position: 'fixed', bottom: 20, left: 30, display: 'flex', alignItems: 'center', zIndex: 9999 }}>

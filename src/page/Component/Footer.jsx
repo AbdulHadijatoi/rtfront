@@ -156,7 +156,7 @@ const currentYear = new Date().getFullYear();
             }}>
           <Grid container spacing={5} alignItems={"start"}>
             <Grid item lg={4} md={4} sm={12} xs={12} >
-              <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+              <Box sx={{ display: 'flex', alignItems: 'start', flexDirection: 'column' }}>
                 <Box>
                   <Link to='/'>
                     <img src="/mainLogo.png" alt="footer Logo" style={{ height: '70px' }} />
@@ -167,9 +167,14 @@ const currentYear = new Date().getFullYear();
                   variant="h3"
                   sx={{ fontSize: "0.8rem", marginTop: "1rem", textAlign: 'justify' }}
                 >
-                  Welcome to rahtours.ae, RAH Tours deals and packages at the best price
+                  RAH Tourism, a leading Dubai agency with 15 years of excellence, offers premium, personalized packages for unforgettable experiences in Dubai and Abu Dhabi. Discover UAE with our diverse tours, including city tours, desert safaris, and quad biking.
 
-                  official RAH Tours experience booking website in UAE.
+
+
+
+
+
+
                 </Typography>
               </Box>
 
