@@ -97,7 +97,7 @@ const Tab1Card = (props) => {
             >
               <Box sx={{ position: "relative" }}>
                 <img
-                  src={`http://rtfront.rahtourism.com/storage/uploads/media/${val.image}`}
+                  src={`http://rtadmin.rahtourism.com/storage/uploads/media/${val.image}`}
                   alt="Header image"
                   style={{
                     width: "100%",
