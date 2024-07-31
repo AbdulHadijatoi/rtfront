@@ -442,12 +442,12 @@ const currentYear = new Date().getFullYear();
                 </MuiLink>
               </Typography>
 
-              <Typography sx={{ fontSize: "0.9rem", marginBottom: "0.9rem", color: 'grey' }}>
+              {/* <Typography sx={{ fontSize: "0.9rem", marginBottom: "0.9rem", color: 'grey' }}>
                 Cookie Policy
               </Typography>
               <Typography sx={{ fontSize: "0.9rem", marginBottom: "0.9rem", color: 'grey' }}>
                 Site Map
-              </Typography>
+              </Typography> */}
             </Grid>
 
           </Grid>
