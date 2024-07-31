@@ -10,7 +10,7 @@ const PreviewCard = () => {
     setIsExpanded(!isExpanded);
   };
   const { discountPrice, recipientEmail, description, acData } = location.state;
-  const base = 'http://rtadmin.rahtourism.com/';
+  const base = 'http://admin.pacific-adventures.com/';
 
   useEffect(() => {
     window.scrollTo(0, 0)

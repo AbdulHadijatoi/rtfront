@@ -35,7 +35,7 @@ import { logout } from "../../store/actions/authActions";
 
 const Navbar = () => {
   const theme = useTheme();
-  const base = 'http://rtadmin.rahtourism.com/'
+  const base = 'http://admin.pacific-adventures.com/'
 
 
   const user = useSelector((state) => state?.auth?.user);

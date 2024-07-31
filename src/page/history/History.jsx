@@ -69,7 +69,7 @@ const History = ({ nameProp }) => {
                                 <Box sx={{ backgroundColor: '#FFF', padding: '10px', display: 'flex', gap: '30px', flexWrap: 'wrap' }}>
 
                                     <Box flex={1}>
-                                        <img src={`http://rtadmin.rahtourism.com/storage/uploads/media/${item.image}`} alt="image" style={{ height: '100%', width: '100%', objectFit: 'cover', borderRadius: '5px' }} />
+                                        <img src={`http://admin.pacific-adventures.com/storage/uploads/media/${item.image}`} alt="image" style={{ height: '100%', width: '100%', objectFit: 'cover', borderRadius: '5px' }} />
                                     </Box>
                                     <Box flex={3} sx={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                                         <Typography sx={{ fontSize: '20px', fontWeight: 600 }}>{item.name}</Typography>
