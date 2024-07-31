@@ -13,7 +13,7 @@ const GiftPaymentInfo = () => {
   const toggleDescription = () => {
     setIsExpanded(!isExpanded);
   };
-  const base = 'http://127.0.0.1:8000/';
+  const base = 'http://rtfront.rahtourism.com/';
   
   const encodeString = (str) => {
     return encodeURIComponent(btoa(str));

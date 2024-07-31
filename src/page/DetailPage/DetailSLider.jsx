@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 const DetailSlider = ({ data1 }) => {
     const theme = useTheme();
     const isSmall = useMediaQuery(theme.breakpoints.down('sm'));
-    const base = 'http://127.0.0.1:8000';
+    const base = 'http://rtfront.rahtourism.com';
     const navigate = useNavigate();
     const routes = useSelector((state) => state?.AllMenu?.menus?.payload)
 

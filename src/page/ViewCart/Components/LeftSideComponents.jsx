@@ -31,7 +31,7 @@ const LeftSideComponents = ({ setTotalPrice }) => {
     setIsExpanded(!isExpanded);
   };
 
-  const base = "http://127.0.0.1:8000/";
+  const base = "http://rtfront.rahtourism.com/";
   const navigate = useNavigate();
   const theme = useTheme();
   const dispatch = useDispatch();

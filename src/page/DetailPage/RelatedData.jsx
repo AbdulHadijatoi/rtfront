@@ -9,7 +9,7 @@ const RelatedData = ({ onItemClick }) => {
   const theme = useTheme();
   const [value, setValue] = useState(5);
   const [loading, setLoading] = useState(false);
-  const base = "http://127.0.0.1:8000/";
+  const base = "http://rtfront.rahtourism.com/";
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const popularActivities = useSelector(
@@ -122,7 +122,7 @@ const RelatedData = ({ onItemClick }) => {
                 >
                   <Box sx={{ position: "relative" }}>
                     <img
-                      src={`http://127.0.0.1:8000/storage/uploads/media/${val.image}`}
+                      src={`http://rtfront.rahtourism.com/storage/uploads/media/${val.image}`}
                       alt="Header"
                       style={{
                         width: "100%",

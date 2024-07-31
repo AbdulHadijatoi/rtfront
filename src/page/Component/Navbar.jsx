@@ -35,7 +35,7 @@ import { logout } from "../../store/actions/authActions";
 
 const Navbar = () => {
   const theme = useTheme();
-  const base = 'http://127.0.0.1:8000/'
+  const base = 'http://rtfront.rahtourism.com/'
 
 
   const user = useSelector((state) => state?.auth?.user);
