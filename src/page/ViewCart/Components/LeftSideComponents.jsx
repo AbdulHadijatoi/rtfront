@@ -31,7 +31,7 @@ const LeftSideComponents = ({ setTotalPrice }) => {
     setIsExpanded(!isExpanded);
   };
 
-  const base = "http://admin.pacific-adventures.com/";
+  const base = "http://rtadmin.rahtourism.com/";
   const navigate = useNavigate();
   const theme = useTheme();
   const dispatch = useDispatch();

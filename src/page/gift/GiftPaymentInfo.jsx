@@ -13,7 +13,7 @@ const GiftPaymentInfo = () => {
   const toggleDescription = () => {
     setIsExpanded(!isExpanded);
   };
-  const base = 'http://admin.pacific-adventures.com/';
+  const base = 'http://rtadmin.rahtourism.com/';
   
   const encodeString = (str) => {
     return encodeURIComponent(btoa(str));
