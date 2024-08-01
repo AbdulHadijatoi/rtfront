@@ -37,7 +37,7 @@ const dispatch =  useDispatch()
         {
             title: '1. How to Book',
             descriptions: [
-                'To book any of our Tours and Safaris book online, or call us on +971 58 862 7171 or visit any of our Office.',
+                'To book any of our Tours and Safaris book online, or call us on +971 52 933 1100 or visit any of our Office.',
                 'Purchase of any of our products or services is subject to our Conditions of Contract.',
             ]
         },

@@ -264,7 +264,7 @@ the booking process.`,
                 gap: { xs: "1rem", md: "2rem" }, // Adjust gap between boxes based on screen size
               }}
             >
-              <a href="https://wa.me/971588627171" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <a href="https://wa.me/971529331100" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <Box
                   sx={{
                     border: "1px solid #ebebeb",
@@ -284,7 +284,7 @@ the booking process.`,
                 </Box>
               </a>
 
-              <a href="tel:+971588627171" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <a href="tel:+971529331100" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <Box
                   sx={{
                     border: "1px solid #ebebeb",

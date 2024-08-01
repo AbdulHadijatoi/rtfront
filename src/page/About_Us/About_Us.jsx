@@ -76,16 +76,16 @@ const About_Us = ({nameProp}) => {
                   paddingRight: "2rem",
                 }}
               >
-             rahtours.ae is committed to serving customers with professional care and giving them optimum satisfaction. We inspire people to travel and explore to further enrich their lives. We aim to meet and supersede all tourism requirements by using advanced technology to ensure fast and efficient services to our clients.
-
+                We, at RAH Tourism. Are very happy to welcome you to this amazing country that will be you home for the next few days. First of all. Thank you for choosing us to be your travel partner of choice, for over 15 years now, RAH Tourism has been delivering breathtaking experiences to all guests coming to our destination from all around the globe. We are a full-service premium experience provider with the ability and expertise to deliver wonderful lifelong memories to even the most demanding guests. From the simplest of greetings to the most exquisite cultural of multi-sensory experience, we are happy to do our best to delight you.
              <br/>
              <br/>
 
-             At rahtours.ae, We ensures a high degree of quality in services and yet our prices are incredibly reasonable. We can promise you the best deals with the most satisfying and enjoyable services so that you will yearn to return. We also provide all tours, excursions bookings online.
+             From the moment you are greeted by our welcome concierges and are handed your personalized information folder, your holiday becomes our highest priority and we will assign you a specialist to make sure that every element of you holidays is simply beyond your expectations. Whether you want to relax on the beach, explore our local culture or maybe try a more adventurous type of tours, our seasoned specialists will help you to design the perfect experience for you or your family or friends.
+
 
 <br/>
 <br/>
-Driven by the growth in the tourism industry, our online system ensures the fastest services in the shortest timeframe possible.
+Contact us any time during your stay and our specialists will recognize you by your name and will assist you in everything that you may need or desire, welcome to the world of RAH Tourism – where premium services have been selected for you.
 
               </Typography>
 
@@ -106,11 +106,11 @@ P.O. Box 232268 Dubai, United Arab Emirates
 
 <Typography sx={{fontSize:'0.9rem', textAlign:'center', color:'grey'}}>
 What's app or Call:
-{/* <Link href="tell:+971588627171">
-+971 58 862 7171,
+{/* <Link href="tell:+971529331100">
++971 52 933 1100,
         </Link> */}
 
-        <a href="tel:+971588627171" style={{textDecoration:'none', color:'grey'}}> {" "}+971 58 862 7171</a>
+        <a href="tel:+971529331100" style={{textDecoration:'none', color:'grey'}}> {" "}+971 52 933 1100</a>
 
 <br/>
  24/7 Chat available on site.

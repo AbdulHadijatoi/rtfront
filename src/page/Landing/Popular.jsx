@@ -50,7 +50,7 @@ const Popular = () => {
             <CustomCard />
 
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mt: 5 }}>
-                <Button variant='outlined' sx={{ color: 'black', padding: '5px 100px', borderRadius: '10px', textTransform: 'none', fontSize: '0.9rem', fontWeight: 400 }} onClick={handleActivities}>See More</Button>
+                <Button variant='outlined' sx={{ borderColor: 'black', color: 'black', padding: '5px 100px', borderRadius: '10px', textTransform: 'none', fontSize: '0.9rem', fontWeight: 400 }} onClick={handleActivities}>See More</Button>
             </Box>
         </Box>
     );

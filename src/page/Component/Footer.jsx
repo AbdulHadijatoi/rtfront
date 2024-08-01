@@ -23,6 +23,8 @@ import { FiPhoneCall } from "react-icons/fi";
 import { MdEmail, MdOutlineMailOutline } from "react-icons/md";
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import { useSelector } from "react-redux";
+import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
+
 const Footer = () => {
   const theme = useTheme();
 const routes = useSelector((state)=>state?.AllMenu?.menus?.payload || {})
@@ -35,9 +37,9 @@ const currentYear = new Date().getFullYear();
       <Box>
         <Box
           sx={{
-            backgroundColor: theme.palette.primary.main,
-            padding: "3rem 5%",
-            color: "white",
+            marginTop: '50px',
+            padding: "2rem 5%",
+            border: '1px solid rgba(0,0,0,0.05)'
           }}
         >
           <Box sx={{
@@ -46,21 +48,25 @@ const currentYear = new Date().getFullYear();
              lg: '1280px',
             }, 
           }}>
-            <Grid container spacing={3} alignItems={"center"}>
-              <Grid item lg={5} md={5} sm={12} xs={12}>
+            <Grid container alignItems={"center"} justifyContent={"space-between"}>
+              <Box sx={{display: 'flex'}}>
+              <HeadsetMicIcon sx={{ marginRight: '10px'}}/>
                 <Typography
-                  variant="h1"
-                  sx={{ fontSize: "1.2rem", fontWeight: "600" }}
+                  sx={{ fontSize: "1rem" }}
                 >
-                  We have got amazing deals just for you
+                  Speak to our expert at
                 </Typography>
-
-                <Typography sx={{ fontSize: "0.8rem" }}>
-                  Subscribe to the newsletter and stay up to date...
+                
+                <Typography
+                  sx={{ fontSize: "1rem", marginLeft: '10px', color: '#ee8e3b', fontWeight: '600' }}
+                >
+                  <a href="tel:+971529331100" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        +971 52 933 1100
+                      </a>
                 </Typography>
-              </Grid>
+              </Box>
 
-              <Grid item lg={3} md={3} sm={12} xs={12}>
+
                 <Box
                   sx={{
                     display: "flex",
@@ -68,82 +74,34 @@ const currentYear = new Date().getFullYear();
                     alignItems: "center",
                   }}
                 >
-
-                  <a href="https://www.facebook.com/rahtravels" target="_blank" rel="noopener noreferrer">
-                    <FacebookIcon sx={{ color: 'white' }} />
+                   <Typography sx={{ fontSize: "1rem", marginRight:'20px', color: 'black' }}>
+                    Follow Us
+                  </Typography>
+                  <a style={{marginLeft: '10px', marginRight: '10px'}} href="https://www.facebook.com/rahtravels" target="_blank" rel="noopener noreferrer">
+                    <FacebookIcon sx={{ color: 'black' }} />
                   </a>
 
-                  <a href="https://twitter.com/rahtoursdubai?s=21" target="_blank" rel="noopener noreferrer">
-                    <TwitterIcon sx={{ color: 'white' }} />
+                  <a style={{marginLeft: '10px', marginRight: '10px'}} href="https://twitter.com/rahtoursdubai?s=21" target="_blank" rel="noopener noreferrer">
+                    <TwitterIcon sx={{ color: 'black' }} />
                   </a>
 
-                  <a href="https://www.linkedin.com/company/rah-tourism-l.l.c" target="_blank" rel="noopener noreferrer">
-                    <LinkedInIcon sx={{ color: 'white' }} />
+                  <a style={{marginLeft: '10px', marginRight: '10px'}} href="https://www.linkedin.com/company/rah-tourism-l.l.c" target="_blank" rel="noopener noreferrer">
+                    <LinkedInIcon sx={{ color: 'black' }} />
                   </a>
 
-                  <a href="https://www.instagram.com/rahtourism/" target="_blank" rel="noopener noreferrer">
-                    <InstagramIcon sx={{ color: 'white' }} />
+                  <a style={{marginLeft: '10px', marginRight: '10px'}} href="https://www.instagram.com/rahtourism/" target="_blank" rel="noopener noreferrer">
+                    <InstagramIcon sx={{ color: 'black' }} />
                   </a>
 
 
-                  <a href="https://www.youtube.com/MyHabib786" target="_blank" rel="noopener noreferrer">
-                    <YouTubeIcon sx={{ color: 'white' }} />
+                  <a style={{marginLeft: '10px'}} href="https://www.youtube.com/MyHabib786" target="_blank" rel="noopener noreferrer">
+                    <YouTubeIcon sx={{ color: 'black' }} />
                   </a>
                 
                 </Box>
-              </Grid>
 
-              <Grid item lg={4} md={4} sm={12} xs={12}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "space-evenly",
-                    alignItems: "center",
-                  }}
-                >
-                  <TextField
-                    fullWidth
-                    placeholder="Enter your Email"
-                    sx={{
-                      "& .MuiInputBase-root": {
-                        border: "none",
-                        padding: 0, // Set padding to 0
-                        "&:howver": {
-                          borderColor: "transparent",
-                        },
-                        "&.Mui-focused": {
-                          boxShadow: "none",
-                        },
-                      },
-                      "& .MuiOutlinedInput-notchedOutline": {
-                        display: "none",
-                      },
-                      borderRadius: "0px",
-                      backgroundColor: "white",
-                    }}
-                    InputProps={{
-                      endAdornment: (
-                        <InputAdornment
-                          position="end"
-                          sx={{
-                            backgroundColor: "black",
-                            padding: "1.8rem 1rem",
-                            color: "white",
-                          }}
-                        >
-                          <SearchOutlinedIcon />
-                        </InputAdornment>
-                      ),
-                      sx: {
-                        "& input::placeholder": {
-                          color: "black",
-                        },
-                        padding: 0, // Ensure no padding for the input
-                      },
-                    }}
-                  />
-                </Box>
-              </Grid>
+
+              
             </Grid>
           </Box>
         </Box>
@@ -156,49 +114,56 @@ const currentYear = new Date().getFullYear();
             }}>
           <Grid container spacing={5} alignItems={"start"}>
             <Grid item lg={4} md={4} sm={12} xs={12} >
-              <Box sx={{ display: 'flex', alignItems: 'start', flexDirection: 'column' }}>
-                <Box>
-                  <Link to='/'>
-                    <img src="/mainLogo.png" alt="footer Logo" style={{ height: '70px' }} />
-
-                  </Link>
-                </Box>
-                <Typography
-                  variant="h3"
-                  sx={{ fontSize: "0.8rem", marginTop: "1rem", textAlign: 'justify' }}
-                >
-                  RAH Tourism, a leading Dubai agency with 15 years of excellence, offers premium, personalized packages for unforgettable experiences in Dubai and Abu Dhabi. Discover UAE with our diverse tours, including city tours, desert safaris, and quad biking.
-
-
-
-
-
-
-
-                </Typography>
-              </Box>
-
-
-              <Box
+            <Typography
                 sx={{
-                  display: "flex",
-                  justifyContent: "start",
-                  alignItems: "start",
-                  marginTop: "1rem",
+                  fontSize: "1rem",
+                  fontWeight: "500",
+                  marginBottom: "0.9rem",
                 }}
-                gap={1}
               >
-                <img src="/visaimage.png" alt="" />
-                <img src="/american.png" alt="" />
-                <img src="/mastercard.png" alt="" />
-                <img src="/stripe.png" alt="" />
+                Contact
+              </Typography>
+              <Box sx={{ display: 'flex', alignItems: 'start', flexDirection: 'column' }}>
+
+                <Typography sx={{ 
+                  color: 'grey',
+                  fontSize: "0.9rem",
+                  marginTop: "1rem",
+                  textTransform: "none"
+                  }}>
+                  Suite 714, Makateb Tower - Port Saeed - Dubai
+                </Typography>
+                
+                <Box sx={{ display: 'flex', gap: '5px', alignItems: 'center', mt: 2 }}>
+                    <Typography sx={{ 
+                      color: 'grey',
+                      fontSize: "0.9rem",
+                      textTransform: "none"
+                      }}>
+                      <a href="tel:+971529331100" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        +971 52 933 1100
+                      </a>
+                    </Typography>
+                </Box>
+
+
+                <Box sx={{ display: 'flex', gap: '5px', alignItems: 'center', mt: 2, width: '10px' }}>
+                <Typography sx={{ 
+                  color: 'grey',
+                  fontSize: "0.9rem",
+                  textTransform: "none"
+                  }} component="a" href={`mailto:info@rahtours.ae`}>
+                      info@rahtours.ae
+                    </Typography>
+                </Box>
               </Box>
+
             </Grid>
             <Grid item lg={2} md={2} sm={12} xs={12}>
               <Typography
                 sx={{
                   fontSize: "1rem",
-                  fontWeight: "700",
+                  fontWeight: "500",
                   marginBottom: "0.9rem",
                 }}
               >
@@ -327,69 +292,12 @@ const currentYear = new Date().getFullYear();
               </Typography>
 
             </Grid>
-
-            <Grid item lg={2} md={2} sm={12} xs={12}>
-              <Typography
-                sx={{
-                  fontSize: "1rem",
-                  fontWeight: "700",
-                  marginBottom: "0.9rem",
-                }}
-              >
-                Contact Us
-              </Typography>
-
-              <Box sx={{ display: 'flex', gap: '5px', alignItems: 'center', mt: 2 }}>
-                <FiPhoneCall style={{ color: 'grey', fontSize: '20px' }} />
-
-                <Box>
-                  <Typography sx={{ fontSize: '12px', color: 'grey' }}>
-                    <a href="tel:+971588627171" style={{ textDecoration: 'none', color: 'inherit' }}>
-                      +971 58 862 7171
-                    </a>
-                  </Typography>
-                </Box>
-
-              </Box>
-
-              <Box sx={{ display: 'flex', gap: '5px', alignItems: 'center', mt: 2 }}>
-                <FaWhatsapp style={{ color: 'grey', fontSize: '20px' }} />
-                <Box>
-                  <Typography sx={{ fontSize: '12px', color: 'grey' }}>
-                    <a href="https://wa.me/971588627171" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
-                    +971 58 862 7171
-                    </a>
-                  </Typography>
-                </Box>
-              </Box>
-
-
-              <Box sx={{ display: 'flex', gap: '5px', alignItems: 'center', mt: 2, width: '10px' }}>
-                <EmailOutlinedIcon style={{ color: 'grey', fontSize: '20px' }} />
-
-                <Box>
-                  {/* <Typography sx={{ fontSize: '12px', color: 'grey', }}>info@rahtours.ae</Typography> */}
-
-                  <Typography component="a" href={`mailto:info@rahtours.ae`} sx={{ fontSize: '12px', color: 'grey', textDecoration:'none' }}>
-                  info@rahtours.ae
-                  </Typography>
-
-                </Box>
-
-              </Box>
-
-
-
-
-
-            </Grid>
-
             
             <Grid item lg={2} md={2} sm={12} xs={12}>
               <Typography
                 sx={{
                   fontSize: "1rem",
-                  fontWeight: "700",
+                  fontWeight: "500",
                   marginBottom: "0.9rem",
                 }}
               >
@@ -442,12 +350,78 @@ const currentYear = new Date().getFullYear();
                 </MuiLink>
               </Typography>
 
-              {/* <Typography sx={{ fontSize: "0.9rem", marginBottom: "0.9rem", color: 'grey' }}>
-                Cookie Policy
+            </Grid>
+            
+            <Grid item lg={4} md={4} sm={12} xs={12}>
+              <Typography
+                sx={{
+                  fontSize: "1rem",
+                  fontWeight: "500",
+                  marginBottom: "0.9rem",
+                }}
+              >
+                Newsletter
               </Typography>
-              <Typography sx={{ fontSize: "0.9rem", marginBottom: "0.9rem", color: 'grey' }}>
-                Site Map
-              </Typography> */}
+              <Typography
+                sx={{
+                  color: 'grey',
+                  fontSize: "0.9rem",
+                  marginBottom: "0.9rem",
+                  textTransform: "none",
+                }}
+              >
+                  Subscribe to the newsletter and stay up to date...
+              </Typography>
+              <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-evenly",
+                    alignItems: "center",
+                  }}
+                >
+                  <TextField
+                    fullWidth
+                    placeholder="Enter your Email"
+                    sx={{
+                      "& .MuiInputBase-root": {
+
+                        padding: 0, // Set padding to 0
+                        backgroundColor: "rgba(0,0,0,0.04)",
+                        "&:howver": {
+                          borderColor: "transparent",
+                        },
+                        "&.Mui-focused": {
+                          boxShadow: "none",
+                        },
+                      },
+                      "& .MuiOutlinedInput-notchedOutline": {
+                        display: "none",
+                      },
+                      borderRadius: "0px",
+                      backgroundColor: "white",
+                    }}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment
+                          position="end"
+                          sx={{
+                            color: "black",
+                            padding: "1.8rem 1rem",
+                          }}
+                        >
+                          Subscribe
+                        </InputAdornment>
+                      ),
+                      sx: {
+                        "& input::placeholder": {
+                          color: "black",
+                        },
+                        padding: 0, // Ensure no padding for the input
+                      },
+                    }}
+                  />
+                </Box>
+
             </Grid>
 
           </Grid>

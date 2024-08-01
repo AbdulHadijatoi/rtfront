@@ -948,7 +948,7 @@ const Navbar = () => {
           </Box>
         </Box>
       </Drawer>
-      <Divider />
+      {/* <Divider /> */}
       <AllActivities />
     </>
   );

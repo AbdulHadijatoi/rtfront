@@ -14,12 +14,10 @@ const AllActivities = () => {
   const authh = useSelector((state) => state?.auth?.isAuthenticated);
 
   const staticCategories = [
-    { name: 'Desert Adventures', image: '/activity1.svg' },
-    { name: 'City Tours & Attractions', image: '/activity8.svg' },
-    { name: 'Cruise & Boat Tours', image: '/activity5.svg' },
-    { name: 'Waterpark & Theme Parks', image: '/activity2.svg' },
-    { name: 'Transportation', image: '/activity7.svg' },
-    { name: 'Special Offers', image: '/offers.svg' },
+    { name: 'Tours & experiences', image: '/activity1.svg' },
+    { name: 'Outdoor & sports activities', image: '/activity8.svg' },
+    { name: 'Waterparks & Theme Parks', image: '/activity5.svg' },
+    { name: 'Chauffer & Transfers', image: '/activity2.svg' },
   ];
 
   const menus = useSelector((state) => state?.AllMenu?.menus?.payload || {});
@@ -62,11 +60,12 @@ const AllActivities = () => {
   }
 
   return (
-    <Box sx={{ padding: "1rem 5%",
+    <Box sx={{ padding: "0.5rem 5%",
        position: 'sticky', 
        top: 0, zIndex: 999, 
        backgroundColor: 'white', 
-       boxShadow: isScrolled ? '0px 4px 12px rgba(0, 0, 0, 0.1)' : 'none', 
+        borderTop: '1px solid rgba(0,0,0,0.1)',
+        borderBottom: '1px solid rgba(0,0,0,0.1)',
        display: "flex", 
        justifyContent: "space-between", 
        }} gap={2}>
@@ -81,7 +80,6 @@ const AllActivities = () => {
                 }} gap={2}>
         {!loading && staticCategories.map((val, ind) => (
           <Box key={ind} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <img src={val.image} alt={val.name} style={{ width: '20px', height: '20px' }} />
             <Button
               sx={{ textTransform: "none", color: "grey" }}
               onClick={() => navigate(menus[4]?.route, { state: { categoryId: categoryMap[val.name] } })}

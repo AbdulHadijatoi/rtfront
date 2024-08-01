@@ -110,7 +110,7 @@ const Contact_Us = ({nameProp}) => {
             <Box
               sx={{
                 borderRadius: "10px",
-                backgroundImage: `url(${"/contact_detail.png"})`,
+                backgroundColor: "#ee8e3b",
                 backgroundPosition: "center",
                 backgroundSize: "cover",
                 backgroundRepeat: "none",
@@ -228,6 +228,7 @@ const Contact_Us = ({nameProp}) => {
                         padding: "0.8rem 1.5rem",
                         textTransform: "none",
                         fontSize: "0.8rem",
+                        color: 'white'
                       }}
                       type="submit"
                     >
@@ -242,7 +243,7 @@ const Contact_Us = ({nameProp}) => {
 
         <Box sx={{ p: 5, textAlign: "center" }}>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.3808593751346!2d55.330080575383725!3d25.257770477672086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43539c4f0139%3A0xd73ae73cb4141c82!2sPacific%20Adventures!5e0!3m2!1sen!2som!4v1720564634217!5m2!1sen!2som"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57748.61976995328!2d55.26235095346436!3d25.22719818879941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5cd858f39b1f%3A0x4e2c6269c59488d4!2sRAH%20Tourism%20LLC!5e0!3m2!1sen!2som!4v1722548063191!5m2!1sen!2som"
             width="100%"
             height="450"
             style={{ border: 0 }}
