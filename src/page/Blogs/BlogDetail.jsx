@@ -61,7 +61,13 @@ const BlogDetail = () => {
             </Box> */}
 
       <Page title={data?.title}>
-        <Box sx={{ padding: "60px 7%" }}>
+        <Box sx={{ 
+          padding: "60px 0%",
+          margin: 'auto',
+          width: {
+            lg: '1280px',
+          }, 
+          }}>
           <Button
             sx={{
               backgroundColor: "green",
