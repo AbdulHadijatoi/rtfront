@@ -98,9 +98,8 @@ const BlogDetail = () => {
                 color: "#506273",
                 textAlign: "justify",
               }}
-            >
-              {data?.description}
-            </Typography>
+              dangerouslySetInnerHTML={{ __html: data.description }}
+              />
           </Box>
           {data?.contents?.map((val, ind) => (
             <>
@@ -122,9 +121,8 @@ const BlogDetail = () => {
                           fontSize: "0.8rem",
                           textAlign: "justify",
                         }}
-                      >
-                        {val.description}
-                      </Typography>
+                        dangerouslySetInnerHTML={{ __html: val.description }}
+                        />
                     </Grid>
                     <Grid item lg={5} md={6} sm={12} xs={12}>
                       <img

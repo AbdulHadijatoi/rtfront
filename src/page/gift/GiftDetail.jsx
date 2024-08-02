@@ -261,42 +261,23 @@ const GiftDetail = ({ ac_data }) => {
                 {ac_data?.description}
               </Typography> */}
 
-                    <Typography
-
-                      sx={{
-                        fontSize: { xs: '14px', md: '16px' },
-                        fontWeight: 500,
-
-                        // wordBreak: 'break-all',
-                        color: '#A9A9A9',
-                        wordBreak: "break-word",
-                        overflowWrap: "break-word",
-                        lineHeight: "1.5rem",
-                      }}
-                    >
-                      {isExpanded ? ac_data?.description : (
-                        <>
-                          {ac_data?.description.slice(0, 320)}
-                          {ac_data?.description.length > 320 && (
-                            <Button
-                              onClick={toggleDescription}
-                              sx={{
-                                marginLeft: '0.5rem',
-                                textTransform: 'none',
-                                fontSize: '0.875rem',
-                                color: '#A9A9A9',
-                              }}
-                            >
-                              Read More
-                            </Button>
-                          )}
-                        </>
-                      )}
-                      {isExpanded && (
+              <Typography
+                    sx={{
+                      fontSize: { xs: '14px', md: '16px' },
+                      fontWeight: 500,
+                      color: '#A9A9A9',
+                      wordBreak: "break-word",
+                      overflowWrap: "break-word",
+                      lineHeight: "1.5rem",
+                    }}
+                  >
+                    {isExpanded ? (
+                      <>
+                        <span dangerouslySetInnerHTML={{ __html: ac_data.description }} />
                         <Button
                           onClick={toggleDescription}
                           sx={{
-                            marginTop: '0.5rem', // Adjust spacing as needed
+                            marginTop: '0.5rem',
                             textTransform: 'none',
                             fontSize: '0.875rem',
                             color: '#A9A9A9',
@@ -304,8 +285,26 @@ const GiftDetail = ({ ac_data }) => {
                         >
                           Show Less
                         </Button>
-                      )}
-                    </Typography>
+                      </>
+                    ) : (
+                      <>
+                        <span dangerouslySetInnerHTML={{ __html: ac_data.description.slice(0, 320) }} />
+                        {ac_data.description.length > 320 && (
+                          <Button
+                            onClick={toggleDescription}
+                            sx={{
+                              marginLeft: '0.5rem',
+                              textTransform: 'none',
+                              fontSize: '0.875rem',
+                              color: '#A9A9A9',
+                            }}
+                          >
+                            Read More
+                          </Button>
+                        )}
+                      </>
+                    )}
+                  </Typography>
 
                   </Box>
                 </Box>

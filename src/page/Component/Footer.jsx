@@ -386,7 +386,7 @@ const currentYear = new Date().getFullYear();
                       "& .MuiInputBase-root": {
 
                         padding: 0, // Set padding to 0
-                        backgroundColor: "rgba(0,0,0,0.04)",
+                        backgroundColor: "rgba(0,0,0,0.03)",
                         "&:howver": {
                           borderColor: "transparent",
                         },
@@ -407,6 +407,7 @@ const currentYear = new Date().getFullYear();
                           sx={{
                             color: "black",
                             padding: "1.8rem 1rem",
+                            border: '1px solid rgba(0,0,0,0.07)',
                           }}
                         >
                           Subscribe
