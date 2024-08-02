@@ -25,6 +25,7 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import { useSelector } from "react-redux";
 import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
 
+
 const Footer = () => {
   const theme = useTheme();
 const routes = useSelector((state)=>state?.AllMenu?.menus?.payload || {})
@@ -121,7 +122,7 @@ const currentYear = new Date().getFullYear();
                   marginBottom: "0.9rem",
                 }}
               >
-                Contact
+                Contact Us
               </Typography>
               <Box sx={{ display: 'flex', alignItems: 'start', flexDirection: 'column' }}>
 
@@ -156,6 +157,32 @@ const currentYear = new Date().getFullYear();
                       info@rahtours.ae
                     </Typography>
                 </Box>
+                <Typography
+                  sx={{
+                    color: 'grey',
+                    fontSize: "0.9rem",
+                    marginBottom: "0.9rem",
+                    textTransform: "none",
+                    mt: 2
+                  }}
+                >
+                  <MuiLink
+                    component={Link}
+                    // to="/contact-us"
+                    to={routes[6]?.route}
+
+                    sx={{
+
+                      textDecoration: "none",
+                      color: "inherit",
+                      "&:hover": { textDecoration: "none" },
+                    }}
+                  >
+                    Contact Us
+                  </MuiLink>
+                  
+                </Typography>
+                
               </Box>
 
             </Grid>
@@ -241,6 +268,7 @@ const currentYear = new Date().getFullYear();
               </Typography>
 
 
+              
               <Typography
                 sx={{
                   color: 'grey',
@@ -251,8 +279,7 @@ const currentYear = new Date().getFullYear();
               >
                 <MuiLink
                   component={Link}
-                  // to="/contact-us"
-                  to={routes[6]?.route}
+                  to="/things-to-do-in-dubai"
 
                   sx={{
 
@@ -261,9 +288,8 @@ const currentYear = new Date().getFullYear();
                     "&:hover": { textDecoration: "none" },
                   }}
                 >
-                  Contact Us
+                  Things To Do In Dubai
                 </MuiLink>
-                
               </Typography>
               
               <Typography

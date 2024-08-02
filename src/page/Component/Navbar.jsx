@@ -32,8 +32,11 @@ import { IoIosBicycle } from "react-icons/io";
 import { FaChevronRight } from "react-icons/fa6";
 import { PiBuildingsBold } from "react-icons/pi";
 import { logout } from "../../store/actions/authActions";
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 
 const Navbar = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
   const theme = useTheme();
   const base = 'http://rtadmin.rahtourism.com/'
 
@@ -950,6 +953,30 @@ const Navbar = () => {
       </Drawer>
       {/* <Divider /> */}
       <AllActivities />
+      <Divider />
+      {!isHomePage && <Breadcrumbs />}
+      <Box sx={{ position: 'fixed', bottom: 5, right: 5, display: {xs: 'flex', md:'none' }, justifyContent: 'cetner', alignItems: 'center', zIndex: 9999 }}>
+          <Button variant='contained' sx={{
+              backgroundColor: '#832d14',
+              textTransform: 'none',
+              color: "#FFF",
+              fontWeight: 600,
+              borderRadius: '40px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '60px',
+              height: '60px',
+              zIndex: 9999
+          }}>
+
+
+          <a href="tel:+971588627171" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <FiPhoneCall style={{ marginTop: '10px', color: 'white', fontSize: '20px' }} />
+          </a>
+
+          </Button>
+      </Box>
     </>
   );
 };

@@ -40,16 +40,13 @@ const TermsConditions = ({nameProp}) => {
 
 
       <Box sx={{ padding: "3rem 5%", margin: 'auto', width: {lg: '1280px'} }}>
-        {/* <Typography
-          variant="h1"
-          sx={{
-            fontSize: "2rem",
-            fontWeight: "800",
-            color: theme.palette.primary.main,
-          }}
-        >
+        <h1 style={{
+            fontSize: "1.3rem",
+            fontWeight: "600",
+            color: '#832d14',
+          }}>
           Terms & Conditions
-        </Typography> */}
+        </h1>
 
         <Typography sx={{ color: "grey", marginTop: "1rem" , fontSize:'13px' }}>
           Thank you for choosing our tour packages. By booking a trip through

@@ -70,6 +70,13 @@ const Privacy_Policy = ({nameProp}) => {
           lg: '1280px'
         }
       }}>
+        <h1 style={{
+            fontSize: "1.3rem",
+            fontWeight: "600",
+            color: '#832d14',
+          }}>
+          Privacy Policy
+        </h1>
         {/* <Heading>Privacy Policy</Heading> */}
         <Paragraph>
           RAH Tours Tourism LLC collects information about its

@@ -34,7 +34,7 @@ const BlogCard = () => {
     }, [dispatch]);
 
     const handleDetail = () => {
-        navigate('/blog-detail');
+        navigate('/blogs');
     }
 
     const descriptionStyle = {
@@ -51,7 +51,8 @@ const BlogCard = () => {
     return (
         <Box sx={{ padding: '4rem 5%' }}>
             <Box sx={{ textAlign: 'center', marginBottom: '2rem' }}>
-                <Typography variant='h1' sx={{ fontSize: '1.5rem', fontWeight: '700' }}>Read Our Recent Blogs</Typography>
+                <h1 style={{ fontSize: '1.5rem', fontWeight: '700' }}>Read Our Recent Blogs</h1>
+
                 {/* <Typography variant='body1' sx={{ fontSize: '0.9rem', color: 'grey' }}>Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica.</Typography> */}
             </Box>
 
@@ -84,7 +85,7 @@ const BlogCard = () => {
                                         </Typography>
                                         <Typography variant="body2" color="text.secondary" sx={descriptionStyle} dangerouslySetInnerHTML={{ __html: val.description }}/>
                                         <Box sx={{ display: 'flex', alignItems: 'end', justifyContent: 'end', marginTop: '1rem' }}>
-                                            <Button onClick={() => navigate(`/blog-detail/${val.id}`)} size="small" variant='contained' sx={{ textTransform: 'none' }}>Read More <ArrowForwardIcon /></Button>
+                                            <Button onClick={() => navigate(`/blogs/${val.slug}`)} size="small" variant='contained' sx={{ textTransform: 'none' }}>Read More <ArrowForwardIcon /></Button>
                                         </Box>
                                     </Box>
                                 </Box>

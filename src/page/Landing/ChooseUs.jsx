@@ -28,9 +28,7 @@ const ChooseUs = () => {
                     lg: '1280px',
                 }, 
             }}>
-            <Typography sx={{  
-                fontWeight: 600,fontSize: isSmall ? '14px' : '26px',width: '100%', textAlign: { xs: 'center', sm: 'center', md:'left', lg: 'left'}, marginBottom: {xs: '0px', sm: '0px', md:'20px'}
-            }}>Why Book with RAH Tours?</Typography>
+            <h1 style={{  fontWeight: 600,fontSize: isSmall ? '14px' : '26px', }}>Why Book with RAH Tours?</h1>
             <Box >
                 <Grid container spacing={5}>
                     {chooseData.length > 0 ? (

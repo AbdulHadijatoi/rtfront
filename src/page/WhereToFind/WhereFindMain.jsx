@@ -17,6 +17,14 @@ const WhereFindMain = ({nameProp}) => {
 
       <Page title={nameProp}>
         <Overlay title="Where To Find Us" imageUrl={about} />
+        <h1
+          variant="h4"
+          fontWeight="bold"
+          color="primary"
+          style={{ width: '100%', textAlign: 'center', marginTop: '15px', color: '#832d14',fontSize: "1.5rem", fontWeight: 700 }}
+        >
+          Where To Find Us
+        </h1>
         <MainComponent />
       </Page>
     </>

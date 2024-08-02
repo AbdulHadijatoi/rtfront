@@ -60,7 +60,16 @@ const Categories = ({nameProp}) => {
           );
           setSelectedCategory(initialCategory);
         } else {
-          setSelectedCategory(initialCategories[0]);
+          // setSelectedCategory(initialCategories[0]);
+          const allActivities = initialCategories.flatMap(category => category.activity || []);
+          const allActivitiesCategory = {
+            id: 'all-activities',
+            name: 'All Activities',
+            activity: allActivities
+          };
+  
+          setCategories([...initialCategories, allActivitiesCategory]);
+          setSelectedCategory(allActivitiesCategory);
         }
         setLoading(false);
       })
@@ -335,7 +344,7 @@ const Categories = ({nameProp}) => {
                   ) : (
                     <Box sx={{ padding: '0rem 8%' }}>
                       <Slider {...settings}>
-                        {categories.map((val, index) => (
+                        {categories.slice(0, -1).map((val, index) => (
                           <Box
                             key={index}
                             onClick={() => handleCategoryClick(val)}
@@ -394,13 +403,10 @@ flexWrap:'wrap'
 
 
           <img src='/thingstodo.svg' width={'30rem'} />
-          <Typography
-            variant="h4"
-            fontWeight="bold"
-            sx={{ flex: 2, whiteSpace: "nowrap", fontSize: "1rem" }}
-          >
+          <h1 style={{ flex: 2, whiteSpace: "nowrap", fontSize: "1rem" }}
+>
             {activityLength}  Things to do in Dubai
-          </Typography>
+          </h1>
 
           <Box
             sx={{

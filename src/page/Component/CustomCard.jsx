@@ -89,7 +89,7 @@ const CustomCard = () => {
         filteredActivities.map((val, ind) => (
           <Grid item lg={3} md={6} sm={12} xs={12} key={ind}>
             <Box
-              onClick={() => navigate(`/${val.slug}`)}
+              onClick={() => navigate(`things-to-do-in-dubai/${val.slug}`)}
               sx={{
                 backgroundColor: "white",
                 border: "1px solid rgba(0, 0, 0, 0.1)",
@@ -100,6 +100,7 @@ const CustomCard = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'start',
+                // height: "48vh",
                 cursor: 'pointer'
               }}
             >

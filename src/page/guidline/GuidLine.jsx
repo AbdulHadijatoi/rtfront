@@ -116,7 +116,14 @@ const dispatch =  useDispatch()
         <>
             <Page title={nameProp}>
                 <Overlay title="Guidelines" imageUrl={guidelineimage} />
-
+                
+                <h1 style={{
+                    fontSize: "1.3rem",
+                    fontWeight: "600",
+                    color: '#832d14',
+                }}>
+                Guildlines
+                </h1>
 
                 <Box sx={{ padding: '10px 5%',
                     margin: 'auto',

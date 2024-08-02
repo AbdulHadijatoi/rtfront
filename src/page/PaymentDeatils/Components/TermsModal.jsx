@@ -46,16 +46,13 @@ const TermsModal = ({ isOpen, onClose }) => {
 
       <Box>
 
- <Typography
-          variant="h1"
-          sx={{
+      <h1 style={{
             fontSize: "1.3rem",
             fontWeight: "600",
-            color: theme.palette.primary.main,
-          }}
-        >
+            color: '#832d14',
+          }}>
           Terms & Conditions
-        </Typography>
+        </h1>
 
 
         <Typography sx={{ color: "grey", marginTop: "1rem", fontSize: "13px" }}>

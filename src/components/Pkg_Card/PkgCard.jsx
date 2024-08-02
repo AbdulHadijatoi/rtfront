@@ -66,7 +66,7 @@ const PkgCard = ({ data, categories, ind }) => {
       image_url: `${base}${data?.image_url}`
     };
     Cookies.set('BookingImage', JSON.stringify(bookingData), { expires: farFutureDate });
-    navigate(`/${data.slug}`);
+    navigate(`/things-to-do-in-dubai/${data.slug}`);
   };
 
   const handleFavoriteClick = (activityId, activityData) => {

@@ -40,6 +40,7 @@ import UnAuthDetail from "./page/Help_Page/UnAuthDetail";
 import GenerateCheckoutInvoice from "./page/PaymentDeatils/GenerateCheckoutInvoice";
 import ErrorPage from "./components/ErrorBoundary/components/ErrorPage";
 import PaymentErrorPage from "./page/PaymentDeatils/PaymentErrorPage"; // Import the new component
+import ThankYouPage from "./page/PaymentDeatils/ThankYouPage"; // Import the new component
 import GiftPaymentInfo from "./page/gift/GiftPaymentInfo"; // Import the new component
 
 export default function Router() {
@@ -91,7 +92,7 @@ export default function Router() {
     { path: getMatchedRouteForPath("/guest-details").route, element: <GuestDetailsMain nameProp={getMatchedRouteForPath("/guest-details").nameProp} /> },
     { path: getMatchedRouteForPath("/about").route, element: <About_Us nameProp={getMatchedRouteForPath("/about").nameProp} /> },
     { path: getMatchedRouteForPath("/invoice-details").route, element: <InvoiceDetails nameProp={getMatchedRouteForPath("/invoice-details").nameProp} /> },
-    { path: getMatchedRouteForPath("/:id").route, element: <DetailPage nameProp={getMatchedRouteForPath("/:id").nameProp} /> },
+    { path: getMatchedRouteForPath("things-to-do-in-dubai/:id").route, element: <DetailPage nameProp={getMatchedRouteForPath("things-to-do-in-dubai/:id").nameProp} /> },
     { path: getMatchedRouteForPath("/search-result").route, element: <Search_Results nameProp={getMatchedRouteForPath("/search-result").nameProp} /> },
     { path: getMatchedRouteForPath("/desert-safari").route, element: <Categories nameProp={getMatchedRouteForPath("/desert-safari").nameProp} /> },
     { path: getMatchedRouteForPath("/privacy-policy").route, element: <Privacy_Policy nameProp={getMatchedRouteForPath("/privacy-policy").nameProp} /> },
@@ -99,7 +100,7 @@ export default function Router() {
     { path: getMatchedRouteForPath("/booking-info").route, element: <Booking_Info nameProp={getMatchedRouteForPath("/booking-info").nameProp} /> },
     { path: getMatchedRouteForPath("/contact-us").route, element: <Contact_Us nameProp={getMatchedRouteForPath("/contact-us").nameProp} /> },
     { path: getMatchedRouteForPath("/blogs").route, element: <BlogsMain nameProp={getMatchedRouteForPath("/blogs").nameProp} /> },
-    { path: getMatchedRouteForPath("/blog-detail/:id").route, element: <BlogDetail nameProp={getMatchedRouteForPath("/blog-detail/:id").nameProp} /> },
+    { path: getMatchedRouteForPath("/blogs/:id").route, element: <BlogDetail nameProp={getMatchedRouteForPath("/blogs/:id").nameProp} /> },
     { path: getMatchedRouteForPath("/help").route, element: <HelpPageMain nameProp={getMatchedRouteForPath("/help").nameProp} /> },
     { path: getMatchedRouteForPath("/where-to-find-us").route, element: <WhereFindMain nameProp={getMatchedRouteForPath("/where-to-find-us").nameProp} /> },
     { path: getMatchedRouteForPath("/payment-details").route, element: <PaymentDetailsMain nameProp={getMatchedRouteForPath("/payment-details").nameProp} /> },
@@ -118,6 +119,7 @@ export default function Router() {
     { path: getMatchedRouteForPath("/preview-card").route, element: <PreviewCard nameProp={getMatchedRouteForPath("/preview-card").nameProp} /> },
     { path: getMatchedRouteForPath("/payment-help").route, element: <UnAuthDetail nameProp={getMatchedRouteForPath("/payment-help").nameProp} /> },
     { path: getMatchedRouteForPath("/payment-error").route, element: <PaymentErrorPage /> }, // Add this line
+    { path: getMatchedRouteForPath("/thank-you").route, element: <ThankYouPage /> }, // Add this line
     { path: getMatchedRouteForPath("/gift-payment-info/:code").route, element: <GiftPaymentInfo /> }, // Add this line
   ]);
 
