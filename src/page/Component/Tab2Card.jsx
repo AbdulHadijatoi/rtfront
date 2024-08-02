@@ -82,7 +82,7 @@ const Tab2Card = (props) => {
         filteredActivities.map((val, ind) => (
           <Grid item lg={4} md={4} sm={12} xs={12} key={ind}>
             <Box
-              onClick={() => navigate(`/things-to-do-in-dubai/${val.slug}`)}
+              onClick={() => navigate(`/dubai-activities/${val.slug}`)}
               sx={{
                 minHeight: '20rem',
                 // maxHeight: '20rem',

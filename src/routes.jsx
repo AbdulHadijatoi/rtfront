@@ -92,7 +92,7 @@ export default function Router() {
     { path: getMatchedRouteForPath("/guest-details").route, element: <GuestDetailsMain nameProp={getMatchedRouteForPath("/guest-details").nameProp} /> },
     { path: getMatchedRouteForPath("/about").route, element: <About_Us nameProp={getMatchedRouteForPath("/about").nameProp} /> },
     { path: getMatchedRouteForPath("/invoice-details").route, element: <InvoiceDetails nameProp={getMatchedRouteForPath("/invoice-details").nameProp} /> },
-    { path: getMatchedRouteForPath("things-to-do-in-dubai/:id").route, element: <DetailPage nameProp={getMatchedRouteForPath("things-to-do-in-dubai/:id").nameProp} /> },
+    { path: getMatchedRouteForPath("dubai-activities/:id").route, element: <DetailPage nameProp={getMatchedRouteForPath("dubai-activities/:id").nameProp} /> },
     { path: getMatchedRouteForPath("/search-result").route, element: <Search_Results nameProp={getMatchedRouteForPath("/search-result").nameProp} /> },
     { path: getMatchedRouteForPath("/desert-safari").route, element: <Categories nameProp={getMatchedRouteForPath("/desert-safari").nameProp} /> },
     { path: getMatchedRouteForPath("/privacy-policy").route, element: <Privacy_Policy nameProp={getMatchedRouteForPath("/privacy-policy").nameProp} /> },

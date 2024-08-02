@@ -279,7 +279,7 @@ const currentYear = new Date().getFullYear();
               >
                 <MuiLink
                   component={Link}
-                  to="/things-to-do-in-dubai"
+                  to="/dubai-activities"
 
                   sx={{
 
