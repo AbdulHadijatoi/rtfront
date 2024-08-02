@@ -405,7 +405,7 @@ flexWrap:'wrap'
           <img src='/thingstodo.svg' width={'30rem'} />
           <h1 style={{ flex: 2, whiteSpace: "nowrap", fontSize: "1rem" }}
 >
-            {activityLength}  Things to do in Dubai
+            {activityLength}  Dubai Activities
           </h1>
 
           <Box

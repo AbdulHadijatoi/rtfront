@@ -38,7 +38,7 @@ const Popular = () => {
                     Best Selling Activities
                 </Typography>
                 <Typography sx={{ color: theme.palette.primary.textPrimary, fontSize: '14px' }}>
-                    Dubai is the place to seek out everything you imagine and beyond. Find it all here Things to do in Dubai,
+                    Dubai is the place to seek out everything you imagine and beyond. Find it all here Dubai Activities,
                     Culture, nature, thrills, and more...
                 </Typography>
                 <Box sx={{ padding: '30px 50px' }}>

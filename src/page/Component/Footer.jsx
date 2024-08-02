@@ -288,7 +288,7 @@ const currentYear = new Date().getFullYear();
                     "&:hover": { textDecoration: "none" },
                   }}
                 >
-                  Things To Do In Dubai
+                  Dubai Activities
                 </MuiLink>
               </Typography>
               
