@@ -970,11 +970,6 @@ const Navbar = () => {
               zIndex: 9999
           }}>
 
-
-          <a href="tel:+971588627171" style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <FiPhoneCall style={{ marginTop: '10px', color: 'white', fontSize: '20px' }} />
-          </a>
-
           </Button>
       </Box>
     </>
