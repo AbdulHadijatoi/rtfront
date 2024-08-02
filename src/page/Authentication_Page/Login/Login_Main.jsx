@@ -24,7 +24,7 @@ import { FaGoogle } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import Page from "../../../components/page";
-const Login_Main = () => {
+const Login_Main = ({onClose}) => {
   const initialValues = {
     email: "",
     password: "",
@@ -59,6 +59,7 @@ const navigate = useNavigate()
         enqueueSnackbar(res.data.message, { variant: "success" });
         // alert(res.data.message, 'response')
         setFormValues(initialValues)
+        onClose();
         navigate('/')
       })
       .catch((err) => {
@@ -77,8 +78,6 @@ const navigate = useNavigate()
 
       <Box sx={{
                 marginTop: '10px', 
-                padding: isSmall? "2rem 3rem" : "2rem 8rem",
-                
           }}>
         <Box
           sx={{
@@ -111,7 +110,7 @@ const navigate = useNavigate()
           </Box>
           </Box>
           <form onSubmit={handleSubmit}>
-            <Box sx={{ width: "400px", margin: 'auto', marginTop: "3rem" }}>
+            <Box sx={{ width: {xs:"100%", md: '400px'}, margin: 'auto', marginTop: "3rem" }}>
               <Box sx={{ textAlign: "start" }}>
                 <TextField
                   type="email"
@@ -185,15 +184,15 @@ const navigate = useNavigate()
                 <Button
                   type="submit"
                   variant="contained"
-                  sx={{ width: "100%", padding: "0.5rem 0rem" }}
+                  sx={{ width: "100%", padding: "0.5rem 0rem", color: 'white' }}
                 >
                   Sign in
                 </Button>
               )}
             </Box>
           </form>
-
-          <Typography
+          <br/><br/>
+          {/* <Typography
             sx={{ marginTop: "1rem", color: "grey", fontSize: "0.9rem", textAlign:'center' }}
           >
             or sign in with
@@ -258,9 +257,9 @@ const navigate = useNavigate()
           >
             <FaApple style={{fontSize:'1rem'}}/>
           </Button>
-        </Box>
+        </Box> */}
 
-          <Box
+          {/* <Box
             sx={{
               marginTop: "1rem",
               display: "flex",
@@ -282,7 +281,7 @@ const navigate = useNavigate()
                 Signup!
               </Typography>
             </Link>
-          </Box>
+          </Box> */}
         </Box>
 
 </Page>

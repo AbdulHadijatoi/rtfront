@@ -17,6 +17,11 @@ import {
   Link as MuiLink,
   Avatar,
   Select,
+
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions
 } from "@mui/material";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
@@ -34,8 +39,30 @@ import { PiBuildingsBold } from "react-icons/pi";
 import { logout } from "../../store/actions/authActions";
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import SearchIcon from '@mui/icons-material/Search';
+import LoginMain from '../Authentication_Page/Login/Login_Main';
+import SignupMain from '../Authentication_Page/Signup/Signup_Main';
 
 const Navbar = () => {
+  const [signupOpen, setSignupOpen] = useState(false);
+
+  const openSignupDialog = () => {
+    setSignupOpen(true);
+  };
+
+  const closeSignupDialog = () => {
+    setSignupOpen(false);
+  };
+  
+  const [loginOpen, setLoginOpen] = useState(false);
+
+  const openLoginDialog = () => {
+    setLoginOpen(true);
+  };
+
+  const closeLoginDialog = () => {
+    setLoginOpen(false);
+  };
+
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const theme = useTheme();
@@ -485,6 +512,7 @@ const Navbar = () => {
                   <Select
                     sx={{
                       outline: "none",
+                      marginTop: "0.5rem",
                       "&:focus": {
                         outline: "none",
                       },
@@ -539,6 +567,50 @@ const Navbar = () => {
 
               </Box>
 
+              {!authh ?(
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    marginTop: "1rem",
+                    cursor: "pointer",
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontSize: "12px",
+                      marginBottom: "0.9rem",
+                      textTransform: "none",
+                    }}
+                  >
+                    <Badge
+                      // badgeContent={0}
+                      badgeContent={cartItemCount}
+                      color="primary"
+                      anchorOrigin={{
+                        vertical: "top",
+                        horizontal: "left",
+                      }}
+                    >
+                      <MuiLink
+                        component={Link}
+                        // to="/cart"
+                        onClick={openSignupDialog}
+
+                        sx={{
+                          alignItems: "center",
+                          display: "flex",
+                          textDecoration: "none",
+                          color: "inherit",
+                          "&:hover": { textDecoration: "none" },
+                        }}
+                      >
+                        SignUp
+                      </MuiLink>
+                    </Badge>
+                  </Typography>
+                </Box>
+              ):(<Box></Box>)}
               
               <Box
                 sx={{
@@ -618,7 +690,8 @@ const Navbar = () => {
                 ) : (
                   <MuiLink
                     component={Link}
-                    to="/login"
+                    // to="/login"
+                    onClick={openLoginDialog}
                     sx={{
                       alignItems: "center",
                       display: "flex",
@@ -973,6 +1046,18 @@ const Navbar = () => {
 
           </Button>
       </Box>
+      <Dialog open={signupOpen} onClose={closeSignupDialog}>
+        <DialogContent>
+          <SignupMain onClose={closeSignupDialog} openLogin={loginOpen}/>
+        </DialogContent>
+        
+      </Dialog>
+      
+      <Dialog open={loginOpen} onClose={closeLoginDialog}>
+        <DialogContent>
+          <LoginMain onClose={closeLoginDialog}/>
+        </DialogContent>
+      </Dialog>
     </>
   );
 };

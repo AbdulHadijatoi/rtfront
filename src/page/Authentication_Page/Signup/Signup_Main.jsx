@@ -22,7 +22,7 @@ import { FaGoogle } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import Page from "../../../components/page";
-const Signup_Main = () => {
+const Signup_Main = ({onClose}) => {
   const initialValues = {
     first_name: "",
     last_name: "",
@@ -84,7 +84,9 @@ const Signup_Main = () => {
 
         setFormValues(initialValues);
 
-        navigate("/login");
+        onClose();
+
+        // navigate("/login");
       })
       .catch((err) => {
         setLoading(false);
@@ -103,7 +105,7 @@ const Signup_Main = () => {
           justifyContent: 'center'
         }}>
 
-            <Box sx={{ padding: isSmall? "2rem 4rem" : "2rem 8rem" }}>
+            <Box sx={{ }}>
               <Box
                 sx={{
                   display: "flex",
@@ -134,7 +136,7 @@ const Signup_Main = () => {
                 </Box>
 
                 <Box
-                  sx={{ width: "100%", marginTop: "3rem" }}
+                  sx={{ width: {xs: "100%", md: '400px'}, marginTop: "3rem" }}
                   component="form"
                   onSubmit={handleSubmit}
                 >
@@ -295,6 +297,7 @@ const Signup_Main = () => {
                       sx={{
                         width: "100%",
                         padding: "0.5rem 0rem",
+                        color: 'white',
                         textTransform: "none",
                       }}
                     >
@@ -303,7 +306,7 @@ const Signup_Main = () => {
                   )}
                 </Box>
 
-                <Typography
+                {/* <Typography
                   sx={{
                     marginTop: "1rem",
                     color: "grey",
@@ -399,7 +402,8 @@ const Signup_Main = () => {
                       Login
                     </Typography>
                   </Link>
-                </Box>
+                </Box> */}
+                <br/><br/>
               </Box>
             </Box>
 
