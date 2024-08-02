@@ -65,7 +65,6 @@ const AllActivities = () => {
        top: 0, zIndex: 999, 
        backgroundColor: 'white', 
         borderTop: '1px solid rgba(0,0,0,0.1)',
-        borderBottom: '1px solid rgba(0,0,0,0.1)',
        display: "flex", 
        justifyContent: "space-between", 
        }} gap={2}>
