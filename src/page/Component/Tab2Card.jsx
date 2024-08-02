@@ -96,7 +96,7 @@ const Tab2Card = (props) => {
             >
               <Box sx={{ position: "relative" }}>
                 <img
-                  src={`http://rtadmin.rahtourism.com/storage/uploads/media/${val.image}`}
+                  src={`https://rtadmin.rahtourism.com/storage/uploads/media/${val.image}`}
                   alt="Header image"
                   style={{
                     width: "100%",

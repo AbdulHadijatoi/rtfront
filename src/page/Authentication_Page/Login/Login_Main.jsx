@@ -78,10 +78,7 @@ const navigate = useNavigate()
       <Box sx={{
                 marginTop: '10px', 
                 padding: isSmall? "2rem 3rem" : "2rem 8rem",
-                margin: 'auto',
-                width: {
-                  lg: '1280px',
-                }, 
+                
           }}>
         <Box
           sx={{

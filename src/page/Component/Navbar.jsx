@@ -33,12 +33,13 @@ import { FaChevronRight } from "react-icons/fa6";
 import { PiBuildingsBold } from "react-icons/pi";
 import { logout } from "../../store/actions/authActions";
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
+import SearchIcon from '@mui/icons-material/Search';
 
 const Navbar = () => {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const theme = useTheme();
-  const base = 'http://rtadmin.rahtourism.com/'
+  const base = 'https://rtadmin.rahtourism.com/'
 
 
   const user = useSelector((state) => state?.auth?.user);
@@ -306,7 +307,7 @@ const Navbar = () => {
                     position="start"
                     style={{ paddingLeft: 10, paddingRight: 10, margin: 0 }}
                   >
-                    <img src="./search-new.svg" width="25px"/>
+                    <SearchIcon />
                   </InputAdornment>
                 ),
               }}

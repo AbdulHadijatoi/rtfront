@@ -7,7 +7,7 @@ import { getBlogBID } from "../../store/actions/blogAction";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import Page from "../../components/page";
 const BlogDetail = () => {
-  const base = "http://rtadmin.rahtourism.com/";
+  const base = "https://rtadmin.rahtourism.com/";
   const navigate = useNavigate();
   const { id } = useParams();
   const handleBack = () => {

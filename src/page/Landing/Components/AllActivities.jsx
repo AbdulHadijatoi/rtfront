@@ -80,7 +80,7 @@ const AllActivities = () => {
         {!loading && staticCategories.map((val, ind) => (
           <Box key={ind} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
             <Button
-              sx={{ textTransform: "none", color: "grey" }}
+              sx={{ textTransform: "none", color: "black" }}
               onClick={() => navigate(menus[4]?.route, { state: { categoryId: categoryMap[val.name] } })}
               disabled={loading} // Disable button while loading
             >

@@ -89,38 +89,7 @@ Contact us any time during your stay and our specialists will recognize you by y
 
               </Typography>
 
-              <Typography sx={{textAlign:'center', fontSize:'1.1rem', fontWeight:600}}>
-              Dubai, UAE
-              </Typography>
-
-
-<Typography sx={{fontSize:'0.9rem', textAlign:'center', color:'grey'}}>
-Sheikh Zayed Road
-
-</Typography>
-<Typography sx={{fontSize:'0.9rem', textAlign:'center', color:'grey'}}>
-
-P.O. Box 232268 Dubai, United Arab Emirates
-
-</Typography>
-
-<Typography sx={{fontSize:'0.9rem', textAlign:'center', color:'grey'}}>
-What's app or Call:
-{/* <Link href="tell:+971529331100">
-+971 52 933 1100,
-        </Link> */}
-
-        <a href="tel:+971529331100" style={{textDecoration:'none', color:'grey'}}> {" "}+971 52 933 1100</a>
-
-<br/>
- 24/7 Chat available on site.
-</Typography>
-<Typography sx={{fontSize:'0.9rem', textAlign:'center', color:'grey'}} variant="body1">
-        For MICE and Group Bookings email us:
-        <Link href="mailto:bookings@rahtours.ae">
-          {" "}bookings@rahtours.ae
-        </Link>
-      </Typography>
+{/*               
               <Button
                 variant="contained"
                 sx={{
@@ -132,7 +101,7 @@ What's app or Call:
                 endIcon={<ArrowForward />}
               >
                 Learn More
-              </Button>
+              </Button> */}
             </Box>
           </Grid>
 

@@ -98,10 +98,7 @@ const Signup_Main = () => {
     <>
       <Page title="Signup">
         <Box mt={2} sx={{
-          margin: 'auto',
-          width: {
-            lg: '1280px',
-          }, 
+
           display: 'flex',
           justifyContent: 'center'
         }}>

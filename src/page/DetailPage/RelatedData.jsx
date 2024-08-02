@@ -9,7 +9,7 @@ const RelatedData = ({ onItemClick }) => {
   const theme = useTheme();
   const [value, setValue] = useState(5);
   const [loading, setLoading] = useState(false);
-  const base = "http://rtadmin.rahtourism.com/";
+  const base = "https://rtadmin.rahtourism.com/";
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const popularActivities = useSelector(
@@ -103,7 +103,7 @@ const RelatedData = ({ onItemClick }) => {
         }}
       >
         <Typography sx={{ fontSize: "20px", fontWeight: 700 }}>
-          Other Experience You Might Like
+          Experience & Activities for you
         </Typography>
 
         <Grid container spacing={3}>
@@ -116,14 +116,14 @@ const RelatedData = ({ onItemClick }) => {
                     backgroundColor: "white",
                     borderRadius: "12px",
                     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                    height: '48vh',
+                    height: '425px',
                     overflow: "hidden",
                     padding: "5px",
                   }}
                 >
                   <Box sx={{ position: "relative" }}>
                     <img
-                      src={`http://rtadmin.rahtourism.com/storage/uploads/media/${val.image}`}
+                      src={`https://rtadmin.rahtourism.com/storage/uploads/media/${val.image}`}
                       alt="Header"
                       style={{
                         width: "100%",

@@ -35,7 +35,7 @@ const Popular = () => {
                 display: 'flex', flexDirection: 'column', alignItems: {xs: 'center', sm: 'center', md: 'start'}, justifyContent: 'center',
             }}>
                 <Typography sx={{ fontSize: isSmall ? '15px' : '24px', fontWeight: 600, }}>
-                    Best Selling Activities
+                    Travelers' Favorite Choice
                 </Typography>
                 <Typography sx={{ color: theme.palette.primary.textPrimary, fontSize: '14px' }}>
                     Dubai is the place to seek out everything you imagine and beyond. Find it all here Dubai Activities,
