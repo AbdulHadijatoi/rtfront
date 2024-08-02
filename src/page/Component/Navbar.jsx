@@ -43,6 +43,19 @@ import LoginMain from '../Authentication_Page/Login/Login_Main';
 import SignupMain from '../Authentication_Page/Signup/Signup_Main';
 
 const Navbar = () => {
+
+  const [recentlyViewed, setRecentlyViewed] = useState([]);
+  
+  const loadRecentlyActivitiesData = () => {
+    // Retrieve the data from local storage
+    const data = JSON.parse(localStorage.getItem('visitedData') || '[]');
+    setRecentlyViewed(data);
+  };
+
+  const openRecentActivity = (value) => {
+    console.log('Selected:', value);
+  };
+
   const [signupOpen, setSignupOpen] = useState(false);
 
   const openSignupDialog = () => {
@@ -171,6 +184,10 @@ const Navbar = () => {
 
   const handleSignup = () => {
     navigate("/login");
+  };
+  
+  const handleRegister = () => {
+    navigate("/signup");
   };
 
   const handleDrawerClose = () => {
@@ -508,63 +525,126 @@ const Navbar = () => {
               </Box>
 
               <Box>
+                <Select
+                  sx={{
+                    outline: 'none',
+                    marginTop: '0.5rem',
+                    '&:focus': {
+                      outline: 'none',
+                    },
+                    '& .MuiOutlinedInput-notchedOutline': {
+                      border: 'none',
+                    },
+                  }}
+                  value={selectedValue}
+                  onChange={handleChange}
+                  onOpen={loadRecentlyActivitiesData}
+                  displayEmpty
+                  inputProps={{ 'aria-label': 'Recently Viewed' }}
+                  renderValue={(selected) => (
+                    <Typography sx={{ fontSize: '12px' }}>
+                      {selected || 'Recently Viewed'}
+                    </Typography>
+                  )}
+                  IconComponent={() => null} // Remove the dropdown icon
+                >
+                  <Box sx={{height: "50vh"}}>
 
-                  <Select
-                    sx={{
-                      outline: "none",
-                      marginTop: "0.5rem",
-                      "&:focus": {
-                        outline: "none",
-                      },
-                      "& .MuiOutlinedInput-notchedOutline": {
-                        border: "none",
-                      },
-                    }}
-                    value={selectedValue}
-                    onChange={handleChange}
-                    displayEmpty
-                    inputProps={{ "aria-label": "Recently Viewed" }}
-                    renderValue={(selected) => (
+                    {recentlyViewed.map((item, index) => (
+                      <MenuItem
+                        key={index}
+                        value={item.name}
+                        sx={{ fontSize: '0.8rem', width: '400px', padding: '10px', borderBottom: '1px solid rgba(0,0,0,0.2)' }}
+                        onClick={() => handleMenuItemClick(item)}
+                      >
+                        <Box
+                            onClick={() => navigate(`dubai-activities/${item.slug}`)}
+                            sx={{
+                              backgroundColor: "white",
+                              display: 'flex',
+                              alignItems: 'start',
+                              cursor: 'pointer'
+                            }}
+                          >
+                            <Box sx={{ position: "relative" }}>
+                              <img
+                                src={`https://rtadmin.rahtourism.com/storage/uploads/media/${item.image}`}
+                                alt="Header"
+                                style={{
+                                  width: "80px",
+                                  height: '80px',
+                                  objectFit: "cover",
+                                }}
+                              />
+                            </Box>
 
-                      <Typography sx={{ fontSize: '12px' }}>
-                        Recently Viewed
-                      </Typography>
-                    )}
-                    IconComponent={() => null} // Remove the dropdown icon
-                  >
-                    <MenuItem
-                      value="Manage Profile"
-                      sx={{ fontSize: '0.8rem', width: '400px', padding: '10px' }}
-                      onClick={() => handleMenuItemClick("Manage Profile")}
-                    >
-                      Manage Profile
-                    </MenuItem>
+                            <Box
+                              p={2}
+                              sx={{ padding: '10px', width: "300px", display: "flex", flexDirection: "column", gap: "10px" }}
+                            >
+                              <Typography
+  sx={{
+    fontSize: '12px',
+    textAlign: 'start',
+    fontWeight: 600,
+    color: theme.palette.primary.textPrimary,
+    wordBreak: 'break-word',
+    overflowWrap: 'break-word',
+    whiteSpace: 'normal',
+    maxHeight: '4.5rem',
+    lineHeight: '1.5rem',
+    width: '100%',
+  }}
+>
+  {item.name}
+</Typography>
 
-                    <MenuItem
-                      sx={{ fontSize: '0.8rem', width: '400px', padding: '10px' }}
-                      value="Booking"
-                      onClick={() => handleMenuItemClick("Booking")}
-                    >
-                      Booking
-                    </MenuItem>
 
-                    <MenuItem
-                      sx={{ fontSize: '0.8rem', width: '400px', padding: '10px' }}
-                      value="History"
-                      onClick={() => handleMenuItemClick("History")}
-                    >
-                      History
-                    </MenuItem>
+                              <Box sx={{ width: "90%", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
 
-                    <MenuItem
-                      sx={{ fontSize: '0.8rem', width: '400px', padding: '10px' }}
-                      value="Logout"
-                      onClick={() => handleMenuItemClick("Logout")}
-                    >
-                      Logout
-                    </MenuItem>
-                  </Select>
+                                <Typography sx={{ fontSize: "0.75rem", color: "grey" }}>
+                                  Per person Price
+                                </Typography>
 
+                                <Box gap={1} sx={{}}>
+                                  {item.packages && item.packages.length > 0 && (
+                                    <>
+                                      <Box gap={1} sx={{ display: "flex", }}>
+                                        {item.discount_offer > 0 && (
+                                          <Typography sx={{ color: "grey", textDecoration: "line-through", fontSize: '0.8rem' }}>
+                                            {item.packages[0].category === "private"
+                                              ? `AED ${item.packages[0].price}`
+                                              : `AED ${item.packages[0].adult_price}`}
+                                          </Typography>
+                                        )}
+
+                                        <Typography fontWeight="bold" color={theme.palette.primary.main} fontSize='0.8rem'>
+                                          {item.packages[0].category === "private"
+                                            ? `AED ${(
+                                              item.packages[0].price -
+                                              (item.packages[0].price * item.discount_offer) / 100
+                                            )}`
+                                            : `AED ${(
+                                              item.packages[0].adult_price -
+                                              (item.packages[0].adult_price *
+                                                item.discount_offer) /
+                                              100
+                                            )}`} {" "}
+                                        </Typography>
+
+                                      </Box>
+
+                                    </>
+                                  )}
+                                </Box>
+
+                              </Box>
+                            </Box>
+                          </Box>
+                      </MenuItem>
+                    ))}
+                  </Box>
+                </Select>
               </Box>
 
               {!authh ?(
@@ -959,18 +1039,35 @@ const Navbar = () => {
               </FormControl>
             </Box>
           ) : (
-            <Button
-              onClick={handleSignup}
-              variant="contained"
-              sx={{
-                backgroundColor: theme.palette.primary.main,
-                padding: "0.5rem 2rem",
-                textTransform: "none",
-                color: 'white'
-              }}
-            >
-              Login
-            </Button>
+            <Box>
+              <Button
+                onClick={handleRegister}
+                variant="contained"
+                sx={{
+                  backgroundColor: theme.palette.primary.main,
+                  padding: "0.5rem 2rem",
+                  textTransform: "none",
+                  marginRight: '10px',
+                  color: 'white'
+                }}
+              >
+                Sign Up
+              </Button>
+              
+              <Button
+                onClick={handleSignup}
+                variant="contained"
+                sx={{
+                  backgroundColor: theme.palette.primary.main,
+                  padding: "0.5rem 2rem",
+                  textTransform: "none",
+                  color: 'white'
+                }}
+              >
+                Login
+              </Button>
+              
+            </Box>
           )}
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <TextField
