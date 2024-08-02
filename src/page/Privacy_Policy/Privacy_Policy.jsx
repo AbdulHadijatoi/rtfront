@@ -73,7 +73,7 @@ const Privacy_Policy = ({nameProp}) => {
         <h1 style={{
             fontSize: "1.3rem",
             fontWeight: "600",
-            color: '#832d14',
+            color: '#ee8e3b',
           }}>
           Privacy Policy
         </h1>

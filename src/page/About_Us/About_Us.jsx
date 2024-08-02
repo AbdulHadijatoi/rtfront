@@ -60,7 +60,7 @@ const About_Us = ({nameProp}) => {
           variant="h4"
           fontWeight="bold"
           color="primary"
-          style={{ color: '#832d14',fontSize: "1.5rem", fontWeight: 700 }}
+          style={{ color: '#ee8e3b',fontSize: "1.5rem", fontWeight: 700 }}
         >
           About Us
         </h1>

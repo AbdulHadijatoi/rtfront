@@ -21,7 +21,7 @@ const WhereFindMain = ({nameProp}) => {
           variant="h4"
           fontWeight="bold"
           color="primary"
-          style={{ width: '100%', textAlign: 'center', marginTop: '15px', color: '#832d14',fontSize: "1.5rem", fontWeight: 700 }}
+          style={{ width: '100%', textAlign: 'center', marginTop: '15px', color: '#ee8e3b',fontSize: "1.5rem", fontWeight: 700 }}
         >
           Where To Find Us
         </h1>

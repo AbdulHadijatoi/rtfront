@@ -957,7 +957,7 @@ const Navbar = () => {
       {!isHomePage && <Breadcrumbs />}
       <Box sx={{ position: 'fixed', bottom: 5, right: 5, display: {xs: 'flex', md:'none' }, justifyContent: 'cetner', alignItems: 'center', zIndex: 9999 }}>
           <Button variant='contained' sx={{
-              backgroundColor: '#832d14',
+              backgroundColor: '#ee8e3b',
               textTransform: 'none',
               color: "#FFF",
               fontWeight: 600,

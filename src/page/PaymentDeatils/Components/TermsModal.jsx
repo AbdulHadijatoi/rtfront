@@ -49,7 +49,7 @@ const TermsModal = ({ isOpen, onClose }) => {
       <h1 style={{
             fontSize: "1.3rem",
             fontWeight: "600",
-            color: '#832d14',
+            color: '#ee8e3b',
           }}>
           Terms & Conditions
         </h1>
