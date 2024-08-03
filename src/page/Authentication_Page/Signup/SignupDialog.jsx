@@ -22,7 +22,7 @@ import { FaGoogle } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import Page from "../../../components/page";
-const Signup_Main = ({onLoginClick}) => {
+const Signup_Main = ({onClose, onLoginClick}) => {
   const initialValues = {
     first_name: "",
     last_name: "",
@@ -84,7 +84,9 @@ const Signup_Main = ({onLoginClick}) => {
 
         setFormValues(initialValues);
 
-        navigate("/login");
+        onLoginClick();
+
+        // navigate("/login");
       })
       .catch((err) => {
         setLoading(false);
@@ -111,7 +113,7 @@ const Signup_Main = ({onLoginClick}) => {
                   textAlign: "center",
                 }}
               >
-                <Box sx={{width: '90%', borderBottom: '1px solid rgba(0,0,0,0.2)', marginBottom: '15px'}}>
+                <Box sx={{width: '100%', borderBottom: '1px solid rgba(0,0,0,0.2)', marginBottom: '15px'}}>
                   <Typography
                     variant="h1"
                     sx={{ color: 'rgba(0,0,0,0.8)', fontSize: "1.1rem", fontWeight: "600", padding: '15px 0px'}}
@@ -474,24 +476,41 @@ const Signup_Main = ({onLoginClick}) => {
                   <Typography sx={{ fontSize: "0.85rem", textAlign: 'left' }}>
                   Already a member? Log in below to access your account and explore the world with ease.
                   </Typography>
-
-                  <Link to="/login" style={{ textDecoration: "none", textWrap: 'nowrap' }}>
-                    <Typography
-                      sx={{
-                        color: theme.palette.primary.main,
-                        marginLeft: "0.5rem",
-                        border: '1px solid black',
-                        padding: '6px 30px',
-                        borderRadius: '8px',
-                        fontSize: '0.9rem',
-                        borderColor: theme.palette.primary.main,
-                      }}
-                    >
-                      Log In
-                    </Typography>
-                  </Link>
+                  <Box sx={{display: {xs: 'block', md: 'none'}}}>
+                    <Link to="/login" style={{ textDecoration: "none", textWrap: 'nowrap' }}>
+                      <Typography
+                        sx={{
+                          color: theme.palette.primary.main,
+                          marginLeft: "0.5rem",
+                          border: '1px solid black',
+                          padding: '6px 30px',
+                          borderRadius: '8px',
+                          fontSize: '0.9rem',
+                          borderColor: theme.palette.primary.main,
+                        }}
+                      >
+                        Log In
+                      </Typography>
+                    </Link>
+                  </Box>
                   
-                  
+                  <Box sx={{display: {xs: 'none', md: 'block'}}}>
+                    <Link onClick={onLoginClick} style={{ textDecoration: "none", textWrap: 'nowrap' }}>
+                      <Typography
+                        sx={{
+                          color: theme.palette.primary.main,
+                          marginLeft: "0.5rem",
+                          border: '1px solid black',
+                          padding: '6px 30px',
+                          borderRadius: '8px',
+                          fontSize: '0.9rem',
+                          borderColor: theme.palette.primary.main,
+                        }}
+                      >
+                        Log In
+                      </Typography>
+                    </Link>
+                  </Box>
                 </Box>
 
               </Box>

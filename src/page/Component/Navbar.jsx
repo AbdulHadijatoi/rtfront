@@ -39,9 +39,9 @@ import { PiBuildingsBold } from "react-icons/pi";
 import { logout } from "../../store/actions/authActions";
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import SearchIcon from '@mui/icons-material/Search';
-import LoginMain from '../Authentication_Page/Login/Login_Main';
-import SignupMain from '../Authentication_Page/Signup/Signup_Main';
-import ForgotPassword from '../Authentication_Page/Components/Forget_Password';
+import LoginMain from '../Authentication_Page/Login/LoginDialog';
+import SignupMain from '../Authentication_Page/Signup/SignupDialog';
+import ForgotPassword from '../Authentication_Page/Components/ForgetPasswordDialog';
 
 const Navbar = () => {
 

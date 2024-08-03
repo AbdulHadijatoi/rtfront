@@ -45,7 +45,7 @@ const Forget_Password = () => {
         mt: 5,
       }}
     >
-      <Box sx={{ textAlign: "center", width: "500px", paddingBottom: "2rem" }}>
+      <Box sx={{ textAlign: "center", width: "90%", paddingBottom: "2rem" }}>
         <Typography variant="h1" sx={{ fontSize: "2rem", fontWeight: "600" }}>
           Forget Your Password
         </Typography>
