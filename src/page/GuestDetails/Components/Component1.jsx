@@ -549,7 +549,7 @@ const handleDelete = async (ids) => {
               </RadioGroup>
 
               <Typography sx={{ fontSize: "0.9rem", color: "grey" }}>
-                <label style={{color: "#872a10"}}>Note :</label> In the next step you will be redirected to your banks website to verify yourself.
+                <label style={{color: "#ee8e3b"}}>Note :</label> In the next step you will be redirected to your banks website to verify yourself.
               </Typography>
              
             </Box>

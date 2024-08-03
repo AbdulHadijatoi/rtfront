@@ -81,7 +81,7 @@ const StepperComp = ({ activeStep, handleNext, handleBack, handleSkip, handleRes
               Currently, you have {cartItemCount} item(s) in your cart.
               <br/>
               <Link to="/" style={{
-                color: "#832c13",
+                color: "#ee8e3b",
                 textDecoration: 'underline',
                 fontWeight: 'bold',
               }}>Continue Shopping</Link>

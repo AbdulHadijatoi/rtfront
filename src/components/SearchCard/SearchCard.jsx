@@ -155,7 +155,7 @@ const SearchCard = () => {
                   Your Wishlist is empty
                 </Typography>
                 <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
-                  <Button variant="contained" sx={{ textTransform: 'none' }} onClick={() => navigate(routes[4]?.route)}>
+                  <Button variant="contained" sx={{ textTransform: 'none', color: 'white', boxShadow: 'none' }} onClick={() => navigate(routes[4]?.route)}>
                   Find things to do
                   </Button>
                 </Box>

@@ -434,8 +434,8 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
                                             padding: "20px",
                                             border:
                                                 selectedItemIndex === index
-                                                    ? "2px solid #832c13"
-                                                    : "1px solid #832c13",
+                                                    ? "2px solid #ee8e3b"
+                                                    : "1px solid #ee8e3b",
                                             borderRadius: "10px",
                                             marginBottom: "10px",
                                             cursor: "pointer",

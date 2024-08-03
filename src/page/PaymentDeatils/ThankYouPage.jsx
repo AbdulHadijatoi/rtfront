@@ -11,8 +11,8 @@ const PaymentErrorPage = () => {
 
             <Box mt={5} mb={5}>
 
-                <EmailOutlinedIcon style={{ color: '#832c13', fontSize: '80px', marginBottom: '20px' }} />
-                <Typography variant="h4" style={{ color: '#832c13', marginBottom: '10px' }}>
+                <EmailOutlinedIcon style={{ color: '#ee8e3b', fontSize: '80px', marginBottom: '20px' }} />
+                <Typography variant="h4" style={{ color: '#ee8e3b', marginBottom: '10px' }}>
                     Thank you.
                 </Typography>
                 <Typography variant="body1" style={{ marginBottom: '20px' }}>

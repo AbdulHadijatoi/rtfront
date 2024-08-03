@@ -28,7 +28,7 @@ const PreviewCard = () => {
 
         </Typography>
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: "20px 0px", flexDirection: 'column' }}>
-          <Box sx={{ backgroundColor: 'white', padding: '50px', border: '6px solid #832c13', borderRadius: '25px', width: 'fit-content', textAlign: 'center' }}>
+          <Box sx={{ backgroundColor: 'white', padding: '50px', border: '6px solid #ee8e3b', borderRadius: '25px', width: 'fit-content', textAlign: 'center' }}>
 
             <Typography sx={{ color: 'black', fontWeight: '700', }}>Redeemable for te Vale of :</Typography>
 

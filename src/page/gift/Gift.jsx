@@ -17,7 +17,7 @@ const Gift = () => {
 
     return (
         <>
-            <Box sx={{ backgroundColor: "#832c13", height: '25vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '20px', gap: "10px" }}>
+            <Box sx={{ backgroundColor: "#ee8e3b", height: '25vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '20px', gap: "10px" }}>
                 <FiGift style={{ color: '#FFFFFF', }} size={100} />
                 <Typography sx={{ fontSize: "2rem", fontWeight: 700, color: "#FFFFFF" }}>Give a RAH Tours gift card</Typography>
                 <Typography sx={{ fontSize: "18px", fontWeight: 500, color: "#FFFFFF", textAlign: 'center', width: '70%' }}>Give the ones you love unforgettable travel experiences and make memories to last a lifetime rahtours on gift card</Typography>

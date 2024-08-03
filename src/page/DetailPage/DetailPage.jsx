@@ -594,7 +594,7 @@ const DetailPage = ({ nameProp }) => {
                         <Button
                           sx={{
                             ...btnStyle,
-                            color: isHighlighted("description") ? "#832c13" : "#0D0D0D",
+                            color: isHighlighted("description") ? "#ee8e3b" : "#0D0D0D",
                           }}
                         >
                           Description
@@ -605,7 +605,7 @@ const DetailPage = ({ nameProp }) => {
                           sx={{
                             ...btnStyle,
                             color: isHighlighted("Highlight")
-                              ? "#832c13"
+                              ? "#ee8e3b"
                               : "#0D0D0D",
                             fontSize: '0.9rem',
 
@@ -619,7 +619,7 @@ const DetailPage = ({ nameProp }) => {
                           sx={{
                             ...btnStyle,
                             color: isHighlighted("itinerary")
-                              ? "#832c13"
+                              ? "#ee8e3b"
                               : "#0D0D0D",
                             fontSize: '0.9rem'
 
@@ -633,7 +633,7 @@ const DetailPage = ({ nameProp }) => {
                           sx={{
                             ...btnStyle,
                             color: isHighlighted("whats-included")
-                              ? "#832c13"
+                              ? "#ee8e3b"
                               : "#0D0D0D",
                             fontSize: '0.9rem'
 
@@ -647,7 +647,7 @@ const DetailPage = ({ nameProp }) => {
                           sx={{
                             ...btnStyle,
                             color: isHighlighted("whats-not-included")
-                              ? "#832c13"
+                              ? "#ee8e3b"
                               : "#0D0D0D",
                             fontSize: '0.9rem'
 
@@ -661,7 +661,7 @@ const DetailPage = ({ nameProp }) => {
                           sx={{
                             ...btnStyle,
                             color: isHighlighted("trip-instructions")
-                              ? "#832c13"
+                              ? "#ee8e3b"
                               : "#0D0D0D",
                             fontSize: '0.9rem'
 

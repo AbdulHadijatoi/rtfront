@@ -9,7 +9,7 @@ const PaymentErrorPage = () => {
         <Container  style={{ textAlign: 'center'}}>
             <img src="/logo.png" alt="Logo" style={{  width: "300px",  }} />
 
-            <Typography variant="h4" style={{ color: '#832c13', marginBottom: '10px' }}>
+            <Typography variant="h4" style={{ color: '#ee8e3b', marginBottom: '10px' }}>
                 Oops! your payment did not get through
             </Typography>
             <Typography variant="body1" style={{ marginBottom: '20px' }}>
@@ -76,9 +76,9 @@ const PaymentErrorPage = () => {
 
             <Box mt={5}>
                 <Typography variant="body2" color="textSecondary">
-                    For any urgent bookings related issues please reach on call Dubai +971 52 933 1100, or Email us on <a style={{textDecoration: "none", color: "#832c13"}} href="mailto:info@rahtours.ae">Rahtours</a>
+                    For any urgent bookings related issues please reach on call Dubai +971 52 933 1100, or Email us on <a style={{textDecoration: "none", color: "#ee8e3b"}} href="mailto:info@rahtours.ae">Rahtours</a>
                 </Typography>
-                <Typography variant="body2" color="textSecondary" style={{ margin: '10px 0px 20px 0px', color: '#832c13' }}>
+                <Typography variant="body2" color="textSecondary" style={{ margin: '10px 0px 20px 0px', color: '#ee8e3b' }}>
                     Error Code:
                 </Typography>
             </Box>
