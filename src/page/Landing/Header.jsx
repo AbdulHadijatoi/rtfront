@@ -64,14 +64,14 @@ const Header = () => {
                 }, 
             }}>
                 <Typography sx={{
-                    fontSize: isSmall ? '25px' : '48px', fontWeight: 600, textAlign: { xs: 'center', sm: 'center', md:'left', lg: 'left'}
+                    fontSize: isSmall ? '25px' : '40px', fontWeight: 600, marginBottom: '5px', textAlign: { xs: 'center', sm: 'center', md:'left', lg: 'left'}
                 }}>
-                    Your world of joy
+                    Adventure awaits. Are you ready?
                 </Typography>
                 <Typography sx={{ 
-                    fontSize: '18px', width: isSmall ? '100%' : '70%', textAlign: { xs: 'center', sm: 'center', md:'left', lg: 'left'}
+                    fontSize: '18px', width: isSmall ? '100%' : '80%', marginBottom: '10px', textAlign: { xs: 'center', sm: 'center', md:'left', lg: 'left'}
                 }}>
-                    From local escapes to far-flung adventures, find what makes you happy anytime, anywhere
+                    Choose from our curated selection of activities, including city tours, yacht cruises, and water adventures.<br/>Immerse yourself in the best experiences, tailored for both tourists and residents in the UAE.
                 </Typography>
                 <Box sx={{marginTop: '10px',display: "flex", backgroundColor: 'white', borderRadius: "12px", alignItems: 'center', justifyContent: 'start', padding: '3px 4px', height: "48px", width: isSmall ? '100%' : '65%',}}>
                     <TextField
