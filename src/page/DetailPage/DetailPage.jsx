@@ -521,7 +521,7 @@ const DetailPage = ({ nameProp }) => {
                   <Typography sx={{ fontSize: '0.9rem', fontWeight: '500', margin: '0px 10px' }}>
                     {averageRating}/5.0 <a style={{fontSize: '13px', textDecoration: 'underline'}}>{data1?.reviews?.length} Reviews</a>
                   </Typography>
-                  <Typography sx={{ fontSize: '0.9rem', fontWeight: '500', margin: '0px 10px', color: 'grey', fontWeight: '400' }}>
+                  <Typography sx={{ fontSize: '0.9rem', margin: '0px 10px', color: 'grey', fontWeight: '400' }}>
                     Operated By: <a style={{fontSize: '13px', textDecoration: 'underline', color: 'black'}}>RAH Tourism</a>
                   </Typography>
                 </Box>
