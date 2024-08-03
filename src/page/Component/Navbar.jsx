@@ -554,7 +554,7 @@ const Navbar = () => {
                   )}
                   IconComponent={() => null} // Remove the dropdown icon
                 >
-                  <Box sx={{height: "50vh"}}>
+                  <Box sx={{maxHeight: "50vh"}}>
 
                     {recentlyViewed.map((item, index) => (
                       <MenuItem
