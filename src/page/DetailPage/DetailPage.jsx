@@ -51,9 +51,9 @@ const DetailPage = ({ nameProp }) => {
   const totalReviews = data1?.reviews?.length || 0;
   const averageRating = data1?.reviews?.reduce((acc, review) => acc + review?.rating, 0) / totalReviews || 0;
 
-  useEffect(() => {
-    setValue(Math.round(averageRating));
-  }, [averageRating]);
+  // useEffect(() => {
+  //   setValue(Math.round(averageRating));
+  // }, [averageRating]);
 
   const toggleDescription = () => {
     setIsExpanded(!isExpanded);
@@ -515,11 +515,11 @@ const DetailPage = ({ nameProp }) => {
                 <Box sx={{display: 'flex', alignItems: 'center', margin: '5px 0px 10px 0px'}}>
                   <Rating
                     name="simple-controlled"
-                    value={averageRating}
+                    value={Math.round(averageRating)}
                     readOnly
                   />
                   <Typography sx={{ fontSize: '0.9rem', fontWeight: '500', margin: '0px 10px' }}>
-                    {averageRating}/5.0 <a style={{fontSize: '13px', textDecoration: 'underline'}}>{data1?.reviews?.length} Reviews</a>
+                    {averageRating.toFixed(2)}/5.0 <a style={{fontSize: '13px', textDecoration: 'underline'}}>{data1?.reviews?.length} Reviews</a>
                   </Typography>
                   <Typography sx={{ fontSize: '0.9rem', margin: '0px 10px', color: 'grey', fontWeight: '400' }}>
                     Operated By: <a style={{fontSize: '13px', textDecoration: 'underline', color: 'black'}}>RAH Tourism</a>

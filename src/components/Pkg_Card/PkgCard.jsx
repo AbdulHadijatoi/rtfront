@@ -220,10 +220,10 @@ const PkgCard = ({ data, categories, ind }) => {
 
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 1 }}>
           <Box>
-            <Typography sx={{ fontSize: '0.7rem' }}>{averageRating} Ratting</Typography>
+            <Typography sx={{ fontSize: '0.7rem' }}>{averageRating.toFixed(2)} Ratting</Typography>
             <Rating
               name="simple-controlled"
-              value={averageRating}
+              value={averageRating.toFixed(2)}
               
               size="small"
               readOnly

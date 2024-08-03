@@ -99,12 +99,10 @@ const Signup_Main = ({onClose, onLoginClick}) => {
   return (
     <>
       <Page title="Signup">
-        <Box mt={2} sx={{
-
+        <Box sx={{
           display: 'flex',
           justifyContent: 'center'
         }}>
-
             <Box sx={{ }}>
               <Box
                 sx={{
@@ -115,196 +113,278 @@ const Signup_Main = ({onClose, onLoginClick}) => {
                   textAlign: "center",
                 }}
               >
-                <Box>
-                  <img src="/mainLogo.png" alt="Logo" style={{width:'90px', height:'auto'}} />
-                </Box>
-                <Box>
+                <Box sx={{width: '100%', borderBottom: '1px solid rgba(0,0,0,0.2)', marginBottom: '15px'}}>
                   <Typography
                     variant="h1"
-                    sx={{ fontSize: "2rem", fontWeight: "600" }}
+                    sx={{ color: 'rgba(0,0,0,0.8)', fontSize: "1.1rem", fontWeight: "600", padding: '15px 0px'}}
                   >
-                    Create your account
+                    SIGN UP
+                  </Typography>
+
+                </Box>
+                <Box sx={{width: '90%'}}>
+                  <Typography
+                    variant="h1"
+                    sx={{ fontSize: "1rem", fontWeight: "600", marginBottom: '15px', lineHeight: '1.5' }}
+                  >
+                    Welcome to Rah Tours
+                    <br/>Your Gateway to Unforgettable Adventures!
                   </Typography>
 
                   <Typography
                     variant="h1"
-                    sx={{ fontSize: "1rem", color: "grey" }}
+                    sx={{ fontSize: "0.8rem", color: "grey", lineHeight: '1.5' }}
                   >
-                    Credentials are only used to authenticate the user to use
-                    our services. All data will be stored in your database.
+                    Create an account to unlock exclusive travel deals, personalized recommendtaions, and seamless booking experiences.
                   </Typography>
                 </Box>
 
                 <Box
-                  sx={{ width: {xs: "100%", md: '400px'}, marginTop: "3rem" }}
+                  sx={{ width: "90%", marginTop: '1rem', padding: '0px 20px' }}
                   component="form"
                   onSubmit={handleSubmit}
                 >
-                  <Box sx={{ textAlign: "start" }}>
-                    <label>First Name</label>
-                    <TextField
-                      name="first_name"
-                      value={formValues.first_name}
-                      onChange={handleChange}
-                      fullWidth
-                      sx={{ marginTop: "0.3rem" }}
-                      size="small"
-                    />
-                  </Box>
-                  <Box sx={{ textAlign: "start", marginTop: "1rem" }}>
-                    <label>Last Name</label>
-                    <TextField
-                      name="last_name"
-                      value={formValues.last_name}
-                      onChange={handleChange}
-                      fullWidth
-                      sx={{ marginTop: "0.3rem" }}
-                      size="small"
-                    />
-                  </Box>
-                  <Box sx={{ textAlign: "start", marginTop: "1rem" }}>
-                    <label>Phone</label>
-                    <TextField
-                      name="phone"
-                      value={formValues.phone}
-                      onChange={handleChange}
-                      fullWidth
-                      sx={{ marginTop: "0.3rem" }}
-                      size="small"
-                    />
-                  </Box>
-                  <Box sx={{ textAlign: "start", marginTop: "1rem" }}>
-                    <label>Email</label>
-                    <TextField
-                      name="email"
-                      value={formValues.email}
-                      onChange={handleChange}
-                      fullWidth
-                      sx={{ marginTop: "0.3rem" }}
-                      size="small"
-                    />
-                  </Box>
-
-                  {/* <Box sx={{ textAlign: "start", marginTop: "1rem" }}>
-                    <label>Visa Status</label>
-                    <TextField
-                      select
-                      name="visa_status"
-                      value={formValues.visa_status}
-                      onChange={handleChange}
-                      fullWidth
-                      sx={{ marginTop: "0.3rem" }}
-                      size="small"
-                    >
-                      <MenuItem value="tourist">Tourist</MenuItem>
-
-                      <MenuItem value="UAE residence">UAE Residence</MenuItem>
-                    </TextField>
-                  </Box> */}
-
-                  <Box sx={{ textAlign: "start", marginTop: "1rem" }}>
-                    <label>Password</label>
-                    <TextField
-                      name="password"
-                      value={formValues.password}
-                      onChange={handleChange}
-                      fullWidth
-                      sx={{ marginTop: "0.3rem" }}
-                      size="small"
-                      type={showPassword ? "text" : "password"}
-                      InputProps={{
-                        endAdornment: (
-                          <InputAdornment position="end">
-                            <IconButton
-                              aria-label="toggle password visibility"
-                              onClick={handleClickShowPassword}
-                              edge="end"
-                            >
-                              {showPassword ? (
-                                <VisibilityOff />
-                              ) : (
-                                <Visibility />
-                              )}
-                            </IconButton>
-                          </InputAdornment>
-                        ),
-                      }}
-                    />
-                  </Box>
-                  <Box sx={{ textAlign: "start", marginTop: "1rem" }}>
-                    <label>Confirm Password</label>
-                    <TextField
-                      name="confirmPassword"
-                      value={formValues.confirmPassword}
-                      onChange={handleChange}
-                      fullWidth
-                      sx={{ marginTop: "0.3rem" }}
-                      size="small"
-                      type={showConfirmPassword ? "text" : "password"}
-                      InputProps={{
-                        endAdornment: (
-                          <InputAdornment position="end">
-                            <IconButton
-                              aria-label="toggle password visibility"
-                              onClick={handleClickShowConfirmPassword}
-                              edge="end"
-                            >
-                              {showConfirmPassword ? (
-                                <VisibilityOff />
-                              ) : (
-                                <Visibility />
-                              )}
-                            </IconButton>
-                          </InputAdornment>
-                        ),
-                      }}
-                    />
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "start",
-                      textAlign: "start",
-                      marginTop: "1rem",
-                      marginBottom: "1rem",
-                    }}
-                  >
-                    <input type="checkbox" />
-                    <Typography sx={{ marginLeft: "1rem" }}>
-                      I agree with{" "}
-                    </Typography>
-                    <Link
-                      to="/terms-&-conditions"
-                      style={{ textDecoration: "none" }}
-                    >
-                      <Typography
+                    <Box sx={{ textAlign: "start" }}>
+                      <TextField
+                        name="first_name"
+                        value={formValues.first_name}
+                        onChange={handleChange}
+                        fullWidth
                         sx={{
-                          color: theme.palette.primary.main,
-                          marginLeft: "0.5rem",
+
+                          '& .MuiOutlinedInput-root': {
+                              '& fieldset': {
+                                border: 'none',
+                              },
+                            },
+                        }}
+                        InputProps={{
+                          sx: {
+                            padding: 0,
+                            height: '50px',
+                            borderRadius: "8px",
+                            backgroundColor: '#f5f5f5',
+                            fontSize: "14px"
+                          }
+                        }}
+                        size="small"
+                        variant="outlined"
+                        placeholder="First Name"
+                      />
+                    </Box>
+                    <Box sx={{ textAlign: "start", marginTop: "0.6rem" }}>
+                      <TextField
+                        name="last_name"
+                        value={formValues.last_name}
+                        onChange={handleChange}
+                        fullWidth
+                        sx={{
+
+                          '& .MuiOutlinedInput-root': {
+                              '& fieldset': {
+                                border: 'none',
+                              },
+                            },
+                        }}
+                        InputProps={{
+                          sx: {
+                            padding: 0,
+                            height: '45px',
+                            borderRadius: "8px",
+                            backgroundColor: '#f5f5f5',
+                            fontSize: "14px"
+                          }
+                        }}
+                        size="small"
+                        variant="outlined"
+                        placeholder="Last Name"
+                      />
+                    </Box>
+                    <Box sx={{ textAlign: "start", marginTop: "0.6rem" }}>
+                      <TextField
+                        name="phone"
+                        value={formValues.phone}
+                        onChange={handleChange}
+                        fullWidth
+                        sx={{
+
+                          '& .MuiOutlinedInput-root': {
+                              '& fieldset': {
+                                border: 'none',
+                              },
+                            },
+                        }}
+                        InputProps={{
+                          sx: {
+                            padding: 0,
+                            height: '45px',
+                            borderRadius: "8px",
+                            backgroundColor: '#f5f5f5',
+                            fontSize: "14px"
+                          }
+                        }}
+                        size="small"
+                        variant="outlined"
+                        placeholder="Phone"
+                      />
+                    </Box>
+                    <Box sx={{ textAlign: "start", marginTop: "0.6rem" }}>
+                      <TextField
+                        name="email"
+                        value={formValues.email}
+                        onChange={handleChange}
+                        fullWidth
+                        sx={{
+
+                          '& .MuiOutlinedInput-root': {
+                              '& fieldset': {
+                                border: 'none',
+                              },
+                            },
+                        }}
+                        InputProps={{
+                          sx: {
+                            padding: 0,
+                            height: '45px',
+                            borderRadius: "8px",
+                            backgroundColor: '#f5f5f5',
+                            fontSize: "14px"
+                          }
+                        }}
+                        size="small"
+                        variant="outlined"
+                        placeholder="Email"
+                      />
+                    </Box>
+                    <Box sx={{ textAlign: "start", marginTop: "0.6rem" }}>
+                      <TextField
+                        name="password"
+                        value={formValues.password}
+                        onChange={handleChange}
+                        fullWidth
+                        sx={{
+                          '& .MuiOutlinedInput-root': {
+                              '& fieldset': {
+                                border: 'none',
+                              },
+                            },
+                        }}
+                        InputProps={{
+                          sx: {
+                            padding: '0 15px 0 10px',
+                            height: '45px',
+                            borderRadius: "8px",
+                            backgroundColor: '#f5f5f5',
+                            fontSize: "14px",
+                          },
+                          endAdornment: (
+                            <InputAdornment position="end">
+                              <IconButton
+                                aria-label="toggle password visibility"
+                                onClick={handleClickShowPassword}
+                                edge="end"
+                              >
+                                {showPassword ? <VisibilityOff /> : <Visibility />}
+                              </IconButton>
+                            </InputAdornment>
+                          ),
+                          
+                        }}
+                        size="small"
+                        variant="outlined"
+                        placeholder="Password"
+                        type={showPassword ? "text" : "password"}
+                      />
+                    </Box>
+                    <Box sx={{ textAlign: "start", marginTop: "0.6rem" }}>
+                      <TextField
+                        name="confirmPassword"
+                        value={formValues.confirmPassword}
+                        onChange={handleChange}
+                        fullWidth
+                        sx={{
+
+                          '& .MuiOutlinedInput-root': {
+                              '& fieldset': {
+                                border: 'none',
+                              },
+                            },
+                        }}
+                        InputProps={{
+                          sx: {
+                            padding: '0 15px 0 10px',
+                            height: '45px',
+                            borderRadius: "8px",
+                            backgroundColor: '#f5f5f5',
+                            fontSize: "14px"
+                          },
+                          endAdornment: (
+                            <InputAdornment position="end">
+                              <IconButton
+                                aria-label="toggle password visibility"
+                                onClick={handleClickShowConfirmPassword}
+                                edge="end"
+                              >
+                                {showConfirmPassword ? <VisibilityOff /> : <Visibility />}
+                              </IconButton>
+                            </InputAdornment>
+                          ),
+                        }}
+                        size="small"
+                        variant="outlined"
+                        placeholder="Confirm Password"
+                        type={showConfirmPassword ? "text" : "password"}
+                        
+                      />
+                    </Box>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "start",
+                        textAlign: "start",
+                        marginTop: "1rem",
+                        marginBottom: "1rem",
+                      }}
+                    >
+                      <input type="checkbox" />
+                      <Typography sx={{ marginLeft: "1rem", fontSize: '0.8rem' }}>
+                        I agree with{" "}
+                      </Typography>
+                      <Link
+                        to="/terms-&-conditions"
+                        style={{ textDecoration: "none" }}
+                      >
+                        <Typography
+                          sx={{
+                            color: theme.palette.primary.main,
+                            marginLeft: "0.5rem",
+                            fontSize: '0.8rem'
+                          }}
+                        >
+                          Terms & Conditions
+                        </Typography>
+                      </Link>
+                    </Box>
+
+                    {loading ? (
+                      <Loader />
+                    ) : (
+                      <Button
+                        type="submit"
+                        variant="contained"
+                        sx={{
+                          width: "100%",
+                          padding: "0.5rem 0rem",
+                          color: 'white',
+                          textTransform: "none",
+                          boxShadow: "none"
                         }}
                       >
-                        Terms & Conditions
-                      </Typography>
-                    </Link>
+                        SIGN UP
+                      </Button>
+                    )}
                   </Box>
 
-                  {loading ? (
-                    <Loader />
-                  ) : (
-                    <Button
-                      type="submit"
-                      variant="contained"
-                      sx={{
-                        width: "100%",
-                        padding: "0.5rem 0rem",
-                        color: 'white',
-                        textTransform: "none",
-                      }}
-                    >
-                      Sign up
-                    </Button>
-                  )}
-                </Box>
 
                 {/* <Typography
                   sx={{
@@ -384,26 +464,55 @@ const Signup_Main = ({onClose, onLoginClick}) => {
 
                 <Box
                   sx={{
-                    marginTop: "1rem",
+                    width: '90%',
+                    padding: '20px 0px',
+                    borderTop: '1px dashed rgba(0,0,0,0.2)',
+                    marginTop: "1.4rem",
                     display: "flex",
                     alignItems: "center",
+                    justifyContent: 'space-between'
                   }}
                 >
-                  <Typography sx={{ fontSize: "0.9rem" }}>
-                    Have an account?
+                  <Typography sx={{ fontSize: "0.85rem", textAlign: 'left' }}>
+                  Already a member? Log in below to access your account and explore the world with ease.
                   </Typography>
-                  <Link onClick={onLoginClick} style={{ textDecoration: "none" }}>
-                    <Typography
-                      sx={{
-                        color: theme.palette.primary.main,
-                        marginLeft: "0.5rem",
-                      }}
-                    >
-                      Login
-                    </Typography>
-                  </Link>
+                  <Box sx={{display: {xs: 'block', md: 'none'}}}>
+                    <Link to="/login" style={{ textDecoration: "none", textWrap: 'nowrap' }}>
+                      <Typography
+                        sx={{
+                          color: theme.palette.primary.main,
+                          marginLeft: "0.5rem",
+                          border: '1px solid black',
+                          padding: '6px 30px',
+                          borderRadius: '8px',
+                          fontSize: '0.9rem',
+                          borderColor: theme.palette.primary.main,
+                        }}
+                      >
+                        Log In
+                      </Typography>
+                    </Link>
+                  </Box>
+                  
+                  <Box sx={{display: {xs: 'none', md: 'block'}}}>
+                    <Link onClick={onLoginClick} style={{ textDecoration: "none", textWrap: 'nowrap' }}>
+                      <Typography
+                        sx={{
+                          color: theme.palette.primary.main,
+                          marginLeft: "0.5rem",
+                          border: '1px solid black',
+                          padding: '6px 30px',
+                          borderRadius: '8px',
+                          fontSize: '0.9rem',
+                          borderColor: theme.palette.primary.main,
+                        }}
+                      >
+                        Log In
+                      </Typography>
+                    </Link>
+                  </Box>
                 </Box>
-                <br/><br/>
+
               </Box>
             </Box>
 

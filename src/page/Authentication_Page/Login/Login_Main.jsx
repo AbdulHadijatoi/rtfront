@@ -24,7 +24,7 @@ import { FaGoogle } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import Page from "../../../components/page";
-const Login_Main = ({onClose, onSignupClick}) => {
+const Login_Main = ({onClose, onSignupClick, onForgotPasswordClick}) => {
   const initialValues = {
     email: "",
     password: "",
@@ -74,10 +74,10 @@ const navigate = useNavigate()
 
   return (
     <>
-<Page title="Login">
+    <Page title="Login">
 
       <Box sx={{
-                marginTop: '10px', 
+            marginTop: '10px', 
           }}>
         <Box
           sx={{
@@ -88,54 +88,83 @@ const navigate = useNavigate()
             textAlign: "center",
           }}
         >
-          <Box>
-          <img src="/mainLogo.png" alt="Logo" style={{width:'90px', height:'auto'}} />
-
-          </Box>
-          <Box>
+          <Box sx={{width: '100%', borderBottom: '1px solid rgba(0,0,0,0.2)', marginBottom: '15px'}}>
             <Typography
               variant="h1"
-              sx={{ fontSize: "2rem", fontWeight: "600" }}
+              sx={{ color: 'rgba(0,0,0,0.8)', fontSize: "1.1rem", fontWeight: "600", padding: '15px 0px'}}
             >
-              Welcome Back
+              LOG IN
             </Typography>
-
+          </Box>
+          <Box sx={{width: '90%'}}>
             <Typography
               variant="h1"
-              sx={{ fontSize: "1rem", color: "grey" }}
+              sx={{ fontSize: "0.8rem", color: "grey", lineHeight: '1.5' }}
             >
-              Please input your information in the fields below to enter
-              your Journey platform.
+              Sign in to unlock a world of rewards - accumulate Rayna Tours Loyalty points or snag exclusive discounts on your booked travel experiences!
             </Typography>
           </Box>
           </Box>
-          <form onSubmit={handleSubmit}>
-            <Box sx={{ width: {xs:"100%", md: '400px'}, margin: 'auto', marginTop: "3rem" }}>
+          <form 
+            style={{ width: "100%", display: 'flex', justifyContent: 'center', flexDirection: 'column' }}
+            onSubmit={handleSubmit}>
+            <Box sx={{ width:"90%", margin: 'auto', marginTop: "3rem" }}>
               <Box sx={{ textAlign: "start" }}>
                 <TextField
                   type="email"
                   required
                   fullWidth
-                  sx={{ marginTop: "0.3rem" }}
                   size="small"
                   name="email"
                   value={formValues.email}
                   onChange={handleChange}
                   label="Email"
+                  sx={{
+                    marginTop: "0.3rem",
+                    '& .MuiOutlinedInput-root': {
+                        '& fieldset': {
+                          border: 'none',
+                        },
+                      },
+                  }}
+                  InputProps={{
+                    sx: {
+                      padding: '0 15px 0 10px',
+                      height: '45px',
+                      borderRadius: "8px",
+                      backgroundColor: '#f5f5f5',
+                      fontSize: "14px"
+                    },
+                  }}
                 />
               </Box>
               <Box sx={{ textAlign: "start", marginTop: "1rem" }}>
                 <TextField
                   required
+                  variant="outlined"
                   label="Password"
                   name="password"
                   value={formValues.password}
                   onChange={handleChange}
                   fullWidth
-                  sx={{ marginTop: "0.3rem" }}
                   size="small"
                   type={showPassword ? "text" : "password"}
+                  sx={{
+                    marginTop: "0.3rem",
+                    '& .MuiOutlinedInput-root': {
+                        '& fieldset': {
+                          border: 'none',
+                        },
+                      },
+                  }}
                   InputProps={{
+                    sx: {
+                      padding: '0 15px 0 10px',
+                      height: '45px',
+                      borderRadius: "8px",
+                      backgroundColor: '#f5f5f5',
+                      fontSize: "14px"
+                    },
                     endAdornment: (
                       <InputAdornment position="end">
                         <IconButton
@@ -169,14 +198,30 @@ const navigate = useNavigate()
                     label="Remember me"
                   />
                 </FormGroup>
-                <Link
-                  to="/forget-password"
-                  style={{ textDecoration: "none" }}
-                >
-                  <Typography sx={{ color: theme.palette.primary.main }}>
-                    Forget Password
-                  </Typography>
-                </Link>
+                <Box sx={{ display: {xs: 'none', md: 'block'} }}>
+                  <Link
+                    onClick={onForgotPasswordClick}
+                    style={{ textDecoration: "none",  }}
+                  >
+                    
+                    <Typography sx={{ color: theme.palette.primary.main }}>
+                      Forget Password
+                    </Typography>
+                  </Link>
+                </Box>
+               
+                <Box sx={{ display: {sm: 'block', md: 'none'} }}>
+                  <Link
+                    to="/forget-password"
+                    style={{ textDecoration: "none"  }}
+                  >
+                    
+                    <Typography sx={{ color: theme.palette.primary.main }}>
+                      Forget Password
+                    </Typography>
+                  </Link>
+                </Box>
+               
               </Box>
               {loading ? (
                 <Loader />
@@ -184,104 +229,65 @@ const navigate = useNavigate()
                 <Button
                   type="submit"
                   variant="contained"
-                  sx={{ width: "100%", padding: "0.5rem 0rem", color: 'white' }}
+                  sx={{ width: "100%", padding: "0.5rem 0rem", color: 'white', boxShadow: 'none' }}
                 >
-                  Sign in
+                  Log In
                 </Button>
               )}
-            </Box>
-          </form>
-          <br/><br/>
-          {/* <Typography
-            sx={{ marginTop: "1rem", color: "grey", fontSize: "0.9rem", textAlign:'center' }}
-          >
-            or sign in with
-          </Typography>
-<Box sx={{display:'flex', justifyContent:'center', alignItems:'center'}}>
 
-<Button
-            variant="contained"
-            sx={{
-              marginTop: "1rem",
-              padding:'0.5rem 0rem',
-              backgroundColor: "transparent",
-              color: theme.palette.primary.main,
-              textTransform: "none",
-
-              border: "1px solid #ee8e3b",
-              boxShadow: "none",
-              ":hover": {
-                backgroundColor: "transparent",
-              },
-            }}
-          >
-            <FaGoogle style={{fontSize:'1rem'}}/>
-          </Button>
-
-          <Button
-            variant="contained"
-            sx={{
-              marginTop: "1rem",
-              marginLeft: "5px",
-              marginRight: "5px",
-              padding:'0.5rem 0rem',
-              backgroundColor: "transparent",
-              color: theme.palette.primary.main,
-              textTransform: "none",
-
-              border: "1px solid #ee8e3b",
-              boxShadow: "none",
-              ":hover": {
-                backgroundColor: "transparent",
-              },
-            }}
-          >
-            <FaFacebookSquare style={{fontSize:'1rem'}}/>
-          </Button>
-
-          <Button
-              variant="contained"
-            sx={{
-              marginTop: "1rem",
-              padding:'0.5rem 0rem',
-              backgroundColor: "transparent",
-              color: theme.palette.primary.main,
-              textTransform: "none",
-
-              border: "1px solid #ee8e3b",
-              boxShadow: "none",
-              ":hover": {
-                backgroundColor: "transparent",
-              },
-            }}
-          >
-            <FaApple style={{fontSize:'1rem'}}/>
-          </Button>
-        </Box> */}
-
-          <Box
-            sx={{
-
-              display: "flex",
-              textAlign:'center',
-              justifyContent:'center',
-              alignItems: "center",
-            }}
-          >
-            <Typography sx={{ fontSize: "0.9rem" }}>
-              Don’t have an account?
-            </Typography>
-            <Link onClick={onSignupClick} style={{ textDecoration: "none" }}>
-              <Typography
+              <Box
                 sx={{
-                  color: theme.palette.primary.main,
-                  marginLeft: "0.5rem",
+                  padding: '20px 0px',
+                  borderTop: '1px dashed rgba(0,0,0,0.2)',
+                  marginTop: "1.4rem",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: 'space-between'
                 }}
               >
-                Signup!
-              </Typography>
-            </Link>
-          </Box>
+                <Typography sx={{ fontSize: "0.85rem", textAlign: 'left' }}>
+                  Already a member? Log in below to access your account and explore the world with ease.
+                </Typography>
+                <Box sx={{display: {xs: 'none', md: 'block'}}}>
+                  <Link onClick={onSignupClick} style={{ textDecoration: "none" }}>
+                    <Typography
+                      sx={{
+                        color: theme.palette.primary.main,
+                        marginLeft: "0.5rem",
+                        border: '1px solid black',
+                        padding: '6px 30px',
+                        borderRadius: '8px',
+                        fontSize: '0.9rem',
+                        borderColor: theme.palette.primary.main,
+                      }}
+                    >
+                      Signup!
+                    </Typography>
+                  </Link>
+                </Box>
+                <Box sx={{display: {xs: 'block', md: 'none'}}}>
+                  <Link to="/signup" style={{ textDecoration: "none" }}>
+                    <Typography
+                      sx={{
+                        color: theme.palette.primary.main,
+                        marginLeft: "0.5rem",
+                        border: '1px solid black',
+                        padding: '6px 30px',
+                        borderRadius: '8px',
+                        fontSize: '0.9rem',
+                        borderColor: theme.palette.primary.main,
+                      }}
+                    >
+                      Signup!
+                    </Typography>
+                  </Link>
+                </Box>
+              </Box>
+            </Box>
+
+
+          </form>
+
         </Box>
 
 </Page>

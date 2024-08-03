@@ -41,6 +41,7 @@ import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import SearchIcon from '@mui/icons-material/Search';
 import LoginMain from '../Authentication_Page/Login/Login_Main';
 import SignupMain from '../Authentication_Page/Signup/Signup_Main';
+import ForgotPassword from '../Authentication_Page/Components/Forget_Password';
 
 const Navbar = () => {
 
@@ -54,6 +55,7 @@ const Navbar = () => {
 
   const [loginOpen, setLoginOpen] = useState(false);
   const [signupOpen, setSignupOpen] = useState(false);
+  const [forgotPasswordOpen, setForgotPasswordOpen] = useState(false);
 
   const openSignupDialog = () => {
     setSignupOpen(true);
@@ -71,6 +73,14 @@ const Navbar = () => {
   const closeLoginDialog = () => {
     setLoginOpen(false);
   };
+  
+  const openForgotPasswordDialog = () => {
+    setForgotPasswordOpen(true);
+  };
+
+  const closeForgotPasswordDialog = () => {
+    setForgotPasswordOpen(false);
+  };
 
   const handleSignupClick = () => {
     closeLoginDialog();
@@ -80,6 +90,11 @@ const Navbar = () => {
   const handleLoginClick = () => {
     openLoginDialog();
     closeSignupDialog();
+  };
+  
+  const handleForgotPasswordClick = () => {
+    openForgotPasswordDialog();
+    closeLoginDialog();
   };
 
   const location = useLocation();
@@ -533,14 +548,20 @@ const Navbar = () => {
               <Box>
                 <Select
                   sx={{
+                    margin: 0, // Remove all margins
+                    padding: 0, // Remove all paddings
                     outline: 'none',
-                    marginTop: '0.5rem',
                     '&:focus': {
                       outline: 'none',
                     },
                     '& .MuiOutlinedInput-notchedOutline': {
                       border: 'none',
                     },
+                    '& .MuiInputBase-input': {
+                      padding: '0px !important', // Remove input padding
+                      marginTop: '5px'
+                    },
+                    
                   }}
                   value={selectedValue}
                   onChange={handleChange}
@@ -548,7 +569,7 @@ const Navbar = () => {
                   displayEmpty
                   inputProps={{ 'aria-label': 'Recently Viewed' }}
                   renderValue={(selected) => (
-                    <Typography sx={{ fontSize: '12px' }}>
+                    <Typography sx={{ fontSize: '13px' }}>
                       {selected || 'Recently Viewed'}
                     </Typography>
                   )}
@@ -1012,7 +1033,7 @@ const Navbar = () => {
                   color: 'white'
                 }}
               >
-                Login2
+                Login
               </Button>
               
             </Box>
@@ -1092,14 +1113,20 @@ const Navbar = () => {
           </Button>
       </Box>
       <Dialog open={signupOpen} onClose={closeSignupDialog}>
-        <DialogContent>
+        <DialogContent sx={{padding: '0px'}}>
           <SignupMain onClose={closeSignupDialog} onLoginClick={handleLoginClick}/>
         </DialogContent>
       </Dialog>
       
       <Dialog open={loginOpen} onClose={closeLoginDialog}>
-        <DialogContent>
-          <LoginMain onClose={closeLoginDialog} onSignupClick={handleSignupClick}/>
+        <DialogContent sx={{padding: '0px'}}>
+          <LoginMain onClose={closeLoginDialog} onSignupClick={handleSignupClick} onForgotPasswordClick={handleForgotPasswordClick}/>
+        </DialogContent>
+      </Dialog>
+      
+      <Dialog open={forgotPasswordOpen} onClose={closeForgotPasswordDialog}>
+        <DialogContent sx={{padding: '0px'}}>
+          <ForgotPassword onClose={closeForgotPasswordDialog}/>
         </DialogContent>
       </Dialog>
     </>

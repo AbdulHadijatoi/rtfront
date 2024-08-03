@@ -42,7 +42,7 @@ const ReviewsDetail = ({ data }) => {
         >
           <Box sx={{ display: { xs: 'flex', md: 'block' }, alignItems:'center', width: { xs: '100%', md: 'auto' }, textAlign: { xs: 'left', md: 'left' } }}>
             <Typography sx={{ fontSize: { xs: '14px', md: '24px' } }}>
-              {averageRating.toFixed(1)}/5.0
+              {averageRating.toFixed(1)}/5.02
             </Typography>
             <Rating name="average-rating" value={averageRating} readOnly />
           </Box>

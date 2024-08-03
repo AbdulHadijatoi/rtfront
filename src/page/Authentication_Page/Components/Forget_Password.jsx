@@ -45,7 +45,7 @@ const Forget_Password = () => {
         mt: 5,
       }}
     >
-      <Box sx={{ textAlign: "center", width: "40%", paddingBottom: "2rem" }}>
+      <Box sx={{ textAlign: "center", width: "90%", paddingBottom: "2rem" }}>
         <Typography variant="h1" sx={{ fontSize: "2rem", fontWeight: "600" }}>
           Forget Your Password
         </Typography>
@@ -56,12 +56,27 @@ const Forget_Password = () => {
 
         <form onSubmit={handleSubmit}>
           <Box sx={{ textAlign: "start", marginTop: "1rem" }}>
-            <label htmlFor="email">Email</label>
             <TextField
               type="email"
               required
               fullWidth
-              sx={{ marginTop: "1rem" }}
+              sx={{
+                marginTop: "1rem",
+                '& .MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      border: 'none',
+                    },
+                  },
+              }}
+              InputProps={{
+                sx: {
+                  padding: '0 15px 0 10px',
+                  height: '45px',
+                  borderRadius: "8px",
+                  backgroundColor: '#f5f5f5',
+                  fontSize: "14px"
+                },
+              }}
               size="small"
               name="email"
               id="email"
@@ -81,6 +96,8 @@ const Forget_Password = () => {
                 marginTop: "2rem",
                 padding: "0.5rem 0rem",
                 textTransform: "none",
+                boxShadow: 'none',
+                color: 'white',
                 fontSize: "1.1rem",
               }}
               disabled={loading} // Disable the button when loading

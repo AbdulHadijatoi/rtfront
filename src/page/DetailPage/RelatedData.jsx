@@ -116,7 +116,8 @@ const RelatedData = ({ onItemClick }) => {
                     backgroundColor: "white",
                     borderRadius: "12px",
                     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                    height: '425px',
+                    height: "100%",
+                    maxHeight: '430px',
                     overflow: "hidden",
                     padding: "5px",
                   }}
@@ -128,6 +129,7 @@ const RelatedData = ({ onItemClick }) => {
                       style={{
                         width: "100%",
                         height: "30vh",
+                        maxHeight: '280px',
                         borderRadius: "12px",
                         objectFit: "cover",
                       }}
@@ -227,7 +229,7 @@ const RelatedData = ({ onItemClick }) => {
 
                         <Rating size="small" name="simple-controlled" value={Math.round((val?.reviews?.reduce((acc, review) => acc + review?.rating, 0))/(val?.reviews?.length || 0))} readOnly />
                       </Box>
-                      <Button variant="contained" sx={{ fontSize: '0.7rem' }} onClick={() => handleBookNow(val.slug)}>Book Now</Button>
+                      <Button variant="contained" sx={{ fontSize: '0.7rem', color: 'white' }} onClick={() => handleBookNow(val.slug)}>Book Now</Button>
                     </Box>
                   </Box>
                 </Box>

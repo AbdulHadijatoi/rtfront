@@ -190,7 +190,7 @@ const CustomCard = () => {
                 <Rating
                   readOnly
                   name="simple-controlled"
-                  value={Math.round((val?.reviews?.reduce((acc, review) => acc + review?.rating, 0))/(val?.reviews?.length || 0))}
+                  value={Math.round((val?.reviews?.reduce((acc, review) => acc + review?.rating, 0))/(val?.reviews?.length || 0)).toFixed(2)}
                   size="small"
                 />
               </Box>
