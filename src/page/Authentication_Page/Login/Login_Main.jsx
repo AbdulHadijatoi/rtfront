@@ -24,7 +24,7 @@ import { FaGoogle } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import Page from "../../../components/page";
-const Login_Main = ({onClose}) => {
+const Login_Main = ({onClose, onSignupClick}) => {
   const initialValues = {
     email: "",
     password: "",
@@ -259,9 +259,9 @@ const navigate = useNavigate()
           </Button>
         </Box> */}
 
-          {/* <Box
+          <Box
             sx={{
-              marginTop: "1rem",
+
               display: "flex",
               textAlign:'center',
               justifyContent:'center',
@@ -271,7 +271,7 @@ const navigate = useNavigate()
             <Typography sx={{ fontSize: "0.9rem" }}>
               Don’t have an account?
             </Typography>
-            <Link to="/signup" style={{ textDecoration: "none" }}>
+            <Link onClick={onSignupClick} style={{ textDecoration: "none" }}>
               <Typography
                 sx={{
                   color: theme.palette.primary.main,
@@ -281,7 +281,7 @@ const navigate = useNavigate()
                 Signup!
               </Typography>
             </Link>
-          </Box> */}
+          </Box>
         </Box>
 
 </Page>

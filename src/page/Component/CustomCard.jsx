@@ -97,9 +97,10 @@ const CustomCard = () => {
                 borderRadius: "17px",
                 paddingBottom: '5px',
                 height: "100%",
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'start',
+                maxHeight: '450px',
+                // display: 'flex',
+                // flexDirection: 'column',
+                // alignItems: 'start',
                 // height: "48vh",
                 cursor: 'pointer'
               }}
@@ -112,6 +113,7 @@ const CustomCard = () => {
                     width: "100%",
                     borderRadius: "12px 12px 0px 0px",
                     height: '30vh',
+                    maxHeight: '300px',
                     objectFit: "cover",
                   }}
                 />

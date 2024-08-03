@@ -12,6 +12,10 @@ const WishList = ({nameProp}) => {
 flexDirection:'column',
           paddingBottom:'2rem',
           px: 1,
+          margin: 'auto',
+          width: {
+            lg: '1280px',
+          },
         }}
       >
         <SearchCard fill={true} />

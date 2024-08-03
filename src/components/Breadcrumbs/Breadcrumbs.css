@@ -5,7 +5,9 @@
 
   list-style: none;
   background-color: #FFF;
-  border-radius: 0.25rem;
+  font-size: 13px;
+  /* border-radius: 0.25rem; */
+  justify-content: end;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {

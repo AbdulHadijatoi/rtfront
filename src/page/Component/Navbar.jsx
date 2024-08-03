@@ -52,10 +52,7 @@ const Navbar = () => {
     setRecentlyViewed(data);
   };
 
-  const openRecentActivity = (value) => {
-    console.log('Selected:', value);
-  };
-
+  const [loginOpen, setLoginOpen] = useState(false);
   const [signupOpen, setSignupOpen] = useState(false);
 
   const openSignupDialog = () => {
@@ -66,7 +63,6 @@ const Navbar = () => {
     setSignupOpen(false);
   };
   
-  const [loginOpen, setLoginOpen] = useState(false);
 
   const openLoginDialog = () => {
     setLoginOpen(true);
@@ -74,6 +70,16 @@ const Navbar = () => {
 
   const closeLoginDialog = () => {
     setLoginOpen(false);
+  };
+
+  const handleSignupClick = () => {
+    closeLoginDialog();
+    openSignupDialog();
+  };
+  
+  const handleLoginClick = () => {
+    openLoginDialog();
+    closeSignupDialog();
   };
 
   const location = useLocation();
@@ -583,21 +589,21 @@ const Navbar = () => {
                               sx={{ padding: '10px', width: "300px", display: "flex", flexDirection: "column", gap: "10px" }}
                             >
                               <Typography
-  sx={{
-    fontSize: '12px',
-    textAlign: 'start',
-    fontWeight: 600,
-    color: theme.palette.primary.textPrimary,
-    wordBreak: 'break-word',
-    overflowWrap: 'break-word',
-    whiteSpace: 'normal',
-    maxHeight: '4.5rem',
-    lineHeight: '1.5rem',
-    width: '100%',
-  }}
->
-  {item.name}
-</Typography>
+                                sx={{
+                                  fontSize: '12px',
+                                  textAlign: 'start',
+                                  fontWeight: 600,
+                                  color: theme.palette.primary.textPrimary,
+                                  wordBreak: 'break-word',
+                                  overflowWrap: 'break-word',
+                                  whiteSpace: 'normal',
+                                  maxHeight: '4.5rem',
+                                  lineHeight: '1.5rem',
+                                  width: '100%',
+                                }}
+                              >
+                                {item.name}
+                              </Typography>
 
 
                               <Box sx={{ width: "90%", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
@@ -646,51 +652,6 @@ const Navbar = () => {
                   </Box>
                 </Select>
               </Box>
-
-              {!authh ?(
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    marginTop: "1rem",
-                    cursor: "pointer",
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      fontSize: "12px",
-                      marginBottom: "0.9rem",
-                      textTransform: "none",
-                    }}
-                  >
-                    <Badge
-                      // badgeContent={0}
-                      badgeContent={cartItemCount}
-                      color="primary"
-                      anchorOrigin={{
-                        vertical: "top",
-                        horizontal: "left",
-                      }}
-                    >
-                      <MuiLink
-                        component={Link}
-                        // to="/cart"
-                        onClick={openSignupDialog}
-
-                        sx={{
-                          alignItems: "center",
-                          display: "flex",
-                          textDecoration: "none",
-                          color: "inherit",
-                          "&:hover": { textDecoration: "none" },
-                        }}
-                      >
-                        SignUp
-                      </MuiLink>
-                    </Badge>
-                  </Typography>
-                </Box>
-              ):(<Box></Box>)}
               
               <Box
                 sx={{
@@ -1040,19 +1001,6 @@ const Navbar = () => {
             </Box>
           ) : (
             <Box>
-              <Button
-                onClick={handleRegister}
-                variant="contained"
-                sx={{
-                  backgroundColor: theme.palette.primary.main,
-                  padding: "0.5rem 2rem",
-                  textTransform: "none",
-                  marginRight: '10px',
-                  color: 'white'
-                }}
-              >
-                Sign Up
-              </Button>
               
               <Button
                 onClick={handleSignup}
@@ -1064,7 +1012,7 @@ const Navbar = () => {
                   color: 'white'
                 }}
               >
-                Login
+                Login2
               </Button>
               
             </Box>
@@ -1145,14 +1093,13 @@ const Navbar = () => {
       </Box>
       <Dialog open={signupOpen} onClose={closeSignupDialog}>
         <DialogContent>
-          <SignupMain onClose={closeSignupDialog} openLogin={loginOpen}/>
+          <SignupMain onClose={closeSignupDialog} onLoginClick={handleLoginClick}/>
         </DialogContent>
-        
       </Dialog>
       
       <Dialog open={loginOpen} onClose={closeLoginDialog}>
         <DialogContent>
-          <LoginMain onClose={closeLoginDialog}/>
+          <LoginMain onClose={closeLoginDialog} onSignupClick={handleSignupClick}/>
         </DialogContent>
       </Dialog>
     </>

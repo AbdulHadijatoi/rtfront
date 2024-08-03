@@ -23,14 +23,22 @@ const AllActivities = () => {
   const menus = useSelector((state) => state?.AllMenu?.menus?.payload || {});
 
   useEffect(() => {
+    console.log('useEffect for getCategories called');
+
     dispatch(getCategories())
       .then((result) => {
         const categories = result.data.payload;
+        
         const categoryMap = categories.reduce((acc, category) => {
           acc[category.name] = category.id;
           return acc;
         }, {});
         setCategoryMap(categoryMap);
+        // const categoryMap2 = categories.reduce((acc, category) => {
+        //   acc[category.id] = category.name;
+        //   return acc;
+        // }, {});
+        // localStorage.setItem('all_categories',JSON.stringify(categoryMap2));
         setLoading(false);
       })
       .catch((err) => {

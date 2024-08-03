@@ -22,7 +22,7 @@ import { FaGoogle } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import Page from "../../../components/page";
-const Signup_Main = ({onClose}) => {
+const Signup_Main = ({onClose, onLoginClick}) => {
   const initialValues = {
     first_name: "",
     last_name: "",
@@ -84,7 +84,7 @@ const Signup_Main = ({onClose}) => {
 
         setFormValues(initialValues);
 
-        onClose();
+        onLoginClick();
 
         // navigate("/login");
       })
@@ -380,7 +380,7 @@ const Signup_Main = ({onClose}) => {
                   >
                     <FaApple style={{ fontSize: "1rem" }} />
                   </Button>
-                </Box>
+                </Box> */}
 
                 <Box
                   sx={{
@@ -392,7 +392,7 @@ const Signup_Main = ({onClose}) => {
                   <Typography sx={{ fontSize: "0.9rem" }}>
                     Have an account?
                   </Typography>
-                  <Link to="/login" style={{ textDecoration: "none" }}>
+                  <Link onClick={onLoginClick} style={{ textDecoration: "none" }}>
                     <Typography
                       sx={{
                         color: theme.palette.primary.main,
@@ -402,7 +402,7 @@ const Signup_Main = ({onClose}) => {
                       Login
                     </Typography>
                   </Link>
-                </Box> */}
+                </Box>
                 <br/><br/>
               </Box>
             </Box>

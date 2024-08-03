@@ -12,7 +12,7 @@ import {
   AccordionDetails,
   Accordion,
   AccordionSummary,
-
+  IconButton
 } from "@mui/material";
 
 import { ExpandMore as ExpandMoreIcon } from "@mui/icons-material";
@@ -25,7 +25,7 @@ import {
 import { BiTransfer } from "react-icons/bi";
 import DetailLeft from "./DetailLeft";
 import { useParams } from "react-router";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getActivitiesById } from "../../store/actions/categoriesActions";
 import DetailSlider from "./DetailSLider";
 import ReiewsDetail from "./ReiewsDetail";
@@ -33,6 +33,9 @@ import RelatedData from "./RelatedData";
 import Loader from "../../components/Loader/Loader";
 import SkeletonDetailPage from "./component/SkeletonDetailPage";
 import moment from "moment";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import { useSnackbar } from "notistack";
 
 const DetailPage = ({ nameProp }) => {
   const theme = useTheme();
@@ -43,7 +46,7 @@ const DetailPage = ({ nameProp }) => {
   const [value, setValue] = useState(5);
   const [isExpanded, setIsExpanded] = useState(false);
   // const [visitedIds, setVisitedIds] = useState([]);
-
+  const { enqueueSnackbar } = useSnackbar();
   // Calculate average rating
   const totalReviews = data1?.reviews?.length || 0;
   const averageRating = data1?.reviews?.reduce((acc, review) => acc + review?.rating, 0) / totalReviews || 0;
@@ -61,6 +64,87 @@ const DetailPage = ({ nameProp }) => {
 
   const styleType = {
     color: theme.palette.primary.main,
+  };
+
+  const [wishList, setWishList] = React.useState([]);
+  const WishListredux = useSelector((state) => state?.wishlist?.wishlist?.payload)
+  const isAuth = useSelector((state) => state?.auth?.isAuthenticated)
+  const handleFavoriteClick = (activityId, activityData) => {
+    setLoading(true);
+    const token = localStorage.getItem("token");
+  
+    if (token) {
+      const wishList = JSON.parse(localStorage.getItem("wishList")) || [];
+      if (checkAlreadyInWishlist(activityId)) {
+        // Remove from wishlist
+        const updatedWishList = wishList.filter(item => item.id !== activityId);
+        localStorage.setItem("wishList", JSON.stringify(updatedWishList));
+        setWishList(updatedWishList);
+        enqueueSnackbar("Removed from Wishlist", { variant: "info" });
+      } else {
+        // Add to wishlist
+        dispatch(addToWishList(activityId))
+          .then(() => {
+            dispatch(getWishList())
+              .then((result) => {
+                setWishList(result.data.payload);
+                setLoading(false);
+              })
+              .catch((err) => {
+                console.log(err, "Error fetching wishlist");
+                setLoading(false);
+              });
+            enqueueSnackbar("Added to Wishlist", { variant: "success" });
+          })
+          .catch((err) => {
+            console.log(err, "Error");
+            setLoading(false);
+          });
+      }
+    } else {
+      const existingWishListData = localStorage.getItem("wishListData");
+      let wishListArray = existingWishListData ? JSON.parse(existingWishListData) : [];
+  
+      if (checkAlreadyInWishlist(activityId)) {
+        // Remove from wishlist
+        wishListArray = wishListArray.filter(item => item.id !== activityId);
+        enqueueSnackbar("Removed from Wishlist", { variant: "info" });
+      } else {
+        // Add to wishlist
+        wishListArray.push(activityData);
+        enqueueSnackbar("Added to Wishlist", { variant: "info" });
+      }
+  
+      setLoading(false);
+      localStorage.setItem("wishListData", JSON.stringify(wishListArray));
+      setWishList(wishListArray);
+    }
+  };
+
+  const checkAlreadyInWishlist = (activityId) => {
+    const token = localStorage.getItem("token");
+  
+    if (token) {
+      const wishList = JSON.parse(localStorage.getItem("wishList")) || [];
+      return wishList.some(item => item.id === activityId);
+    } else {
+      const existingWishListData = localStorage.getItem("wishListData");
+      let wishListArray = existingWishListData ? JSON.parse(existingWishListData) : [];
+      return wishListArray.some(item => item.id === activityId);
+    }
+  };
+  
+
+  const isActivityInWishlist = (activityId) => {
+
+
+    if (isAuth) {
+
+      return WishListredux?.some((item) => item.activity_id == activityId);
+
+    } else {
+      // return wishList.some((item) => item.activity_id == activityId);
+    }
   };
 
   useEffect(() => {
@@ -96,7 +180,8 @@ const DetailPage = ({ nameProp }) => {
     })();
   }, [id]);
 
-  console.log(data1, 'dataaaaaaaa')
+  // console.log(data1.category_name, 'dataaaaaaaa')
+  localStorage.setItem('category_name',data1.category_name);
 
   const infoItems = [
     { icon: <CiStopwatch style={styleType} />, text: "Operating Hours" },
@@ -297,17 +382,7 @@ const DetailPage = ({ nameProp }) => {
     <Page title={data1?.page_title}>
       {loading ? (
         <>
-          {/* <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "50vh",
-            }}
-          >
-            <Loader />
-          </Box> */}
-
+         
           <SkeletonDetailPage />
 
 
@@ -412,9 +487,68 @@ const DetailPage = ({ nameProp }) => {
               </Box>
             </Box>
           </Box>
+          
+          <Box
+            sx={{
+              display: "flex",
+              
+              justifyContent: "center",
+              flexDirection: 'column',
+              gap: "10px",
+              textAlign: "start",
+              // width:'80%',
+              width: { sm: "100%", md: "100%" },
+            }}
+          >
+            <Box>
+              <Typography
+                sx={{
+                  fontSize: { xs: "1rem", md: "2rem" },
+                  fontWeight: 600,
+                }}
+              >
+                {data1.name}
+              </Typography>
+              
+              <Box sx={{display: 'flex', justifyContent: "space-between", marginBottom: '10px'}}>
+
+                <Box sx={{display: 'flex', alignItems: 'center', margin: '5px 0px 10px 0px'}}>
+                  <Rating
+                    name="simple-controlled"
+                    value={averageRating}
+                    readOnly
+                  />
+                  <Typography sx={{ fontSize: '0.9rem', fontWeight: '500', margin: '0px 10px' }}>
+                    {averageRating}/5.0 <a style={{fontSize: '13px', textDecoration: 'underline'}}>{data1?.reviews?.length} Reviews</a>
+                  </Typography>
+                  <Typography sx={{ fontSize: '0.9rem', fontWeight: '500', margin: '0px 10px', color: 'grey', fontWeight: '400' }}>
+                    Operated By: <a style={{fontSize: '13px', textDecoration: 'underline', color: 'black'}}>RAH Tourism</a>
+                  </Typography>
+                </Box>
+
+
+                <Box onClick={() => handleFavoriteClick(data1.id, data1)} sx={{cursor: 'pointer'}}>
+                  {loading ? (
+                    <Loader />
+                  ) : checkAlreadyInWishlist(data1.id) ? (
+                    <Box sx={{display: 'flex', alignItems: 'center'}}>
+                      <FavoriteIcon sx={{ fontSize: "20px", color: "red", marginRight: '5px' }} />  
+                      <Typography> Added to wishlist</Typography>
+                    </Box>
+                  ) : (
+                    <Box sx={{display: 'flex', alignItems: 'center'}}>
+                      <FavoriteBorderIcon sx={{ fontSize: "24px", marginRight: '5px' }} />
+                      <Typography> Add to wishlist</Typography>
+                    </Box>
+                  )}
+                </Box>
+
+              </Box>
+            </Box>
+          </Box>
 
           <DetailSlider data1={data1} />
-          <Box sx={{ padding: "30px" }}>
+          <Box>
             <Grid container spacing={6}>
               <Grid item lg={8} sm={12} xs={12} md={6}>
                 <Box
@@ -426,38 +560,7 @@ const DetailPage = ({ nameProp }) => {
                     gap: "20px",
                   }}
                 >
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "10px",
-                      textAlign: "start",
-                      // width:'80%',
-                      width: { sm: "100%", md: "80%" },
-                    }}
-                  >
-                    <Box>
-                      <Typography
-                        sx={{
-                          fontSize: { xs: "1rem", md: "1.3rem" },
-                          fontWeight: 600,
-                        }}
-                      >
-                        {data1.name}
-
-                        <Rating
-                          name="simple-controlled"
-                          value={averageRating}
-                          sx={{ marginLeft: '1rem' }}
-                          size="small"
-                          readOnly
-                        />
-                        <span style={{ fontSize: '0.9rem', fontWeight: '500' }}>({averageRating}) {data1?.reviews?.length} Reviews</span>
-                      </Typography>
-
-
-                    </Box>
-                  </Box>
+                  
 
 
 
@@ -474,7 +577,7 @@ const DetailPage = ({ nameProp }) => {
                       zIndex: 999,
                       // padding: "20px",
 
-                      padding: { xs: "0px", md: "20px" },
+
 
                     }}
                   >

@@ -234,7 +234,7 @@ const PkgCard = ({ data, categories, ind }) => {
             <Button
               variant="contained"
               onClick={handleBookNowClick}
-              sx={{ fontSize: '0.7rem', textTransform: 'none' }}
+              sx={{ fontSize: '0.7rem', textTransform: 'none', color: 'white' }}
             >
               Book Now
             </Button>
