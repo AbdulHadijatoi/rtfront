@@ -32,7 +32,7 @@ const Search_Results = ({nameProp}) => {
 
   return (
     <Page title={nameProp}>
-      <Box sx={{ p: 5 }}>
+      <Box sx={{ p: 5, margin: 'auto', width: {lg: "1280px"} }}>
         <Button variant="contained" startIcon={<ArrowBack />} onClick={handleBackClick}>
           Back to homepage
         </Button>

@@ -270,7 +270,7 @@ const isAuth = useSelector((state)=>state?.auth?.isAuthenticated)
           <Box
             sx={{ mt: 3 }}
             key={ind}
-            onClick={() => navigate(`/${val.slug}`)}
+            onClick={() => navigate(`/dubai-activities/${val.slug}`)}
           >
             <Card sx={{ p: 2, background: "#FFF" }}>
               <Box
