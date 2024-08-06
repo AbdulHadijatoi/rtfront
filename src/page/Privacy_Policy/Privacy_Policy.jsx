@@ -79,7 +79,7 @@ const Privacy_Policy = ({nameProp}) => {
         </h1>
         {/* <Heading>Privacy Policy</Heading> */}
         <Paragraph>
-          RAH Tours Tourism LLC collects information about its
+          RAH Tourism LLC collects information about its
           customers both during the order process and as customers navigate the
           following website:
           <a href="https://www.rahtours.ae">
@@ -245,9 +245,9 @@ const Privacy_Policy = ({nameProp}) => {
           privacy@rahtours.ae{" "}
         </Paragraph>
         <Paragraph>Mailing Address:</Paragraph>
-        <Paragraph>RAH Tours Tourism LLC.</Paragraph>
-        <Paragraph>P.O. Box: 232226, Dubai, United Arab Emirates</Paragraph>
-        <Paragraph>T: +971-50-3773786 </Paragraph>
+        <Paragraph>RAH Tourism LLC</Paragraph>
+        <Paragraph>Office # 714, Makateb Tower, Dubai - U.A.E</Paragraph>
+        <Paragraph>T: +971 52 933 1100 </Paragraph>
         <Paragraph>Last Updated on: May 14, 2024</Paragraph>
         <Paragraph>
           If we decide to change our privacy policy, we will post those changes

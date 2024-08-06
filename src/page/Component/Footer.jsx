@@ -259,29 +259,6 @@ const Footer = () => {
                 </MuiLink>
               </Typography>
 
-              <Typography
-                sx={{
-                  color: 'grey',
-                  fontSize: "0.9rem",
-                  marginBottom: "0.9rem",
-                  textTransform: "none",
-                }}
-              >
-                <MuiLink
-                  component={Link}
-                  to={routes[14]?.route}
-
-                  sx={{
-
-                    textDecoration: "none",
-                    color: "inherit",
-                    "&:hover": { textDecoration: "none" },
-                  }}
-                >
-                  Guidelines
-                </MuiLink>
-              </Typography>
-
 
               
               <Typography
@@ -388,6 +365,29 @@ const Footer = () => {
                   }}
                 >
                   Privacy Policy
+                </MuiLink>
+              </Typography>
+
+              <Typography
+                sx={{
+                  color: 'grey',
+                  fontSize: "0.9rem",
+                  marginBottom: "0.9rem",
+                  textTransform: "none",
+                }}
+              >
+                <MuiLink
+                  component={Link}
+                  to={routes[14]?.route}
+
+                  sx={{
+
+                    textDecoration: "none",
+                    color: "inherit",
+                    "&:hover": { textDecoration: "none" },
+                  }}
+                >
+                  Guidelines
                 </MuiLink>
               </Typography>
 
