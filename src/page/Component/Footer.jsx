@@ -8,7 +8,7 @@ import {
   useTheme,
   Link as MuiLink,
 } from "@mui/material";
-import React from "react";
+import {React, useState} from "react";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -22,15 +22,30 @@ import { FaWhatsapp } from "react-icons/fa";
 import { FiPhoneCall } from "react-icons/fi";
 import { MdEmail, MdOutlineMailOutline } from "react-icons/md";
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
-
+import { subscribe } from "../../store/actions/subscribe";
+import { useSnackbar } from "notistack";
 
 const Footer = () => {
+  const dispatch = useDispatch();
   const theme = useTheme();
-const routes = useSelector((state)=>state?.AllMenu?.menus?.payload || {})
-const currentYear = new Date().getFullYear();
+  const routes = useSelector((state)=>state?.AllMenu?.menus?.payload || {})
+  const currentYear = new Date().getFullYear();
+  const [email, setEmail] = useState("");
+  const { enqueueSnackbar } = useSnackbar();
 
+  const handleSubscribe = async () => {
+    try {
+      const res = await dispatch(subscribe({ email }));
+      enqueueSnackbar('Successfully subscribed!', { variant: 'success' });
+
+    } catch (err) {
+
+      enqueueSnackbar('Subscription Failed!', { variant: 'error' });
+
+    }
+  };
 
 
   return (
@@ -408,6 +423,7 @@ const currentYear = new Date().getFullYear();
                   <TextField
                     fullWidth
                     placeholder="Enter your Email"
+                    onChange={(e) => setEmail(e.target.value)}
                     sx={{
                       "& .MuiInputBase-root": {
 
@@ -433,8 +449,10 @@ const currentYear = new Date().getFullYear();
                           sx={{
                             color: "black",
                             padding: "1.8rem 1rem",
-                            border: '1px solid rgba(0,0,0,0.07)',
+                            borderLeft: '1px solid rgba(0,0,0,0.07)',
+                            cursor: 'pointer',
                           }}
+                          onClick={handleSubscribe}
                         >
                           Subscribe
                         </InputAdornment>
