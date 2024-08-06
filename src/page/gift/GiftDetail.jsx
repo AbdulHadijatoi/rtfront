@@ -132,7 +132,7 @@ const GiftDetail = ({ ac_data }) => {
     backgroundColor: '#f6f7f9',
   };
 
-  const base = 'https://rtadmin.rahtourism.com/';
+  const base = 'https://adminrah51786.rahtours.ae/';
   const descriptionPreview = ac_data?.description?.split(' ').slice(0, 30).join(' ');
   const handleDiscountClick = (value) => {
     setDiscountPrice(value);

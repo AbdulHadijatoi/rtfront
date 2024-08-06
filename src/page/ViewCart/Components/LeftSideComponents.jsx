@@ -31,7 +31,7 @@ const LeftSideComponents = ({ setTotalPrice }) => {
     setIsExpanded(!isExpanded);
   };
 
-  const base = "https://rtadmin.rahtourism.com/";
+  const base = "https://adminrah51786.rahtours.ae/";
   const navigate = useNavigate();
   const theme = useTheme();
   const dispatch = useDispatch();

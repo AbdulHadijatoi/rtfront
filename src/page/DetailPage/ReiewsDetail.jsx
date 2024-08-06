@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 const ReviewsDetail = ({ data }) => {
   const [value, setValue] = useState(5);
   const [showAll, setShowAll] = useState(false); // State to track if all reviews should be shown
-  const base = 'https://rtadmin.rahtourism.com/';
+  const base = 'https://adminrah51786.rahtours.ae/';
 
   // Calculate average rating
   const totalReviews = data?.reviews?.length || 0;

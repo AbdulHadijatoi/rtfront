@@ -283,7 +283,7 @@ const isAuth = useSelector((state)=>state?.auth?.isAuthenticated)
               >
                 <Box flex={1}>
                   <img
-                    src={`https://rtadmin.rahtourism.com/storage/uploads/media/${val.image}`}
+                    src={`https://adminrah51786.rahtours.ae/storage/uploads/media/${val.image}`}
                     style={{
                       width: "100%",
                       borderRadius: "10px",

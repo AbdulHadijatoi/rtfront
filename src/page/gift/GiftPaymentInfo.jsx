@@ -13,7 +13,7 @@ const GiftPaymentInfo = () => {
   const toggleDescription = () => {
     setIsExpanded(!isExpanded);
   };
-  const base = 'https://rtadmin.rahtourism.com/';
+  const base = 'https://adminrah51786.rahtours.ae/';
   
   const encodeString = (str) => {
     return encodeURIComponent(btoa(str));

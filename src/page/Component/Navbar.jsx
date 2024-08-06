@@ -100,7 +100,7 @@ const Navbar = () => {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const theme = useTheme();
-  const base = 'https://rtadmin.rahtourism.com/'
+  const base = 'https://adminrah51786.rahtours.ae/'
 
 
   const user = useSelector((state) => state?.auth?.user);
@@ -595,7 +595,7 @@ const Navbar = () => {
                           >
                             <Box sx={{ position: "relative" }}>
                               <img
-                                src={`https://rtadmin.rahtourism.com/storage/uploads/media/${item.image}`}
+                                src={`https://adminrah51786.rahtours.ae/storage/uploads/media/${item.image}`}
                                 alt="Header"
                                 style={{
                                   width: "80px",
