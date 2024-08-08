@@ -457,8 +457,8 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
                                                         {item.category}
                                                     </Typography>
                                                     {/* <Typography sx={{ fontSize: "14px", color: "#777" }}>
-                {item.highlight}
-            </Typography> */}
+                                                                    {item.highlight}
+                                                                </Typography> */}
 
                                                     <Typography
                                                         sx={{
@@ -470,10 +470,10 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
                                                         }}
                                                     >
                                                         {expandedStates[index] ? (
-                                                            item.highlight
+                                                            <span dangerouslySetInnerHTML={{ __html: item.highlight }} />
                                                         ) : (
                                                             <>
-                                                                {item.highlight.slice(0, 70)}{" "}
+                                                                <span dangerouslySetInnerHTML={{ __html: item.highlight.slice(0, 70) }} />{" "}
                                                                 {item.highlight.length > 70 && (
                                                                     <Button
                                                                         onClick={() => toggleDescription(index)}
@@ -481,7 +481,6 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
                                                                             marginLeft: "1px",
                                                                             textTransform: "none",
                                                                             fontSize: "0.6rem",
-
                                                                             color: "grey",
                                                                         }}
                                                                     >
@@ -504,6 +503,7 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
                                                             </Button>
                                                         )}
                                                     </Typography>
+
                                                 </Box>
                                                 <Box>
                                                     <Typography

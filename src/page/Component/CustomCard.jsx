@@ -121,7 +121,7 @@ const CustomCard = () => {
 
               <Box
                 p={2}
-                sx={{ padding: '10px', width: "100%", display: "flex", flexDirection: "column", gap: "10px" }}
+                sx={{ padding: '10px', width: "100%", minHeight: '100px', display: "flex", flexDirection: "column", justifyContent: 'space-between', }}
               >
                 <Typography
                   sx={{
@@ -145,11 +145,20 @@ const CustomCard = () => {
                 </Typography>
 
 
-                <Box sx={{ width: "90%", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                
+                <Box sx={{ width: "90%", display: "flex", flexDirection: 'column', alignItems: "start" }}>
 
-                  <Typography sx={{ fontSize: "0.75rem", color: "grey" }}>
-                    Per person Price
-                  </Typography>
+                  <Box sx={{ display: 'flex', justifyItems: 'center', alignItems: 'start' }}>
+                    
+                    <Rating
+                      readOnly
+                      name="simple-controlled"
+                      value={Math.round((val?.reviews?.reduce((acc, review) => acc + review?.rating, 0))/(val?.reviews?.length || 0)).toFixed(2)}
+                      size="small"
+                    />
+                    <Typography sx={{ fontSize: '0.7rem' }}>{calculateRating(val?.reviews)} ({val?.reviews?.length})</Typography>
+                  </Box>
+                  
 
                   <Box gap={1} sx={{}}>
                     {val.packages && val.packages.length > 0 && (
@@ -157,14 +166,14 @@ const CustomCard = () => {
                         <Box gap={1} sx={{ display: "flex", }}>
                           {val.discount_offer > 0 && (
                             <Typography sx={{ color: "grey", textDecoration: "line-through", fontSize: '0.8rem' }}>
-                              {val.packages[0].category === "private"
+                              From {val.packages[0].category === "private"
                                 ? `AED ${val.packages[0].price}`
                                 : `AED ${val.packages[0].adult_price}`}
                             </Typography>
                           )}
 
                           <Typography fontWeight="bold" color={theme.palette.primary.main} fontSize='0.8rem'>
-                            {val.packages[0].category === "private"
+                            From {val.packages[0].category === "private"
                               ? `AED ${(
                                 val.packages[0].price -
                                 (val.packages[0].price * val.discount_offer) / 100
@@ -176,7 +185,9 @@ const CustomCard = () => {
                                 100
                               )}`} {" "}
                           </Typography>
-
+                          <Typography sx={{ fontSize: "0.75rem", color: "grey" }}>
+                          Per person
+                        </Typography>
                         </Box>
 
                       </>
@@ -184,15 +195,6 @@ const CustomCard = () => {
                   </Box>
 
                 </Box>
-              </Box>
-              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'start', paddingLeft: '15px' }}>
-                <Typography sx={{ fontSize: '0.7rem' }}>({calculateRating(val?.reviews)}) {val?.reviews?.length} Reviews</Typography>
-                <Rating
-                  readOnly
-                  name="simple-controlled"
-                  value={Math.round((val?.reviews?.reduce((acc, review) => acc + review?.rating, 0))/(val?.reviews?.length || 0)).toFixed(2)}
-                  size="small"
-                />
               </Box>
             </Box>
 
