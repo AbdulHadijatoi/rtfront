@@ -161,7 +161,7 @@ const LeftSideComponents = ({ setTotalPrice }) => {
   };
 
   const handleNavigate = (id) => {
-    navigate(`/${id}`);
+    navigate(`/dubai-activities/${id}`);
   };
 
   const allCart = token ? allCartRedux : allCartLocal;
@@ -239,8 +239,8 @@ const LeftSideComponents = ({ setTotalPrice }) => {
                                     color: "grey",
                                     fontSize: "0.8rem",
                                   }}
+                                  dangerouslySetInnerHTML={{ __html: "Package Type : "+packageItem.highlight }}
                                 >
-                                  Package Type : {packageItem.highlight}
                                 </Typography>
                               </Box>
                               <Box

@@ -268,7 +268,7 @@ const RightSideComponents = ({ allCart, totalPrice }) => {
             >
               Explore more activities
             </Button>
-            <Box sx={{ textAlign: "center", padding: "0rem 3rem", mt: 2 }}>
+            <Box sx={{ textAlign: "center", mt: 2 }}>
               {!isAuthenticated && (
                 <Typography sx={{ fontSize: '0.9rem' }}>
                   <Link
@@ -286,9 +286,10 @@ const RightSideComponents = ({ allCart, totalPrice }) => {
                     style={{
                       color: theme.palette.primary.main,
                       textDecoration: "none",
+                      marginRight: '5px'
                     }}
                   >
-                    Login
+                    Login 
                   </Link>
                   for faster checkout
                 </Typography>

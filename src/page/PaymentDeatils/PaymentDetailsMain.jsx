@@ -117,8 +117,11 @@ const PaymentDetailsMain = () => {
     <>
 
       <Page title='Payment Details | Book RAH Tours'>
-        <Box sx={{ background: '#f1f1f1', mt: 2 }}>
-          <Grid container spacing={3} sx={{ padding: '5%' }}>
+        <Box sx={{ background: '#f1f1f1', mt: 2, }}>
+          <Grid container spacing={3} sx={{
+            margin: 'auto',
+            width: {lg: '1280px'}
+           }}>
             <Grid item xs={12} lg={12}>
               <StepperComp
                 activeStep={activeStep}

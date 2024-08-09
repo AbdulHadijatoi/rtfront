@@ -561,10 +561,12 @@ const handleDelete = async (ids) => {
               border: "1px solid #f0f0f0",
               padding: "2%",
               borderRadius: "10px",
+              marginBottom: '20px',
               marginTop: "1rem",
               background: "#fff",
               display: "flex",
               justifyContent: 'space-between',
+              flexDirection: {xs: 'column', md: 'row'},
               alignItems: 'center',
             }}
           >
@@ -589,6 +591,7 @@ const handleDelete = async (ids) => {
                 width: { xs: "100%", md: "auto" },
                 backgroundColor: theme.palette.primary.main,
                 color: "white",
+                textWrap: 'nowrap'
               }}
               disabled={isClicked || !isChecked}
             >

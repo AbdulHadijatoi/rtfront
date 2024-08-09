@@ -52,7 +52,12 @@ const Booking_Info = ({ activeStep }) => {
 
   return (
     <Page title="Booking Information">
-      <Grid container spacing={3} sx={{ padding: '2rem 5%' }}>
+      <Grid container spacing={3} sx={{ padding: '2rem 0',
+        margin: 'auto',
+        width: {
+          lg: '1280px',
+        }
+       }}>
         <Grid item lg={12} md={12} sm={12} xs={12}>
           <Typography variant="h4" textAlign="center" fontWeight="bold" sx={{ padding: '20px 0px',fontSize:'20px' }}>
             Thank you, Your Booking is Almost complete
