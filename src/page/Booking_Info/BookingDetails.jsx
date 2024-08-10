@@ -10,6 +10,20 @@ const BookingDetails = ({ data }) => {
   const navigate = useNavigate()
   const detail = state === 'cart';
 
+  const PackageDetailsList = ({ data }) => {
+    return (
+      <div>
+        {data?.package_details?.map((pkg, index) => (
+          <Details
+            key={index}
+            title={pkg.ac_data.name}
+            value={pkg.date}
+          />
+        ))}
+      </div>
+    );
+  };
+
   const handleCancel = () => {
     localStorage.removeItem('bookingDetails');
     navigate('/')
@@ -34,14 +48,13 @@ const BookingDetails = ({ data }) => {
           <Details title="Last Name" value={data?.last_name} />
           <Details title="Email" value={data?.email} />
           <Details title="Nationality" value={data?.nationality} />
-          <Details title="Date" value={data?.date} />
 
           <Details title="Phone" value={data?.phone} />
           <BookingHeader
             sx={{ mt: 3 }}
             title={"Booking Reference (" + data?.reference_id +")"}
-            sub={data?.activity_name}
           />
+          <PackageDetailsList data={data} />
           <Divider sx={{ mt: 3 }} />
           <Box
             sx={{
