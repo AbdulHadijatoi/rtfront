@@ -147,7 +147,7 @@ const Footer = () => {
                   marginTop: "1rem",
                   textTransform: "none"
                   }}>
-                  Suite 714, Makateb Tower - Port Saeed - Dubai
+                  Suite 714, Makateb Tower - Dubai
                 </Typography>
                 
                 <Box sx={{ display: 'flex', gap: '5px', alignItems: 'center', mt: 2 }}>
@@ -167,7 +167,8 @@ const Footer = () => {
                 <Typography sx={{ 
                   color: 'grey',
                   fontSize: "0.9rem",
-                  textTransform: "none"
+                  textTransform: "none",
+                  textDecoration: 'none'
                   }} component="a" href={`mailto:info@rahtours.ae`}>
                       info@rahtours.ae
                     </Typography>
