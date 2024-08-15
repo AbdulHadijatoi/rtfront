@@ -37,7 +37,9 @@ const PriceCard = ({ data1, activeStep, total, setTotalAmount, cartData, voucher
   const [loading, setLoading] = useState(false);
   const pathnameCookie = Cookies.get("pathname");
   const totalBooking = JSON.parse(localStorage.getItem("bookingDetails") || "{}");
-  console.log(state)
+
+
+  localStorage.setItem('activity_name',[ state.name]);
   const auth = useSelector((state) => state?.auth?.isAuthenticated);
   
   const handleVoucherChange = (e) => {
@@ -104,7 +106,7 @@ const PriceCard = ({ data1, activeStep, total, setTotalAmount, cartData, voucher
     setExpanded(isExpanded ? panel : false);
   };
 
-  console.log(cartData)
+  // console.log(cartData)
 
   return (
 

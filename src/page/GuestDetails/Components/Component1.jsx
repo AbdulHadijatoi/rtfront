@@ -157,13 +157,13 @@ const Component1 = ({ data, onNext, data1, activeStep, cartData }) => {
     } else {
       bookingDetails = {
         ...formValues,
-        activity_name: data?.name,
+        activity_name: localStorage.getItem('activity_name'),
         date: data?.date,
         total_amount: data?.total_amount - voucherDiscount, 
         status: "pending",
         payment: 'failed',
         reference_id: generateRandomString(),
-        package_details: [data?.package],
+        package_details: [data1],
       };
 
       totalAmount = data?.total_amount - voucherDiscount;
@@ -183,7 +183,7 @@ const ids = Cookies.get('id') ? JSON.parse(Cookies.get('id')) : [];
 
 const booking = async () => {
   const bookingDetails = JSON.parse(localStorage.getItem('bookingDetails'));
-
+// return;
   if (state.path === 'cart') {
       bookingDetails.package_details = cartData;
   }
@@ -199,7 +199,6 @@ const booking = async () => {
       // enqueueSnackbar('Booking successful!', { variant: 'success' });
       localStorage.removeItem('addCartData');
       handleDelete(ids);
-      
       openStripeGatewayPage()
   } catch (error) {
       console.error('Error in booking:', error);
