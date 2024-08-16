@@ -34,7 +34,6 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
 
 
 
-    const [date, setDate] = useState("");
     const [showDropdowns, setShowDropdowns] = useState(false);
     const [adult, setAdult] = useState(1);
     const [child, setChild] = useState(0);
@@ -50,8 +49,9 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
     const today2 = dayjs();
     const currentTime = today2.format('HH:mm:ss');
     const enableToday = currentTime >= ac_data.start_time;
-    console.log("current time: ",currentTime);
-    console.log("start time: ",ac_data.start_time);
+    const minDate = enableToday ? today2.startOf('day') : today2.add(1, 'day').startOf('day');
+    const [date, setDate] = useState(minDate.format('YYYY-MM-DD'));
+
     const handleAdultIncrement = () => {
         setAdult((prevCount) => prevCount + 1);
     };
@@ -630,6 +630,7 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
       <DatePicker
         sx={{ width: "100%" }}
         label="Please select date"
+        value={dayjs(date)} // Set the initial value to the first allowed date
         disabled={ac_data?.available_activity === 0}
         minDate={enableToday ? today2.startOf('day') : today2.add(1, 'day').startOf('day')}
         slotProps={{
