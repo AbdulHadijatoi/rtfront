@@ -119,7 +119,7 @@ const RelatedData = ({ onItemClick }) => {
                     height: "100%",
                     maxHeight: '430px',
                     overflow: "hidden",
-                    padding: "5px",
+                    // padding: "5px",
                   }}
                 >
                   <Box sx={{ position: "relative" }}>
@@ -128,110 +128,92 @@ const RelatedData = ({ onItemClick }) => {
                       alt="Header"
                       style={{
                         width: "100%",
-                        height: "30vh",
+                        height: 240,
                         maxHeight: '280px',
-                        borderRadius: "12px",
+                        borderRadius: "8px 8px 0px 0px",
                         objectFit: "cover",
                       }}
                     />
                   </Box>
 
                   <Box
-                    p={2}
-                    sx={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "10px",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        fontSize: "1rem",
-                        textAlign: "start",
-                        fontWeight: 600,
-                        color: theme.palette.primary.textPrimary,
-                        wordBreak: "break-word",
-                        overflowWrap: "break-word",
-                        display: "-webkit-box",
-                        WebkitBoxOrient: "vertical",
-                        WebkitLineClamp: 2,
-                        overflow: "hidden",
-                        textOverflow: "ellipsis",
-                        maxHeight: "4.5rem",
-                        lineHeight: "1.5rem",
-                      }}
-                    >
-                      {val.name}
-                    </Typography>
+                p={2}
+                sx={{ padding: '10px', width: "100%", minHeight: '100px', display: "flex", flexDirection: "column", justifyContent: 'space-between', }}
+              >
+                <Typography
+                  variant="h5"
+                  sx={{
+                    fontSize: "1rem",
+                    textAlign: "start",
+                    fontWeight: 700,
+                    color: theme.palette.primary.textPrimary,
+                    wordBreak: "break-word",
+                    overflowWrap: "break-word",
+                    display: "-webkit-box",
+                    WebkitBoxOrient: "vertical",
+                    WebkitLineClamp: 2,
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    maxHeight: "4.5rem",
+                    lineHeight: "1.5rem",
+                    width:"95%"
+                  }}
+                >
+                  {val.name}
+                </Typography>
 
-                    <Box
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                      }}
-                    >
-                      <Typography sx={{ fontSize: "0.8rem", color: "grey" }}>
-                        Per person Price
-                      </Typography>
 
-                      <Box gap={1} sx={{ display: "flex", alignItems: 'center' }}>
-                        {val.packages && val.packages.length > 0 && (
-                          <>
-                            {val?.discount_offer > 0 && (
-                              <Typography
-                                sx={{
-                                  color: "grey",
-                                  textDecoration: "line-through",
-                                  fontSize: '0.7rem'
-                                }}
-                              >
-                                {val.packages[0].category === "private"
-                                  ? `AED ${val.packages[0].price}`
-                                  : `AED ${val.packages[0].adult_price}`}
-                              </Typography>
-                            )}
+                
+                <Box sx={{ width: "90%", display: "flex", flexDirection: 'column', alignItems: "start" }}>
 
-                            <Typography
-                              fontWeight="bold"
-                              sx={{ fontSize: '0.8rem' }}
-                              color={theme.palette.primary.main}
-                            >
-                              {val.packages[0].category === "private"
-                                ? `AED ${(
-                                  val.packages[0].price -
-                                  (val.packages[0].price *
-                                    val.discount_offer) /
-                                  100
-                                )}`
-                                : `AED ${(
-                                  val.packages[0].adult_price -
-                                  (val.packages[0].adult_price *
-                                    val.discount_offer) /
-                                  100
-                                )}`}
-                            </Typography>
-                          </>
-                        )}
-                      </Box>
-                    </Box>
-
-                    <Box
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        textTransform: "none",
-                      }}
-                    >
-                      <Box>
-                        <Typography sx={{ fontSize: '0.8rem' }}>({calculateRating(val?.reviews)}) {val?.reviews?.length} Reviews</Typography>
-
-                        <Rating size="small" name="simple-controlled" value={Math.round((val?.reviews?.reduce((acc, review) => acc + review?.rating, 0))/(val?.reviews?.length || 0))} readOnly />
-                      </Box>
-                      <Button variant="contained" sx={{ fontSize: '0.7rem', color: 'white' }} onClick={() => handleBookNow(val.slug)}>Book Now</Button>
-                    </Box>
+                  <Box sx={{ display: 'flex', justifyItems: 'center', alignItems: 'start' }}>
+                    
+                    <Rating
+                      readOnly
+                      name="simple-controlled"
+                      value={Math.round((val?.reviews?.reduce((acc, review) => acc + review?.rating, 0))/(val?.reviews?.length || 0)).toFixed(2)}
+                      size="small"
+                    />
+                    <Typography sx={{ fontSize: '0.7rem' }}>{calculateRating(val?.reviews)} ({val?.reviews?.length})</Typography>
                   </Box>
+                  
+
+                  <Box gap={1} sx={{}}>
+                    {val.packages && val.packages.length > 0 && (
+                      <>
+                        <Box gap={1} sx={{ display: "flex", }}>
+                          {val.discount_offer > 0 && (
+                            <Typography sx={{ color: "grey", textDecoration: "line-through", fontSize: '0.8rem' }}>
+                              From {val.packages[0].category === "private"
+                                ? `AED ${val.packages[0].price}`
+                                : `AED ${val.packages[0].adult_price}`}
+                            </Typography>
+                          )}
+
+                          <Typography fontWeight="bold" color={theme.palette.primary.main} fontSize='0.8rem'>
+                            From {val.packages[0].category === "private"
+                              ? `AED ${(
+                                val.packages[0].price -
+                                (val.packages[0].price * val.discount_offer) / 100
+                              )}`
+                              : `AED ${(
+                                val.packages[0].adult_price -
+                                (val.packages[0].adult_price *
+                                  val.discount_offer) /
+                                100
+                              )}`} {" "}
+                          </Typography>
+                          <Typography sx={{ fontSize: "0.75rem", color: "grey" }}>
+                          Per person
+                        </Typography>
+                        </Box>
+
+                      </>
+                    )}
+                  </Box>
+
+                </Box>
+              </Box>
                 </Box>
               </Grid>
             ))

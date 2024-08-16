@@ -30,6 +30,18 @@ const PkgCard = ({ data, categories, ind }) => {
   // Calculate average rating
   const totalReviews = data?.reviews?.length || 0;
   const averageRating = data?.reviews?.reduce((acc, review) => acc + review?.rating, 0) / totalReviews || 0;
+  
+  const calculateRating = (reviews) => {
+      if (!Array.isArray(reviews) || reviews.length === 0) {
+          return 0;
+      }
+
+      const totalReviews = reviews.length;
+      const totalRating = reviews.reduce((acc, review) => acc + (review?.rating || 0), 0);
+      const averageRating = (totalRating / totalReviews).toFixed(1);
+
+      return averageRating;
+  };
 
   useEffect(() => {
     setValue(Math.round(averageRating));
@@ -135,7 +147,7 @@ const PkgCard = ({ data, categories, ind }) => {
 
 
 
-    <Card sx={{ ml:1, width:'100%', height: '95%', display: 'flex', flexDirection: "column", justifyContent: 'space-between', cursor: 'pointer' }}
+    <Card sx={{ ml:1, width:'100%', height: "100%", maxHeight: '450px', display: 'flex', flexDirection: "column", justifyContent: 'space-between', cursor: 'pointer' }}
       onClick={handleBookNowClick}
 
     >
@@ -160,91 +172,90 @@ const PkgCard = ({ data, categories, ind }) => {
 
 
         <CardMedia
-          sx={{ height: 240, borderRadius: "8px" }}
+          sx={{ height: 240, borderRadius: "8px 8px 0px 0px", }}
           image={`${base}${data?.image_url}`}
           title="green iguana"
         />
       </div>
 
-      <CardContent>
-        <Typography color="textSecondary" component="div" sx={{ fontSize: '12px' }}>
-          {subCategory}
-        </Typography>
-        <Typography gutterBottom variant="h5" component="div" sx={{ WebkitLineClamp: 2, fontSize: '1rem', fontWeight: '700' }}>
-          {data?.name}
-        </Typography>
-        {/* <Typography sx={descriptionStyle}>{data?.description}</Typography> */}
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <Typography sx={{ fontSize: "12px", color: "grey" }}>
-            Per Person Price
-          </Typography>
-          <Box sx={{ display: 'flex', alignItems: 'center' }} gap={1}>
-            {/* <Typography sx={{ fontSize: "15px", color: "grey" }}> */}
+      <Box
 
-            {data.discount_offer > 0 && (
-              <Typography
-                sx={{ fontSize: '0.8rem', color: "grey", textDecoration: "line-through" }}
+                sx={{ padding: '10px', width: "100%", minHeight: '100px', display: "flex", flexDirection: "column", justifyContent: 'space-between', }}
               >
-                {data.packages[0].category === "private"
-                  ? `AED ${data.packages[0].price}`
-                  : `AED ${data.packages[0].adult_price}`}
-              </Typography>
-            )}
+                <Typography
+                  variant="h5"
+                  sx={{
+                    textAlign: "start",
+                    fontSize: '1rem',
+                    fontWeight: '700',
+                    color: theme.palette.primary.textPrimary,
+                    wordBreak: "break-word",
+                    overflowWrap: "break-word",
+                    display: "-webkit-box",
+                    WebkitBoxOrient: "vertical",
+                    WebkitLineClamp: 2,
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    maxHeight: "4.5rem",
+                    lineHeight: "1.5rem",
+                    width:"95%",
+                  }}
+                >
+                  {data.name}
+                </Typography>
 
-            <Typography
-              sx={{ fontSize: '0.9rem' }}
-              fontWeight="bold"
-              color={theme.palette.primary.main}
-            >
-              {data.packages[0].category === "private"
-                ? `AED ${(data.packages[0].price - (data.packages[0].price * data.discount_offer / 100))}`
-                : `AED ${(data.packages[0].adult_price - (data.packages[0].adult_price * data.discount_offer / 100))}`}
-            </Typography>
 
+                
+                <Box sx={{ width: "90%", display: "flex", flexDirection: 'column', alignItems: "start" }}>
 
-            {/* <Typography color="primary" display="inline" fontWeight="bold" sx={{ ml: 1 }}>
-                AED {data?.packages[0]?.price !== null ? data?.packages[0]?.price : data?.packages[0]?.adult_price}
-              </Typography> */}
+                  <Box sx={{ display: 'flex', justifyItems: 'center', alignItems: 'start' }}>
+                    
+                    <Rating
+                      readOnly
+                      name="simple-controlled"
+                      value={Math.round((data?.reviews?.reduce((acc, review) => acc + review?.rating, 0))/(data?.reviews?.length || 0)).toFixed(2)}
+                      size="small"
+                    />
+                    <Typography sx={{ fontSize: '0.7rem' }}>{calculateRating(data?.reviews)} ({data?.reviews?.length})</Typography>
+                  </Box>
+                  
 
+                  <Box gap={1} sx={{}}>
+                    {data.packages && data.packages.length > 0 && (
+                      <>
+                        <Box gap={1} sx={{ display: "flex", }}>
+                          {data.discount_offer > 0 && (
+                            <Typography sx={{ color: "grey", textDecoration: "line-through", fontSize: '0.8rem' }}>
+                              From {data.packages[0].category === "private"
+                                ? `AED ${data.packages[0].price}`
+                                : `AED ${data.packages[0].adult_price}`}
+                            </Typography>
+                          )}
 
+                          <Typography fontWeight="bold" color={theme.palette.primary.main} fontSize='0.8rem'>
+                            From {data.packages[0].category === "private"
+                              ? `AED ${(
+                                data.packages[0].price -
+                                (data.packages[0].price * data.discount_offer) / 100
+                              )}`
+                              : `AED ${(
+                                data.packages[0].adult_price -
+                                (data.packages[0].adult_price *
+                                  data.discount_offer) /
+                                100
+                              )}`} {" "}
+                          </Typography>
+                          <Typography sx={{ fontSize: "0.75rem", color: "grey" }}>
+                          Per person
+                        </Typography>
+                        </Box>
 
-            {/* </Typography> */}
-          </Box>
-        </Box>
+                      </>
+                    )}
+                  </Box>
 
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 1 }}>
-          <Box>
-            <Typography sx={{ fontSize: '0.7rem' }}>{averageRating.toFixed(2)} Ratting</Typography>
-            <Rating
-              name="simple-controlled"
-              value={averageRating.toFixed(2)}
-              
-              size="small"
-              readOnly
-            />
-          </Box>
-
-          <Box>
-            <Button
-              variant="contained"
-              onClick={handleBookNowClick}
-              sx={{ fontSize: '0.7rem', textTransform: 'none', color: 'white' }}
-            >
-              Book Now
-            </Button>
-          </Box>
-        </Box>
-
-        <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 3 }}>
-
-        </Box>
-      </CardContent>
+                </Box>
+              </Box>
     </Card>
   );
 };

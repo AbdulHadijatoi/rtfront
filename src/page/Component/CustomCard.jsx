@@ -111,8 +111,8 @@ const CustomCard = () => {
                   alt="Header"
                   style={{
                     width: "100%",
-                    borderRadius: "12px 12px 0px 0px",
-                    height: '30vh',
+                    borderRadius: "8px 8px 0px 0px",
+                    height: 240,
                     maxHeight: '300px',
                     objectFit: "cover",
                   }}
@@ -124,10 +124,11 @@ const CustomCard = () => {
                 sx={{ padding: '10px', width: "100%", minHeight: '100px', display: "flex", flexDirection: "column", justifyContent: 'space-between', }}
               >
                 <Typography
+                  variant="h5"
                   sx={{
-                    fontSize: "14px",
                     textAlign: "start",
-                    fontWeight: 600,
+                    fontSize: '1rem',
+                    fontWeight: '700',
                     color: theme.palette.primary.textPrimary,
                     wordBreak: "break-word",
                     overflowWrap: "break-word",
@@ -138,7 +139,7 @@ const CustomCard = () => {
                     textOverflow: "ellipsis",
                     maxHeight: "4.5rem",
                     lineHeight: "1.5rem",
-                    width:"100%"
+                    width:"95%"
                   }}
                 >
                   {val.name}

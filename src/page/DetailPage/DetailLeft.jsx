@@ -15,6 +15,10 @@ import {
     Menu,
     IconButton,
 } from "@mui/material";
+import dayjs from 'dayjs';
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker,MobileDatePicker } from "@mui/x-date-pickers";
 import { useSnackbar } from "notistack";
 import { useNavigate, useParams } from "react-router";
 import { useDispatch } from "react-redux";
@@ -618,57 +622,28 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
                             </div>
                         ) : (
                             <div>
-                                <InputLabel sx={{ fontSize: "12px" }}>
-                                    Please Select Date
-                                </InputLabel>
-                                {/* <TextField
-    type="date"
-    fullWidth
-    value={date}
-    // onChange={(e) => setDate(e.target.value)}
-    onChange={handleDateChange}
-    InputLabelProps={{ shrink: true }}
-    variant="outlined"
-    disabled={ac_data?.available_activity === 0 && !date} // Disable if no activity available
-    sx={{
-        backgroundColor: "#EDEDED",
-        borderRadius: "7px",
-        "& .MuiOutlinedInput-root": {
-            "& fieldset": {
-                border: "none",
-            },
-        },
-    }}
-    inputProps={{
-        min: new Date().toISOString().split("T")[0] // Disable past dates
-    }}
-    // disabled={!date}
-/> */}
+                                
+                                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                    <DatePicker
+                                        sx={{ width: "100%" }}
+                                        label="Please select date"
+                                        disabled={ac_data?.available_activity === 0}
+                                        slotProps={{
+                                            field: { clearable: true, onClear: () => setDate(null) },
+                                        }}
+                                        onChange={(newDate) => {
+                                            if (newDate && dayjs(newDate).isValid()) {
+                                                const formattedDate = dayjs(newDate).format('YYYY-MM-DD');
+                                                setDate(formattedDate);
+                                            } else {
+                                                setDate(null); // Handle the case where the date is cleared or invalid
+                                            }
+                                        }}
+                                    />
+                                </LocalizationProvider>
 
 
-                                <TextField
-                                    type="date"
-                                    fullWidth
-                                    value={date}
-                                    onChange={(e) => setDate(e.target.value)}
 
-                                    InputLabelProps={{ shrink: true }}
-                                    variant="outlined"
-                                    disabled={ac_data?.available_activity === 0}
-                                    sx={{
-                                        backgroundColor: "#EDEDED",
-                                        borderRadius: "7px",
-                                        "& .MuiOutlinedInput-root": {
-                                            "& fieldset": {
-                                                border: "none",
-                                            },
-                                        },
-                                    }}
-                                    inputProps={{
-                                        min: isPastEndTime ? tomorrow : today,
-                                        // disabled: isPastEndTim,
-                                    }}
-                                />
 
                             </div>
                         )}
