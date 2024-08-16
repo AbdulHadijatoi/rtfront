@@ -46,9 +46,12 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
     console.log(ac_data.name, 'data name for activity mail')
     const [adultCount, setAdultCount] = useState(1);
 
-
-
-
+     // Get today's date and time
+    const today2 = dayjs();
+    const currentTime = today2.format('HH:mm:ss');
+    const enableToday = currentTime >= ac_data.start_time;
+    console.log("current time: ",currentTime);
+    console.log("start time: ",ac_data.start_time);
     const handleAdultIncrement = () => {
         setAdult((prevCount) => prevCount + 1);
     };
@@ -377,7 +380,7 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
             <Box
                 sx={{
                     border: "2px solid #EDEDED",
-                    borderRadius: "20px",
+                    borderRadius: "10px",
                     padding: "10px 0px",
                 }}
                 ref={boxRef}
@@ -624,23 +627,24 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
                             <div>
                                 
                                 <LocalizationProvider dateAdapter={AdapterDayjs}>
-                                    <DatePicker
-                                        sx={{ width: "100%" }}
-                                        label="Please select date"
-                                        disabled={ac_data?.available_activity === 0}
-                                        slotProps={{
-                                            field: { clearable: true, onClear: () => setDate(null) },
-                                        }}
-                                        onChange={(newDate) => {
-                                            if (newDate && dayjs(newDate).isValid()) {
-                                                const formattedDate = dayjs(newDate).format('YYYY-MM-DD');
-                                                setDate(formattedDate);
-                                            } else {
-                                                setDate(null); // Handle the case where the date is cleared or invalid
-                                            }
-                                        }}
-                                    />
-                                </LocalizationProvider>
+      <DatePicker
+        sx={{ width: "100%" }}
+        label="Please select date"
+        disabled={ac_data?.available_activity === 0}
+        minDate={enableToday ? today2.startOf('day') : today2.add(1, 'day').startOf('day')}
+        slotProps={{
+          field: { clearable: true, onClear: () => setDate(null) },
+        }}
+        onChange={(newDate) => {
+          if (newDate && dayjs(newDate).isValid()) {
+            const formattedDate = dayjs(newDate).format('YYYY-MM-DD');
+            setDate(formattedDate);
+          } else {
+            setDate(null);
+          }
+        }}
+      />
+    </LocalizationProvider>
 
 
 

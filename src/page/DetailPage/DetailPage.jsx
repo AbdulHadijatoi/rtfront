@@ -15,6 +15,7 @@ import {
   IconButton
 } from "@mui/material";
 
+import dayjs from 'dayjs';
 import { ExpandMore as ExpandMoreIcon } from "@mui/icons-material";
 import { CiStopwatch } from "react-icons/ci";
 import {
@@ -42,6 +43,7 @@ const DetailPage = ({ nameProp }) => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const [data1, setData] = useState([]);
+  const startTime = null;
   const [loading, setLoading] = useState(true);
   const [value, setValue] = useState(5);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -230,9 +232,14 @@ const DetailPage = ({ nameProp }) => {
     }
 
     if (data1.start_time) {
+      const time24 = data1.start_time; // e.g., "14:30:00"
+      const time12 = dayjs(`1970-01-01 ${time24}`).format('h:mm A');
+      console.log("Original start time ", data1.start_time);
+      console.log("NEW start time ", time12);
+
       iconsToShow.push({
         icon: <FaClockRotateLeft style={styleType} />,
-        text: `Start time ${data1.start_time}`,
+        text: `Start time ${time12}`,
       });
     }
 
@@ -584,7 +591,7 @@ const DetailPage = ({ nameProp }) => {
                     <Box
                       sx={{
                         gap: { xs: "0px", md: "20px" },
-
+                        marginTop: '30px',
                         display: "flex",
                         // gap: "20px",
                         flexWrap: "wrap",
