@@ -118,9 +118,9 @@ const BlogDetail = () => {
                 {ind % 2 === 0 ? (
                   <>
                     <Grid item lg={7} md={6} sm={12} xs={12}>
-                      <Typography sx={{ fontSize: "24px", fontWeight: 600 }}>
+                      <h1 style={{ fontSize: "24px", fontWeight: 600 }}>
                         {val.title}
-                      </Typography>
+                      </h1>
                       <Typography
                         sx={{
                           color: "#506273",
@@ -172,9 +172,9 @@ const BlogDetail = () => {
                       xs={12}
                       order={{ xs: 1, sm: 1, md: 2, lg: 2 }}
                     >
-                      <Typography sx={{ fontSize: "20px", fontWeight: 600 }}>
+                      <h1 style={{ fontSize: "20px", fontWeight: 600 }}>
                         {val.title}
-                      </Typography>
+                      </h1>
                       <Typography
                         sx={{
                           color: "#506273",

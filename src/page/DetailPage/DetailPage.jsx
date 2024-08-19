@@ -508,14 +508,14 @@ const DetailPage = ({ nameProp }) => {
             }}
           >
             <Box>
-              <Typography
-                sx={{
+              <h1
+                style={{
                   fontSize: { xs: "1rem", md: "2rem" },
                   fontWeight: 600,
                 }}
               >
                 {data1.name}
-              </Typography>
+              </h1>
               
               <Box sx={{display: 'flex', justifyContent: "space-between", marginBottom: '10px'}}>
 
