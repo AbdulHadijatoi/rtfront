@@ -79,7 +79,7 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
     const [loadingStates, setLoadingStates] = useState({});
     // console.log(ac_data, "ac");
 
-    const [selectedItemIndex, setSelectedItemIndex] = useState(null);
+    const [selectedItemIndex, setSelectedItemIndex] = useState(0);
 
     const handleSelectItem = (index) => {
         setSelectedItemIndex(index);
@@ -625,31 +625,26 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
                             </div>
                         ) : (
                             <div>
-                                
                                 <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DatePicker
-        sx={{ width: "100%" }}
-        label="Please select date"
-        value={dayjs(date)} // Set the initial value to the first allowed date
-        disabled={ac_data?.available_activity === 0}
-        minDate={enableToday ? today2.startOf('day') : today2.add(1, 'day').startOf('day')}
-        slotProps={{
-          field: { clearable: true, onClear: () => setDate(null) },
-        }}
-        onChange={(newDate) => {
-          if (newDate && dayjs(newDate).isValid()) {
-            const formattedDate = dayjs(newDate).format('YYYY-MM-DD');
-            setDate(formattedDate);
-          } else {
-            setDate(null);
-          }
-        }}
-      />
-    </LocalizationProvider>
-
-
-
-
+                                    <DatePicker
+                                        sx={{ width: "100%" }}
+                                        label="Please select date"
+                                        value={dayjs(date)} // Set the initial value to the first allowed date
+                                        disabled={ac_data?.available_activity === 0}
+                                        minDate={enableToday ? today2.startOf('day') : today2.add(1, 'day').startOf('day')}
+                                        slotProps={{
+                                        field: { clearable: true, onClear: () => setDate(null) },
+                                        }}
+                                        onChange={(newDate) => {
+                                        if (newDate && dayjs(newDate).isValid()) {
+                                            const formattedDate = dayjs(newDate).format('YYYY-MM-DD');
+                                            setDate(formattedDate);
+                                        } else {
+                                            setDate(null);
+                                        }
+                                        }}
+                                    />
+                                </LocalizationProvider>
                             </div>
                         )}
                     </Box>
@@ -691,7 +686,7 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
                                     }}
                                 >
                                     <Typography sx={{ fontSize: "0.9rem", fontWeight: "700" }}>
-                                        Adult (AED {ac_data?.packages[0].adult_price})
+                                        Adult (AED {selectedItemIndex == 1? ac_data?.packages[selectedItemIndex].price:(ac_data?.packages[selectedItemIndex].adult_price)})
                                         
                                     </Typography>
 
@@ -719,80 +714,84 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
                                         </IconButton>
                                     </Box>
                                 </Box>
+                                { ac_data?.packages[selectedItemIndex]?.category == 'sharing' && (
+                                    <>
+                                    <br />
 
-                                <br />
+                                    <Box
+                                        sx={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            gap: 2,
+                                            justifyContent: "space-between",
+                                        }}
+                                    >
+                                        <Typography sx={{ fontSize: "0.9rem", fontWeight: "700" }}>
+                                            Child (AED {ac_data?.packages[selectedItemIndex]?.child_price})
+                                        </Typography>
 
-                                <Box
-                                    sx={{
-                                        display: "flex",
-                                        alignItems: "center",
-                                        gap: 2,
-                                        justifyContent: "space-between",
-                                    }}
-                                >
-                                    <Typography sx={{ fontSize: "0.9rem", fontWeight: "700" }}>
-                                        Child (AED {ac_data?.packages[0].child_price})
-                                    </Typography>
-
-                                    <Box sx={{ display: "flex", alignItems: "center" }}>
-                                        <IconButton
-                                            onClick={handleChildDecrement}
-                                            sx={{
-                                                color: theme.palette.primary.main,
-                                                fontSize: "2rem",
-                                            }}
-                                        >
-                                            <CiCircleMinus />
-                                        </IconButton>
-                                        <Typography sx={{ fontSize: "1rem" }}>{child}</Typography>
-                                        <IconButton
-                                            onClick={handleChildIncrement}
-                                            sx={{
-                                                color: theme.palette.primary.main,
-                                                fontSize: "2rem",
-                                            }}
-                                        >
-                                            <CiCirclePlus />
-                                        </IconButton>
+                                        <Box sx={{ display: "flex", alignItems: "center" }}>
+                                            <IconButton
+                                                onClick={handleChildDecrement}
+                                                sx={{
+                                                    color: theme.palette.primary.main,
+                                                    fontSize: "2rem",
+                                                }}
+                                            >
+                                                <CiCircleMinus />
+                                            </IconButton>
+                                            <Typography sx={{ fontSize: "1rem" }}>{child}</Typography>
+                                            <IconButton
+                                                onClick={handleChildIncrement}
+                                                sx={{
+                                                    color: theme.palette.primary.main,
+                                                    fontSize: "2rem",
+                                                }}
+                                            >
+                                                <CiCirclePlus />
+                                            </IconButton>
+                                        </Box>
                                     </Box>
-                                </Box>
-                                <br />
+                                    <br />
 
-                                <Box
-                                    sx={{
-                                        display: "flex",
-                                        alignItems: "center",
-                                        gap: 2,
-                                        justifyContent: "space-between",
-                                    }}
-                                >
-                                    <Typography sx={{ fontSize: "0.9rem", fontWeight: "700" }}>
-                                        Infant
-                                    </Typography>
+                                    <Box
+                                        sx={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            gap: 2,
+                                            justifyContent: "space-between",
+                                        }}
+                                    >
+                                        <Typography sx={{ fontSize: "0.9rem", fontWeight: "700" }}>
+                                            Infant
+                                        </Typography>
 
-                                    <Box sx={{ display: "flex", alignItems: "center" }}>
-                                        <IconButton
-                                            onClick={handleInfantDecrement}
-                                            sx={{
-                                                color: theme.palette.primary.main,
-                                                fontSize: "2rem",
-                                            }}
-                                        >
-                                            <CiCircleMinus />
-                                        </IconButton>
-                                        <Typography sx={{ fontSize: "1rem" }}>{infant}</Typography>
-                                        <IconButton
-                                            onClick={handleInfantIncrement}
-                                            sx={{
-                                                color: theme.palette.primary.main,
-                                                fontSize: "2rem",
-                                            }}
-                                        >
-                                            <CiCirclePlus />
-                                        </IconButton>
+                                        <Box sx={{ display: "flex", alignItems: "center" }}>
+                                            <IconButton
+                                                onClick={handleInfantDecrement}
+                                                sx={{
+                                                    color: theme.palette.primary.main,
+                                                    fontSize: "2rem",
+                                                }}
+                                            >
+                                                <CiCircleMinus />
+                                            </IconButton>
+                                            <Typography sx={{ fontSize: "1rem" }}>{infant}</Typography>
+                                            <IconButton
+                                                onClick={handleInfantIncrement}
+                                                sx={{
+                                                    color: theme.palette.primary.main,
+                                                    fontSize: "2rem",
+                                                }}
+                                            >
+                                                <CiCirclePlus />
+                                            </IconButton>
+                                        </Box>
                                     </Box>
-                                </Box>
-
+                                
+                                </>
+                                )}
+                            
                                 {/* ----------------------new design end------------ */}
 
                                 {/* <InputLabel>Adult</InputLabel>
