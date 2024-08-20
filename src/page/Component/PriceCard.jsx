@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
-import { CalendarViewMonthOutlined } from "@mui/icons-material";
+import { CalendarViewMonthOutlined, GroupsOutlined } from "@mui/icons-material";
 import { useDispatch, useSelector } from "react-redux";
 import Cookies from "js-cookie";
 import { Apply_Voucher } from "../../store/actions/bookingAction";
@@ -335,66 +335,119 @@ const PriceCard = ({ data1, activeStep, total, setTotalAmount, cartData, voucher
               <Divider />
 
               <Box sx={{ marginTop: "0rem", padding: "5%"}}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    marginTop: "0rem",
-                  }}
-                >
-                  <Box sx={{ display: "flex", alignItems: "center" }}>
-                    <PersonOutlineOutlinedIcon style={{ color: "#000" }} />
-                    <Typography
-                      sx={{ color: "#000", fontWeight: "bold", mt: 0.5, ml: 1 }}
-                    >
-                      Adult
+                {data1?.category == "private" ? (
+
+                    <Box>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                          marginTop: "0rem",
+                        }}
+                      >
+
+                      <Box sx={{ display: "flex", alignItems: "center" }}>
+                        <GroupsOutlined style={{ color: "#000" }} />
+                        <Typography
+                          sx={{ color: "#000", fontWeight: "bold", mt: 0.5, ml: 1 }}
+                        >
+                          Group(s)
+                        </Typography>
+                      </Box>
+                      <Typography sx={{ fontWeight: "600" }}>
+                        {data1?.adult}
+                      </Typography>
+                      </Box>
+                      <Box
+                          sx={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                            marginTop: "0rem",
+                          }}
+                        >
+
+                        <Box sx={{ display: "flex", alignItems: "center" }}>
+                          <GroupsOutlined style={{ color: "#000" }} />
+                          <Typography
+                            sx={{ color: "#000", fontWeight: "bold", mt: 0.5, ml: 1 }}
+                          >
+                            Persons per group
+                          </Typography>
+                        </Box>
+                        <Typography sx={{ fontWeight: "600" }}>
+                          {data1?.group_size}
+                        </Typography>
+                      </Box>
+                  </Box>
+                  ):(
+                    <Box
+                        sx={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                          marginTop: "0rem",
+                        }}
+                      >
+                      <Box sx={{ display: "flex", alignItems: "center" }}>
+                        <PersonOutlineOutlinedIcon style={{ color: "#000" }} />
+                        <Typography
+                          sx={{ color: "#000", fontWeight: "bold", mt: 0.5, ml: 1 }}
+                        >
+                          Adult
+                        </Typography>
+                      </Box>
+                      <Typography sx={{ fontWeight: "600" }}>
+                        {data1?.adult}
+                      </Typography>
+                    </Box>
+                  )}
+                {data1?.category == "sharing" && (
+                  <>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      marginTop: "1rem",
+                    }}
+                  >
+                    <Box sx={{ display: "flex", alignItems: "center" }}>
+                      <PersonOutlineOutlinedIcon style={{ color: "#000" }} />
+                      <Typography
+                        sx={{ color: "#000", fontWeight: "bold", mt: 0.5, ml: 1 }}
+                      >
+                        Child
+                      </Typography>
+                    </Box>
+                    <Typography sx={{ fontWeight: "600" }}>
+                      {data1?.child}
                     </Typography>
                   </Box>
-                  <Typography sx={{ fontWeight: "600" }}>
-                    {data1?.adult}
-                  </Typography>
-                </Box>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    marginTop: "1rem",
-                  }}
-                >
-                  <Box sx={{ display: "flex", alignItems: "center" }}>
-                    <PersonOutlineOutlinedIcon style={{ color: "#000" }} />
-                    <Typography
-                      sx={{ color: "#000", fontWeight: "bold", mt: 0.5, ml: 1 }}
-                    >
-                      Child
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      marginTop: "1rem",
+                    }}
+                  >
+                    <Box sx={{ display: "flex", alignItems: "center" }}>
+                      <PersonOutlineOutlinedIcon style={{ color: "#000" }} />
+                      <Typography
+                        sx={{ color: "#000", fontWeight: "bold", mt: 0.5, ml: 1 }}
+                      >
+                        Infant
+                      </Typography>
+                    </Box>
+                    <Typography sx={{ fontWeight: "600" }}>
+                      {data1?.infant}
                     </Typography>
                   </Box>
-                  <Typography sx={{ fontWeight: "600" }}>
-                    {data1?.child}
-                  </Typography>
-                </Box>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    marginTop: "1rem",
-                  }}
-                >
-                  <Box sx={{ display: "flex", alignItems: "center" }}>
-                    <PersonOutlineOutlinedIcon style={{ color: "#000" }} />
-                    <Typography
-                      sx={{ color: "#000", fontWeight: "bold", mt: 0.5, ml: 1 }}
-                    >
-                      Infant
-                    </Typography>
-                  </Box>
-                  <Typography sx={{ fontWeight: "600" }}>
-                    {data1?.infant}
-                  </Typography>
-                </Box>
+                  </>
+                )}
+                
                 <Box
                   sx={{
                     display: "flex",

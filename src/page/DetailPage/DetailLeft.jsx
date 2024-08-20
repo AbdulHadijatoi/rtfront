@@ -83,6 +83,7 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
 
     const handleSelectItem = (index) => {
         setSelectedItemIndex(index);
+        setAdult(1);
     };
     // Effect to set the initial date and time
 
@@ -685,11 +686,15 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
                                         justifyContent: "space-between",
                                     }}
                                 >
-                                    <Typography sx={{ fontSize: "0.9rem", fontWeight: "700" }}>
-                                        Adult (AED {selectedItemIndex == 1? ac_data?.packages[selectedItemIndex].price:(ac_data?.packages[selectedItemIndex].adult_price)})
-                                        
-                                    </Typography>
-
+                                    {ac_data?.packages[selectedItemIndex].category == 'private' ? (
+                                        <Typography sx={{ fontSize: "0.9rem", fontWeight: "700" }}>
+                                            Group (AED {ac_data?.packages[selectedItemIndex].price})
+                                        </Typography>
+                                    ):(
+                                        <Typography sx={{ fontSize: "0.9rem", fontWeight: "700" }}>
+                                            Adult (AED {ac_data?.packages[selectedItemIndex].adult_price})
+                                        </Typography>
+                                    )}
                                     <Box sx={{ display: "flex", alignItems: "center" }}>
                                         <IconButton
                                             onClick={handleAdultDecrement}
