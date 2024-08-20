@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
-import { CalendarViewMonthOutlined, GroupsOutlined } from "@mui/icons-material";
+import { CalendarViewMonthOutlined, GroupsOutlined, ListAlt } from "@mui/icons-material";
 import { useDispatch, useSelector } from "react-redux";
 import Cookies from "js-cookie";
 import { Apply_Voucher } from "../../store/actions/bookingAction";
@@ -180,37 +180,71 @@ const PriceCard = ({ data1, activeStep, total, setTotalAmount, cartData, voucher
                       <MdOutlineDateRange size={22} /> &nbsp;
                       {item.tour_date ? item.tour_date : item.date}
                     </Typography>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      {item.category == 'private'?
+                      (
+                    <Box>
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
 
-                      <Typography>Adult :</Typography>
+                        <Typography>Groups</Typography>
 
-                      <Typography>
+                        <Typography>
 
-                        {item.adult ? item.adult : item.adult}
+                          {item.adult ? item.adult : item.adult}
 
-                      </Typography>
+                        </Typography>
+                      </Box>
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+
+                        <Typography>Persons per group</Typography>
+
+                        <Typography>
+
+                          {item.group_size}
+
+                        </Typography>
+                      </Box>
+
+                     
                     </Box>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      ) :
+                      (
+                        <Box>
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
 
-                      <Typography>Infant :</Typography>
+                        <Typography>Adult :</Typography>
 
-                      <Typography>
+                        <Typography>
 
-                        {item.infant ? item.infant : item.infant}
+                          {item.adult ? item.adult : item.adult}
 
-                      </Typography>
+                        </Typography>
+                      </Box>
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+
+                        <Typography>Infant :</Typography>
+
+                        <Typography>
+
+                          {item.infant ? item.infant : item.infant}
+
+                        </Typography>
+                      </Box>
+
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+
+                        <Typography>Child :</Typography>
+
+                        <Typography>
+
+                          {item.child ? item.child : item.child}
+
+                        </Typography>
+                      </Box>
+
                     </Box>
-
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-
-                      <Typography>Child :</Typography>
-
-                      <Typography>
-
-                        {item.child ? item.child : item.child}
-
-                      </Typography>
-                    </Box>
+                      )
+                      }
+                    
 
                     <div>
                       {auth && (
@@ -369,7 +403,7 @@ const PriceCard = ({ data1, activeStep, total, setTotalAmount, cartData, voucher
                         >
 
                         <Box sx={{ display: "flex", alignItems: "center" }}>
-                          <GroupsOutlined style={{ color: "#000" }} />
+                          <ListAlt style={{ color: "#000" }} />
                           <Typography
                             sx={{ color: "#000", fontWeight: "bold", mt: 0.5, ml: 1 }}
                           >

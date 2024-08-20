@@ -32,12 +32,12 @@ const PaymentDetailsMain = () => {
   const [cartData, setCartData] = useState(null)
   const token = useSelector((state) => state?.auth?.token);
   const reduxCartData = useSelector((state) => state?.cart?.cart?.payload);
-
   useEffect(() => {
     if (token) {
       setCartData(reduxCartData);
     } else {
       const sessionCartData = JSON.parse(sessionStorage.getItem('cartData'));
+      console.log("LOG DATA: ", sessionCartData);
       setCartData(sessionCartData);
     }
   }, [token, reduxCartData]);

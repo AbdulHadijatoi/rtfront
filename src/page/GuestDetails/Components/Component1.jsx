@@ -199,6 +199,7 @@ const booking = async () => {
       // enqueueSnackbar('Booking successful!', { variant: 'success' });
       localStorage.removeItem('addCartData');
       handleDelete(ids);
+
       openStripeGatewayPage()
   } catch (error) {
       console.error('Error in booking:', error);

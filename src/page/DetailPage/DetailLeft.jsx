@@ -97,7 +97,8 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
         title,
         highlight,
         id,
-        name, category
+        name, category,
+        group_size
     ) => {
         if (!date) {
             enqueueSnackbar("Please Select Date", { variant: "error" });
@@ -112,6 +113,7 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
                     child: child,
                     infant: infant,
                     price: total_amount,
+                    group_size: group_size
                 },
                 date: date,
                 total_amount: total_amount,
@@ -129,7 +131,8 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
                 child: child,
                 infant: infant,
                 total_amount: total_amount,
-                category: category
+                category: category,
+                group_size: group_size,
             };
 
             const farFutureDate = new Date(
@@ -175,7 +178,8 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
         child,
         infant,
         category,
-        packageid
+        packageid,
+        group_size,
     ) => {
         if (!date) {
             enqueueSnackbar("Please Select Date", { variant: "error" });
@@ -191,7 +195,7 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
                 [packageid]: true,
             }));
 
-            return dispatch(addToCart(p_id, q, total, date, adult, child, infant))
+            return dispatch(addToCart(p_id, q, total, date, adult, child, infant, group_size))
                 .then((result) => {
                     // Set loading state to false for the given packageid on success
                     setLoadingStates((prevStates) => ({
@@ -224,6 +228,7 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
                 infant: infant,
                 category: category,
                 package_id: packageid,
+                group_size: group_size,
             };
 
             // Get existing cart data from localStorage
@@ -537,7 +542,8 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
                                                                     child,
                                                                     infant,
                                                                     item.category,
-                                                                    item.id
+                                                                    item.id,
+                                                                    item.group_size,
                                                                 )
                                                             }
                                                             variant="contained"
@@ -548,7 +554,7 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
                                                             }}
                                                             disabled={loadingStates[item.id]}
                                                         >
-                                                            Add To Cart
+                                                            Add To Cart 
                                                         </Button>
                                                     )}
                                                 </Box>
@@ -566,8 +572,8 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
                                                                 item.highlight,
                                                                 item.id,
                                                                 ac_data.name,
-                                                                item.category
-
+                                                                item.category,
+                                                                item.group_size,
                                                             )
                                                         }
                                                         variant="contained"
@@ -689,6 +695,8 @@ const DetailLeft = ({ ac_data, loading, boxref, endtime, duration }) => {
                                     {ac_data?.packages[selectedItemIndex].category == 'private' ? (
                                         <Typography sx={{ fontSize: "0.9rem", fontWeight: "700" }}>
                                             Group (AED {ac_data?.packages[selectedItemIndex].price})
+                                            <br/>
+                                            <span style={{fontWeight: '400', fontSize: '0.6rem'}}>{ac_data?.packages[selectedItemIndex].group_size} People per group</span>
                                         </Typography>
                                     ):(
                                         <Typography sx={{ fontSize: "0.9rem", fontWeight: "700" }}>

@@ -1,6 +1,6 @@
 import api from "../../utils/Api";
 
-export const addToCart = (p_id, q, total, date, adult, child, infant) => async (dispatch) => {
+export const addToCart = (p_id, q, total, date, adult, child, infant, group_size) => async (dispatch) => {
   const body = {
     package_id: p_id,
     quantity: q,
@@ -8,7 +8,8 @@ export const addToCart = (p_id, q, total, date, adult, child, infant) => async (
     tour_date: date,
     adult: adult,
     child: child,
-    infant: infant
+    infant: infant,
+    group_size: group_size
   };
 
   try {
