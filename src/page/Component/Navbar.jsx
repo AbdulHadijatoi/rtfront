@@ -42,6 +42,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import LoginMain from '../Authentication_Page/Login/LoginDialog';
 import SignupMain from '../Authentication_Page/Signup/SignupDialog';
 import ForgotPassword from '../Authentication_Page/Components/ForgetPasswordDialog';
+import { WhatsApp } from "@mui/icons-material";
 
 const Navbar = () => {
 
@@ -408,7 +409,7 @@ const Navbar = () => {
                   }}
                 >
                   <MuiLink
-                    href='https://wa.me/+971529331100'
+                    href='https://wa.me/+971503773786'
                     sx={{
                       alignItems: "center",
                       display: "flex",
@@ -1096,6 +1097,7 @@ const Navbar = () => {
       <Divider />
       {!isHomePage && <Breadcrumbs />}
       <Box sx={{ position: 'fixed', bottom: 5, right: 5, display: {xs: 'flex', md:'none' }, justifyContent: 'cetner', alignItems: 'center', zIndex: 9999 }}>
+        <MuiLink href='https://wa.me/+971503773786'>
           <Button variant='contained' sx={{
               backgroundColor: '#ee8e3b',
               textTransform: 'none',
@@ -1109,8 +1111,9 @@ const Navbar = () => {
               height: '60px',
               zIndex: 9999
           }}>
-
+            <WhatsApp sx={{color: 'white'}}/>
           </Button>
+        </MuiLink>
       </Box>
       <Dialog open={signupOpen} onClose={closeSignupDialog}>
         <DialogContent sx={{padding: '0px'}}>
